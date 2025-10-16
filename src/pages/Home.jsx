@@ -62,7 +62,7 @@ const Home = () => {
     return (
         <div className="bg-white">
             {/* --- Hero Section --- */}
-            <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32  px-18 md:pb-24">
+            <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-16  px-24 md:pb-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
@@ -76,7 +76,7 @@ const Home = () => {
                             </p>
                             <Link 
                                 to="/book-demo" 
-                                className="inline-flex items-center space-x-2 bg-slate-900 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-slate-800 transition-all duration-300 group"
+                                className="inline-flex items-center space-x-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-slate-800 transition-all duration-300 group"
                             >
                                 <span>GET STARTED</span>
                                 <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -99,7 +99,7 @@ const Home = () => {
                                 </div>
                                 <div className="text-xs">
                                     <p className="font-bold">More than</p>
-                                    <p>800,000+ stus</p>
+                                    <p>800,000+ students</p>
                                 </div>
                             </div>
                             {/* Floating Card 2: Collaboration */}
@@ -160,72 +160,115 @@ const Home = () => {
                 </div>
 </section>
 
-
 {/* --- Why Choose Haven Tutors Section --- */}
-<section className="bg-slate-50 py-20 px-4  sm:px-6 lg:px-8">
-  <div className="container mx-auto">
-    <div className="grid md:grid-cols-2 gap-8 items-center">
-      {/* Left Column: Image with floating cards */}
-      <div className="relative flex justify-center">
+<section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto bg-slate-50 rounded-3xl shadow-sm border border-gray-100  p-10 md:p-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+    
+    {/* Left Column: Image with floating cards */}
+    <div className="relative flex justify-center w-full md:w-1/2 ">
+      <div className="relative">
         <img
           src={featuresImage}
           alt="Student learning online with tutor"
-          className="relative rounded-2xl shadow-lg w-90 max-w-md h-100 object-cover"
+          className="rounded-2xl shadow-lg w-full max-w-sm md:max-w-md object-cover h-125"
         />
 
         {/* Floating Card: Progress Card */}
-        <div className="absolute -bottom-8 right-8 bg-white p-4 rounded-lg shadow-xl w-48">
-          <p className="font-bold text-slate-800">Student Progress</p>
-          <p className="text-3xl font-bold text-slate-800 my-1">85%</p>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg w-44 border border-gray-100">
+          <p className="text-xs text-gray-500 font-medium">Learning Progress</p>
+          <p className="text-2xl font-bold text-slate-800 mt-1">55%</p>
+          <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
             <div
-              className="bg-blue-500 h-2 rounded-full"
-              style={{ width: '85%' }}
+              className="bg-blue-500 h-2 rounded-full transition-all duration-500"
+              style={{ width: "55%" }}
             ></div>
           </div>
         </div>
 
-        {/* Floating Card: Rating */}
-        <div className="absolute -top-8 left-16 bg-white p-4 rounded-lg shadow-xl">
-          <p className="text-sm text-slate-500">Average Rating</p>
-          <p className="text-2xl font-bold text-slate-800">
-            <span className="text-green-500">★</span> 4.9/5
+        {/* Floating Card: Growth / Rating */}
+        <div className="absolute -top-8 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 w-40 text-center">
+          <p className="text-xs text-gray-500 font-medium">Last month</p>
+          <p className="text-xl font-bold text-slate-800 flex items-center justify-center gap-1 mt-1">
+            <span className="text-green-500">↗</span> 25.20%
           </p>
-          <a href="#" className="text-xs text-blue-500 font-semibold">
-            From 1000+ students
-          </a>
+          <button className="mt-1 text-xs text-blue-600 font-semibold hover:text-blue-700">
+            View all →
+          </button>
         </div>
       </div>
+    </div>
 
-      {/* Right Column: Haven Tutors Content */}
-      <div className="text-left px-18">
-        <p className="text-sm font-semibold text-blue-600 uppercase mb-2">
-          Why Choose Haven Tutors
-        </p>
-        <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Personalized Guidance for Every Student
-        </h2>
-        <p className="text-slate-600 mb-8">
-          From one-on-one tutoring to flexible scheduling, we make learning simple, calm, and confidence-building.
-        </p>
+    {/* Right Column: Haven Tutors Content */}
+    <div className="w-full md:w-1/2 text-left">
+      <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
+        Why Choose Haven Tutors
+      </p>
 
-        <div className="space-y-6">
-          <FeatureListItem
-            title="One-on-One Tutoring"
-            description="Personalized sessions focused on each student’s goals and learning pace."
-          />
-          <FeatureListItem
-            title="Flexible Scheduling"
-            description="Book lessons at convenient times that fit your routine."
-          />
-          <FeatureListItem
-            title="Curriculum-Aligned Learning"
-            description="Covers CBSE, ICSE, IB, Cambridge, and State Boards."
-          />
-          <FeatureListItem
-            title="Continuous Support & Guidance"
-            description="Regular updates, doubt clearing, and steady mentorship."
-          />
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-snug">
+        Powerful Features for Your Learning Journey
+      </h2>
+
+      <p className="text-slate-600 mb-8 text-base leading-relaxed">
+        From personalized learning paths to interactive lessons, we’ve designed every feature
+        to make your learning experience simple, calm, and confidence-building.
+      </p>
+
+      {/* Features List */}
+      <div className="divide-y divide-gray-300 border-b border-gray-300">
+        <div className="flex items-start gap-3 py-3">
+          <div className="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+            ✓
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-slate-800">
+              One-on-One Tutoring   
+            </h4>
+            <p className="text-slate-600 text-sm">
+              Personalized sessions focused on each student’s goals and learning pace.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 py-5">
+          <div className="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+            ✓
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-slate-800">
+              Flexible Scheduling
+            </h4>
+            <p className="text-slate-600 text-sm">
+              Book lessons at convenient times that fit your routine.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 py-5">
+          <div className="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+            ✓
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-slate-800">
+              Curriculum-Aligned Learning
+            </h4>
+            <p className="text-slate-600 text-sm">
+              Covers CBSE, ICSE, IB, Cambridge, and State Boards.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-3 py-5">
+          <div className="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+            ✓
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-slate-800">
+              Continuous Support & Guidance
+            </h4>
+            <p className="text-slate-600 text-sm">
+              Regular updates, doubt clearing, and steady mentorship.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -233,7 +276,7 @@ const Home = () => {
 </section>
 
             {/* --- Testimonials Section (Updated) --- */}
-            <section className="py-20 bg-slate-50  sm:px-6 lg:px-32">
+            <section className="py-20 bg-white sm:px-6 lg:px-55">
                 <div className="container mx-auto text-center">
                     <div className="inline-block bg-slate-100 text-slate-600 text-sm font-semibold py-1 px-4 rounded-full mb-4">
                         Our Feedbacks
@@ -244,7 +287,7 @@ const Home = () => {
                     </p>
                     <div className="grid lg:grid-cols-3 gap-8 text-left">
                         <TestimonialCard
-                            quote="This platform helped me land my dream job in data science. The courses were practical and easy."
+                            quote="This platform helped me land my dream job in data science. The courses were practical, understandable and easy."
                             name="John Matthews"
                             role="Product Designer"
                             imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JM"
@@ -268,7 +311,7 @@ const Home = () => {
                             imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=DH"
                         />
                         <TestimonialCard
-                            quote="The UX/UI design course was fantastic. It gave me the skills I needed to advance in my career."
+                            quote="The UX/UI design course was fantastic. This course gave me the skills I needed to advance in my career."
                             name="Jessica Wilson"
                             role="UX/UI Designer"
                             imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JW"

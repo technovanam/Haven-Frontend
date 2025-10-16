@@ -13,7 +13,8 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <Header />
       {/* The Outlet component renders the current route's element */}
-      <main className="flex-grow">
+      {/* Add top padding equal to header height (h-20) so content doesn't sit under the fixed header */}
+      <main className="flex-grow pt-20">
         <Outlet />
       </main>
       <Footer />

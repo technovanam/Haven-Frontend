@@ -12,30 +12,30 @@ const Header = () => {
     return (
         <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-[0px]">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-20 relative">
                     <div className="flex-shrink-0">
                         <Link to="/" className="flex items-center space-x-2">
                              <span className="text-2xl font-bold text-slate-800">✳︎ logo</span>
                         </Link>
                     </div>
-                    
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex">
+
+                    {/* Centered Desktop Navigation */}
+                    <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
                         <ul className="flex items-center space-x-8">
                             <li><NavLink to="/" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600 hover:text-sky-600 transition-colors duration-300">Home</NavLink></li>
                             <li><NavLink to="/about" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600 hover:text-sky-600 transition-colors duration-300">About Us</NavLink></li>
                             <li><NavLink to="/services" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600 hover:text-sky-600 transition-colors duration-300">Services</NavLink></li>
-                            
                             <li><NavLink to="/contact" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600 hover:text-sky-600 transition-colors duration-300">Contact</NavLink></li>
                         </ul>
                     </nav>
 
-                    <div className="hidden md:block">
-                        <Link 
-                            to="/book-demo" 
-                            className="bg-sky-600 text-white font-semibold py-4 px-6 rounded-md hover:bg-sky-700 transition-all duration-300 shadow-sm hover:shadow-lg"
-                        >
-                            Book Your Demo
+                    {/* Right-side actions */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        <Link to="/book-demo" className="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition">
+                            <span>Book a demo</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
                         </Link>
                     </div>
 
@@ -53,19 +53,14 @@ const Header = () => {
             {/* Mobile Navigation */}
             {isOpen && (
                 <div className="md:hidden bg-white pb-4">
-                    <ul className="flex flex-col items-center space-y-4">
-                        <li><NavLink to="/" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Home</NavLink></li>
-                        <li><NavLink to="/services" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Services</NavLink></li>
+                    <ul className="flex flex-col items-center space-y-4 py-4">
                         <li><NavLink to="/about" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>About Us</NavLink></li>
-                        <li><NavLink to="/contact" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Contact</NavLink></li>
+                        <li><NavLink to="/courses" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Courses</NavLink></li>
+                        <li><NavLink to="/shop" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Shop</NavLink></li>
+                        <li><NavLink to="/blog" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Blog</NavLink></li>
+                        <li><NavLink to="/contact" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)} className="text-slate-600" onClick={() => setIsOpen(false)}>Contact Us</NavLink></li>
                         <li>
-                            <Link 
-                                to="/book-demo" 
-                                className="bg-sky-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-sky-700 transition-all duration-300"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Book Your Demo
-                            </Link>
+                            <Link to="/book-demo" className="bg-slate-900 text-white font-semibold py-2 px-6 rounded-md hover:bg-slate-800 transition-all duration-300" onClick={() => setIsOpen(false)}>Book a demo</Link>
                         </li>
                     </ul>
                 </div>
