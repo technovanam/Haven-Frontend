@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Building2, BadgeCheck, CircleStar } from "lucide-react";
+import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock } from "lucide-react";
+import approachImage from "../assets/approachImage.jpg"; 
+import BookDemoModal from "../components/BookDemoModal";
+
 const About = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="bg-white text-slate-800 font-sans">
       {/* ---------------------- HERO SECTION ---------------------- */}
       <section className="flex items-center justify-center text-center py-6 px-6 bg-white">
   <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-lg max-w-9xl w-full text-center py-35  md:px-24">
-    <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
+    <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
   <Building2 className="w-5 h-5" />
-  <span className="text-lg tracking-wide uppercase">About Us</span>
+  <span className="text-md tracking-wide uppercase">About Us</span>
 </div>
 
 
@@ -118,10 +123,10 @@ const About = () => {
   </div>
 </section>
 {/* ---------------------- WHAT WE DO ---------------------- */}
-<section className="py-24 px-6 md:px-6 lg:px-6 bg-white">
+<section className="py-6 px-6 md:px-6 lg:px-6 bg-white">
   <div className="max-w-9xl mx-auto">
     {/* Outer white box */}
-    <div className="bg-slate-50 rounded-3xl shadow-lg p-12">
+    <div className="bg-slate-200 rounded-3xl shadow-lg p-12">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-slate-900 mb-4">What We Do</h2>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -131,37 +136,43 @@ const About = () => {
       </div>
 
       {/* Four cards inside the white box */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 px-24">
         {/* Card 1 */}
         <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
-          <div className="text-blue-600 mb-4 text-3xl">💡</div>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <User className="w-6 h-6 text-blue-600" />
+          </div>
           <h3 className="text-2xl font-semibold text-slate-900 mb-2">
             One-on-One Tutoring
           </h3>
           <p className="text-slate-600">
-            Personalised lessons tailored to each student’s pace and goals.
+            Focused attention with personalised lessons tailored to your pace and goals. Tutors build on strengths and address gaps to boost confidence.
           </p>
         </div>
 
         {/* Card 2 */}
         <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
-          <div className="text-blue-600 mb-4 text-3xl">💡</div>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <Users className="w-6 h-6 text-blue-600" />
+          </div>
           <h3 className="text-2xl font-semibold text-slate-900 mb-2">
             Group Sessions
           </h3>
           <p className="text-slate-600">
-            Collaborative learning that builds teamwork and shared progress.
+            Learn and grow together. Interactive sessions build teamwork, discussion, healthy competition, and motivation as students learn from one another.
           </p>
         </div>
 
         {/* Card 3 */}
         <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
-          <div className="text-blue-600 mb-4 text-3xl">💡</div>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <BookOpen className="w-6 h-6 text-blue-600" />
+          </div>
           <h3 className="text-2xl font-semibold text-slate-900 mb-2">
             All Boards Covered
           </h3>
           <p className="text-slate-600">
-            CBSE, ICSE, IB, Cambridge, and State Boards.
+          From CBSE and ICSE to IB, Cambridge, and State Boards — we cover it all. Each lesson fits your board's needs for strong understanding and exam readiness.
           </p>
         </div>
 
@@ -172,7 +183,7 @@ const About = () => {
             Flexible Scheduling
           </h3>
           <p className="text-slate-600">
-            Learn on your schedule — mornings, evenings, or weekends.
+           Morning, evening, or weekend classes — choose what fits best. It’s easy to balance studies with your routine while keeping learning consistent and stress-free.
           </p>
         </div>
       </div>
@@ -181,7 +192,7 @@ const About = () => {
 </section>
 
       {/* ---------------------- OUR APPROACH ---------------------- */}
-<section className="py-24 px-6 md:px-16 lg:px-24 bg-blue-50">
+<section className="py-24 px-6 md:px-16 lg:px-24 bg-white">
   <div className="max-w-6xl mx-auto text-center mb-16">
     <h2 className="text-4xl font-bold text-slate-900">Our Approach</h2>
   </div>
@@ -190,121 +201,126 @@ const About = () => {
     {/* LEFT SIDE - IMAGE */}
     <div className="flex justify-center">
       <img
-        src="/assets/approach.jpg" // 👈 replace with your actual image path
+        src={approachImage}
         alt="Student Learning"
         className="rounded-2xl shadow-lg w-full max-w-md object-cover"
       />
     </div>
 
-    {/* RIGHT SIDE - CONTENT */}
-    <div className="text-left">
-      <h3 className="text-2xl font-bold text-blue-700 mb-4">
-        Empowering Minds Through Personalized and Interactive Learning
-      </h3>
-      <p className="text-slate-600 mb-6">
-        Every student learns differently. We focus on understanding each learner’s
-        strengths and building from there.
+   {/* RIGHT SIDE - CONTENT */}
+<div className="text-left">
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">
+    Empowering Minds Through Personalized and Interactive Learning
+  </h3>
+  <p className="text-slate-600 mb-6">
+    Every student learns differently. We focus on understanding each learner’s
+    strengths and building from there.
+  </p>
+
+  {/* List with dividing lines */}
+  <div className="divide-y divide-gray-300 border-b border-gray-300">
+    <div className="flex items-start gap-3 py-3">
+      <div className="bg-blue-100 p-2 rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-blue-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      </div>
+      <p className="text-slate-700">
+        <span className="font-semibold text-slate-900">
+          Personalized Learning Paths:
+        </span>{" "}
+        Tailored content to match each student’s pace and goals.
       </p>
-
-      <ul className="space-y-5 text-slate-700">
-        <li className="flex items-start gap-3">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-blue-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <p>
-            <span className="font-semibold text-slate-900">
-              Personalized Learning Paths:
-            </span>{" "}
-            Tailored content to match each student’s pace and goals.
-          </p>
-        </li>
-
-        <li className="flex items-start gap-3">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-blue-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2h2m10-4h-4a2 2 0 00-2 2v4h8V6a2 2 0 00-2-2z"
-              />
-            </svg>
-          </div>
-          <p>
-            <span className="font-semibold text-slate-900">
-              Interactive Sessions:
-            </span>{" "}
-            Engaging live classes and discussion forums.
-          </p>
-        </li>
-
-        <li className="flex items-start gap-3">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-blue-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5.121 17.804A3 3 0 016 17h12a3 3 0 01.879.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-          <p>
-            <span className="font-semibold text-slate-900">
-              Mentorship Programs:
-            </span>{" "}
-            One-on-one guidance from experienced educators.
-          </p>
-        </li>
-      </ul>
     </div>
+
+    <div className="flex items-start gap-3 py-5">
+      <div className="bg-blue-100 p-2 rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-blue-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2h2m10-4h-4a2 2 0 00-2 2v4h8V6a2 2 0 00-2-2z"
+          />
+        </svg>
+      </div>
+      <p className="text-slate-700">
+        <span className="font-semibold text-slate-900">
+          Interactive Sessions:
+        </span>{" "}
+        Engaging live classes and discussion forums.
+      </p>
+    </div>
+
+    <div className="flex items-start gap-3 py-5">
+      <div className="bg-blue-100 p-2 rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-blue-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5.121 17.804A3 3 0 016 17h12a3 3 0 01.879.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+      </div>
+      <p className="text-slate-700">
+        <span className="font-semibold text-slate-900">
+          Mentorship Programs:
+        </span>{" "}
+        One-on-one guidance from experienced educators.
+      </p>
+    </div>
+  </div>
+</div>
+
   </div>
 </section>
 
 
       {/* ---------------------- CTA SECTION ---------------------- */}
-      <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-3xl">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4">
+      <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-6xl font-bold mb-4">
             Ready to Discover Your Potential?
           </h2>
-          <p className="text-lg mb-8 opacity-90">
-            Join Haven Tutors today and take the first step toward confident,
+          <p className="text-xl mb-8 opacity-90">
+            Join Haven Tutors today and take the first step toward confident,<br/>
             personalized, and flexible learning.
           </p>
-          <Link
-            to="/book-demo"
-            className="bg-white text-blue-700 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition-all duration-300 shadow-md"
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-white text-blue-700 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition-all duration-300 shadow-md text-xl"
           >
             Book a Free Demo
-          </Link>
+          </button>
         </div>
       </section>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

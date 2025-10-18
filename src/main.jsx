@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Import the main layout component
 import App from './App.jsx';
@@ -11,7 +11,6 @@ import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';  
 import Contact from './pages/Contact.jsx';
-import BookDemo from './pages/BookDemo.jsx';
 
 // Import global styles
 import './index.css';
@@ -28,7 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="book-demo" element={<BookDemo />} />
+          {/* Redirect old book-demo page to home */}
+          <Route path="book-demo" element={<Navigate to="/" replace />} />
           {/* You can add a 404 Not Found page here later */}
         </Route>
       </Routes>
