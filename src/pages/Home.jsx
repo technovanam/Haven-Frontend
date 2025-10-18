@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import home from '../assets/Home_top.png';
 import featuresImage from '../assets/About.png';
+import BookDemoModal from '../components/BookDemoModal';
+
 // --- Feature List Item Component ---
 const FeatureListItem = ({ title, description }) => (
     <div className="flex items-start space-x-4">
@@ -59,6 +61,8 @@ const TestimonialCard = ({ quote, name, role, imgSrc }) => (
     </div>
 );
 const Home = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className="bg-white">
             {/* --- Hero Section --- */}
@@ -74,13 +78,13 @@ const Home = () => {
                             <p className="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">
                                 Discover a world of knowledge with our cutting-edge online course. Empower yourself to succeed in your career, passions & personal growth journey.
                             </p>
-                            <Link 
-                                to="/book-demo" 
+                            <button 
+                                onClick={() => setIsModalOpen(true)}
                                 className="inline-flex items-center space-x-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-slate-800 transition-all duration-300 group"
                             >
                                 <span>GET STARTED</span>
                                 <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                            </Link>
+                            </button>
                         </div>
                         {/* Right Image and Floating Cards */}
                         <div className="relative mt-12 md:mt-0 flex justify-center">
@@ -326,7 +330,8 @@ const Home = () => {
                 </div>
             </section>
 
-            
+            {/* Book Demo Modal */}
+            <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 };

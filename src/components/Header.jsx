@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo.jpg"; // 👈 adjust the path to your actual logo file
+import BookDemoModal from "./BookDemoModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const activeLinkStyle = {
     color: "#0284c7", // sky-600
@@ -78,8 +80,8 @@ const Header = () => {
 
           {/* Right-side actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link
-              to="/book-demo"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
             >
               <span>Book a demo</span>
@@ -97,7 +99,7 @@ const Header = () => {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -193,17 +195,22 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <Link
-                to="/book-demo"
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsModalOpen(true);
+                }}
                 className="bg-slate-900 text-white font-semibold py-2 px-6 rounded-md hover:bg-slate-800 transition-all duration-300"
-                onClick={() => setIsOpen(false)}
               >
                 Book a demo
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
       )}
+
+      {/* Book Demo Modal */}
+      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>
   );
 };

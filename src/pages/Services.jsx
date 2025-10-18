@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-
-// --- Heroicons (optional for CTA icons) ---
+import React, { useState, useEffect } from "react";
+import { Building2 } from "lucide-react";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import BookDemoModal from "../components/BookDemoModal";
 
-// --- Data ---
-const servicesData = [
-  // Tutoring Formats
-  {
+// --- Data (same as your full dataset above) ---
+const servicesData = [  {
     id: 101,
     category: "Tutoring Formats",
     title: "Online One-on-One Live Sessions",
@@ -220,8 +219,7 @@ const servicesData = [
       "Instant, round-the-clock help for quick questions, technical issues, and scheduling assistance.",
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1171&q=80",
-  },
-];
+  },];
 
 const categories = [
   "Tutoring Formats",
@@ -230,14 +228,6 @@ const categories = [
   "Tutor & Scheduling Features",
   "Additional Services",
 ];
-
-const categoryCTA = {
-  "Tutoring Formats": "🎓 Book Your Free Demo",
-  "Specialized Learning Services": "📘 Explore Specialized Learning",
-  "Virtual Classroom Tools": "💻 Experience the Classroom",
-  "Tutor & Scheduling Features": "📅 Find Your Tutor",
-  "Additional Services": "💬 Connect With Us",
-};
 
 const categoryIntro = {
   "Tutoring Formats":
@@ -270,28 +260,41 @@ const ServiceCard = ({ service }) => (
 
 const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tutoring Formats");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredServices = servicesData.filter(
     (service) => service.category === activeCategory
   );
 
-  return (
-    <div className="bg-slate-50 pt-10 pb-20 px-24 font-sans">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <span className="text-blue-600 font-semibold border border-blue-200 bg-blue-50 rounded-full px-4 py-1.5 text-sm">
-          Our Services
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-medium text-slate-900 mt-4 pt-6">
-          Designed for Confident Learning
-        </h1>
-        <p className="max-w-3xl mx-auto mt-4 text-lg text-slate-600">
-          Discover flexible, personalized tutoring options built to fit every
-          student’s pace, goals, and board of education.
-        </p>
-      </div>
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeCategory]);
 
-      {/* Category Tabs - Underline Style */}
+  return (
+    <div className="bg-white text-slate-800 font-sans">
+      {/* ---------------------- HERO SECTION ---------------------- */}
+      <section className="flex items-center justify-center text-center pt-6 pb-16 px-6 bg-white">
+        <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-lg max-w-9xl w-full text-center py-35 md:px-24">
+          <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
+            <Building2 className="w-5 h-5" />
+            <span className="text-md tracking-wide uppercase">
+              Our Services
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-6">
+            Designed for <br />
+            <span className="italic text-blue-700">Confident Learning</span>
+          </h1>
+
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Discover flexible, personalized tutoring options built to fit every
+            student’s pace, goals, and board of education.
+          </p>
+        </div>
+      </section>
+
+      {/* ---------------------- CATEGORY TABS ---------------------- */}
       <div className="flex justify-center mb-12">
         <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 border-b border-gray-200">
           {categories.map((category) => (
@@ -311,27 +314,37 @@ const ServicesPage = () => {
         </div>
       </div>
 
-      {/* Active Section Content */}
-      <section className="mb-20 text-center">
-        {/* <h2 className="text-3xl font-bold text-slate-900">
-          {activeCategory}
-        </h2> */}
-        {/* <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
-          {categoryIntro[activeCategory]}
-        </p> */}
-
+      {/* ---------------------- SERVICES GRID ---------------------- */}
+      <section className="mb-20 text-center px-6 sm:px-12 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {filteredServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
+      </section>
 
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white font-medium py-3 px-8 rounded-full hover:bg-blue-700 transition duration-300 text-lg">
-            {categoryCTA[activeCategory]}
+      {/* ---------------------- CTA SECTION ---------------------- */}
+      <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+            Ready to Discover Your Potential?
+          </h2>
+          <p className="text-lg md:text-xl mb-8 opacity-90">
+            Join Haven Tutors today and take the first step toward confident,
+            <br />
+            personalized, and flexible learning.
+          </p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-white text-blue-700 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition-all duration-300 shadow-md text-xl"
+          >
+            Book a Free Demo
           </button>
         </div>
       </section>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
