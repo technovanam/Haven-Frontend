@@ -55,26 +55,26 @@ const Contact = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section
-        className="relative flex items-end justify-end text-right pt-70 pb-70 px-8 sm:px-16 lg:px-24 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${contact})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="relative z-10">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white drop-shadow-lg">
-            CONNECT
-          </h1>
-          <p className="mt-4 max-w-xl ml-auto text-lg text-gray-100 drop-shadow">
-            We are here to help you learn better and grow stronger.
-          </p>
-        </div>
-      </section>
+      {/* /* Hero Section */}
+        <section
+          className="relative flex items-end justify-end text-right pt-50 pb-70 px-8 sm:px-16 lg:px-24 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${contact})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="relative z-10">
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-white drop-shadow-lg leading-[1.3] line width">
+          Start Your <br />Learning <br/>Journey <b/>with Us
+            </h1>
+            <p className="mt-4 max-w-xl ml-auto text-lg text-gray-100 drop-shadow">
+          We are here to help you learn better and grow stronger.
+            </p>
+          </div>
+        </section>
 
-      {/* Main Content Section */}
+        {/* Main Content Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 sm:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 items-start">
@@ -102,8 +102,8 @@ const Contact = () => {
                     </svg>
                   }
                   title="Email Address"
-                  value="geburtstag834@gmail.com"
-                  href="mailto:geburtstag834@gmail.com"
+                  value="geburtst834@gmail.com"
+                  href="mailto:geburtg834@gmail.com"
                 />
                 <ContactInfoItem
                   icon={
