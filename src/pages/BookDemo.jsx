@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from "@emailjs/browser";
 
 // Define the two main "courses" (Student Demo and Tutor Application)
 const TABS = {
