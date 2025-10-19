@@ -44,7 +44,6 @@ const StarIcon = () => (
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
     </svg>
 );
-
 const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
   <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
     <div className="flex items-center mb-4">
@@ -57,14 +56,92 @@ const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
       <img src={imgSrc} alt={name} className="w-12 h-12 rounded-full mr-4" />
       <div>
         <p className="font-bold text-slate-800">{name}</p>
-        <p className="text-sm text-slate-500">{role}</p>
+        <p className="text-[12px] text-slate-500">{role}</p>
       </div>
     </div>
   </div>
 );
 
+// Inside your Home component, before the return()
+const testimonials = [
+  {
+    quote:
+      "Haven Tutors made ICSE Physics and Chemistry simple and engaging. My concepts finally clicked, and my grades improved drastically!",
+    name: "Aarav Mehta",
+    role: "ICSE Student – Grade 10",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AM",
+    rating: 5,
+  },
+  {
+    quote:
+      "As an IGCSE student, I struggled with balancing Math and Biology, but Haven Tutors’ personalized sessions helped me manage both with ease.",
+    name: "Sophia Thomas",
+    role: "IGCSE Student – Grade 9",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=ST",
+    rating: 5,
+  },
+  {
+    quote:
+      "CBSE grammar and vocabulary used to be my weak points. The Spoken English sessions gave me the confidence to communicate clearly.",
+    name: "Rahul Sharma",
+    role: "CBSE Student – Grade 8",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=RS",
+    rating: 4,
+  },
+  {
+    quote:
+      "I loved the A-Level Math and AI coding classes. The tutors made even complex problems easy to follow, and the support was outstanding.",
+    name: "Emily Brown",
+    role: "A-Level Student – UK Curriculum",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=EB",
+    rating: 5,
+  },
+  {
+    quote:
+      "The IB curriculum can be tough, but my Economics and Sociology tutor helped me understand real-world applications. I scored higher than expected.",
+    name: "Daniel Wong",
+    role: "IB Student – Singapore",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=DW",
+    rating: 5,
+  },
+  {
+    quote:
+      "As a State Board student, I appreciated the flexible schedule. My Hindi and Mathematics tutors were patient, friendly, and always prepared.",
+    name: "Keerthi Raj",
+    role: "State & Matriculation – Tamil Nadu",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=KR",
+    rating: 4,
+  },
+  {
+    quote:
+      "The Cambridge English and Social Studies courses were brilliant. My tutor explained every topic in depth and made learning enjoyable.",
+    name: "Olivia Green",
+    role: "Cambridge Student – Grade 7",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=OG",
+    rating: 5,
+  },
+  {
+    quote:
+      "Thanks to Haven Tutors’ Canadian curriculum lessons, my child improved drastically in vocabulary and writing structure. Highly recommend!",
+    name: "Anita Patel",
+    role: "Parent – Canadian Curriculum",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AP",
+    rating: 5,
+  },
+  {
+    quote:
+      "I joined for Computer Science and Programming skills. The tutors are skilled, encouraging, and up-to-date with modern coding practices.",
+    name: "Arjun Nair",
+    role: "High School Student – Coding & AI",
+    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AN",
+    rating: 5,
+  },
+];
+
+
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
     return (
         <div className="bg-white">
@@ -282,63 +359,60 @@ const Home = () => {
   </div>
 </section>
 
-            {/* --- Testimonials Section (Updated) --- */}
-            <section className="py-20 bg-white sm:px-6 lg:px-55">
-                <div className="container mx-auto text-center">
-                    <div className="inline-block bg-slate-100 text-slate-600 text-sm font-semibold py-1 px-4 rounded-full mb-4">
-                        Our Feedbacks
-                    </div>
-                    <h2 className="text-4xl font-bold text-slate-900 mb-4">What Our Learners Are Saying</h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto mb-12">
-                        Hear directly from our students about how our courses have transformed their careers and lives.
-                    </p>
-                    <div className="grid lg:grid-cols-3 gap-8 text-left">
-                      <TestimonialCard
-                        quote="This platform helped me land my dream job in data science. The courses were practical, understandable and easy."
-                        name="John Matthews"
-                        role="Product Designer"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JM"
-                        rating={5}
-                      />
-                      <TestimonialCard
-                        quote="I never thought I could start a business, but the entrepreneurship course gave me the confidence."
-                        name="Sarah Lee"
-                        role="Product Manager"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=SL"
-                        rating={4}
-                      />
-                      <TestimonialCard
-                        quote="The flexibility of the courses allowed me to learn at my own pace while managing my job. Highly recommend."
-                        name="Michael Davis"
-                        role="Marketer"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=MD"
-                        rating={5}
-                      />
-                      <TestimonialCard
-                        quote="Gained valuable insights into digital marketing that helped me grow my online business. Thank you."
-                        name="David Harris"
-                        role="Graphics Designer"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=DH"
-                        rating={4}
-                      />
-                      <TestimonialCard
-                        quote="The UX/UI design course was fantastic. This course gave me the skills I needed to advance in my career."
-                        name="Jessica Wilson"
-                        role="UX/UI Designer"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JW"
-                        rating={5}
-                      />
-                      <TestimonialCard
-                        quote="This platform not only taught me new skills but also inspired me to keep learning and growing every day."
-                        name="Laura Martinez"
-                        role="Data Scientist"
-                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=LM"
-                        rating={4}
-                      />
-                    </div>
+          
+<section className="py-20 bg-white sm:px-6 lg:px-55">
+  <div className="container mx-auto text-center">
+    <div className="inline-block bg-slate-100 text-slate-600 text-sm font-semibold py-1 px-4 rounded-full mb-4">
+      Our Feedbacks
+    </div>
+    <h2 className="text-4xl font-bold text-slate-900 mb-4">
+      What Our Learners Are Saying
+    </h2>
+    <p className="text-slate-600 max-w-2xl mx-auto mb-12">
+      Hear directly from our students about how our courses have transformed their learning journey.
+    </p>
 
-                </div>
-            </section>
+    {/* Testimonials Grid */}
+    <div
+      id="testimonial-section"
+      className="grid lg:grid-cols-3 gap-8 text-left transition-all duration-500 ease-in-out"
+    >
+      {testimonials.slice(0, showAll ? testimonials.length : 6).map((t, i) => (
+        <div
+          key={i}
+          className="opacity-0 animate-fadeIn"
+          // style={{
+          //   animationDelay: `${i * 0.01}s`,
+          //   animationFillMode: "forwards",
+          // }}
+        >
+          <TestimonialCard {...t} />
+        </div>
+      ))}
+    </div>
+
+    {/* See More / See Less Button */}
+    <div className="mt-10">
+      <button
+        onClick={() => {
+          setShowAll(!showAll);
+          setTimeout(() => {
+            if (!showAll) {
+              // Smooth scroll to newly revealed section
+              const el = document.getElementById("testimonial-section");
+              if (el) el.scrollIntoView({ behavior: "smooth", block: "end" });
+            }
+          }, 150);
+        }}
+        className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md"
+      >
+        {showAll ? "See Less" : "See More"}
+      </button>
+    </div>
+  </div>
+</section>
+
+
 
             {/* Book Demo Modal */}
             <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
