@@ -45,21 +45,24 @@ const StarIcon = () => (
     </svg>
 );
 
-const TestimonialCard = ({ quote, name, role, imgSrc }) => (
-    <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-        <div className="flex items-center mb-4">
-            <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
-        </div>
-        <p className="text-slate-600 mb-6 italic">"{quote}"</p>
-        <div className="flex items-center">
-            <img src={imgSrc} alt={name} className="w-12 h-12 rounded-full mr-4"/>
-            <div>
-                <p className="font-bold text-slate-800">{name}</p>
-                <p className="text-sm text-slate-500">{role}</p>
-            </div>
-        </div>
+const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
+  <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="flex items-center mb-4">
+      {[...Array(rating)].map((_, i) => (
+        <StarIcon key={i} />
+      ))}
     </div>
+    <p className="text-slate-600 mb-6 italic">"{quote}"</p>
+    <div className="flex items-center">
+      <img src={imgSrc} alt={name} className="w-12 h-12 rounded-full mr-4" />
+      <div>
+        <p className="font-bold text-slate-800">{name}</p>
+        <p className="text-sm text-slate-500">{role}</p>
+      </div>
+    </div>
+  </div>
 );
+
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -290,43 +293,50 @@ const Home = () => {
                         Hear directly from our students about how our courses have transformed their careers and lives.
                     </p>
                     <div className="grid lg:grid-cols-3 gap-8 text-left">
-                        <TestimonialCard
-                            quote="This platform helped me land my dream job in data science. The courses were practical, understandable and easy."
-                            name="John Matthews"
-                            role="Product Designer"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JM"
-                        />
-                        <TestimonialCard
-                            quote="I never thought I could start a business, but the entrepreneurship course gave me the confidence."
-                            name="Sarah Lee"
-                            role="Product Manager"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=SL"
-                        />
-                        <TestimonialCard
-                            quote="The flexibility of the courses allowed me to learn at my own pace while managing my job. Highly recommend."
-                            name="Michael Davis"
-                            role="Marketer"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=MD"
-                        />
-                        <TestimonialCard
-                            quote="Gained valuable insights into digital marketing that helped me grow my online business. Thank you."
-                            name="David Harris"
-                            role="Graphics Designer"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=DH"
-                        />
-                        <TestimonialCard
-                            quote="The UX/UI design course was fantastic. This course gave me the skills I needed to advance in my career."
-                            name="Jessica Wilson"
-                            role="UX/UI Designer"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JW"
-                        />
-                        <TestimonialCard
-                            quote="This platform not only taught me new skills but also inspired me to keep learning and growing every day."
-                            name="Laura Martinez"
-                            role="Data Scientist"
-                            imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=LM"
-                        />
+                      <TestimonialCard
+                        quote="This platform helped me land my dream job in data science. The courses were practical, understandable and easy."
+                        name="John Matthews"
+                        role="Product Designer"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JM"
+                        rating={5}
+                      />
+                      <TestimonialCard
+                        quote="I never thought I could start a business, but the entrepreneurship course gave me the confidence."
+                        name="Sarah Lee"
+                        role="Product Manager"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=SL"
+                        rating={4}
+                      />
+                      <TestimonialCard
+                        quote="The flexibility of the courses allowed me to learn at my own pace while managing my job. Highly recommend."
+                        name="Michael Davis"
+                        role="Marketer"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=MD"
+                        rating={5}
+                      />
+                      <TestimonialCard
+                        quote="Gained valuable insights into digital marketing that helped me grow my online business. Thank you."
+                        name="David Harris"
+                        role="Graphics Designer"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=DH"
+                        rating={4}
+                      />
+                      <TestimonialCard
+                        quote="The UX/UI design course was fantastic. This course gave me the skills I needed to advance in my career."
+                        name="Jessica Wilson"
+                        role="UX/UI Designer"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=JW"
+                        rating={5}
+                      />
+                      <TestimonialCard
+                        quote="This platform not only taught me new skills but also inspired me to keep learning and growing every day."
+                        name="Laura Martinez"
+                        role="Data Scientist"
+                        imgSrc="https://placehold.co/48x48/E2E8F0/4A5568?text=LM"
+                        rating={4}
+                      />
                     </div>
+
                 </div>
             </section>
 

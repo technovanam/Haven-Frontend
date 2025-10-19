@@ -3,6 +3,8 @@ import { Building2 } from "lucide-react";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import BookDemoModal from "../components/BookDemoModal";
+import { useLocation } from "react-router-dom";
+
 
 // --- Data (same as your full dataset above) ---
 const servicesData = [  {
@@ -261,14 +263,16 @@ const ServiceCard = ({ service }) => (
 const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tutoring Formats");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
 
   const filteredServices = servicesData.filter(
     (service) => service.category === activeCategory
   );
 
+  // Scroll to top only when entering this route
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [activeCategory]);
+  }, [location.pathname]);
 
   return (
     <div className="bg-white text-slate-800 font-sans">
