@@ -128,11 +128,11 @@ const Home = () => {
                 </div>
             {/* </section> */}
             <div className="container mx-auto px-4 pt-16 sm:px-6 lg:px-8">
-                    <div className="w-full bg-slate-50 rounded-3xl shadow-sm border border-slate-200 py-10 px-4">
+                    <div className="w-full bg-slate-50 rounded-3xl shadow-sm border border-slate-200 py-10 px-4 transition-all duration-300 hover:shadow-md">
                         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
                             {/* Stat 1 */}
-                            <div className="text-center">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900">100%</h3>
+                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">100%</h3>
                                 <p className="text-slate-500 mt-2 text-sm md:text-base">Satisfaction rate</p>
                             </div>
 
@@ -140,8 +140,8 @@ const Home = () => {
                             <div className="hidden md:block text-4xl font-bold text-gray-300">·</div>
 
                             {/* Stat 2 */}
-                            <div className="text-center">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900">12+</h3>
+                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">12+</h3>
                                 <p className="text-slate-500 mt-2 text-sm md:text-base">Years of experience</p>
                             </div>
 
@@ -149,8 +149,8 @@ const Home = () => {
                             <div className="hidden md:block text-4xl font-bold text-gray-300">·</div>
 
                             {/* Stat 3 */}
-                            <div className="text-center">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900">20k+</h3>
+                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">20k+</h3>
                                 <p className="text-slate-500 mt-2 text-sm md:text-base">Total Courses</p>
                             </div>
 
@@ -158,8 +158,8 @@ const Home = () => {
                             <div className="hidden md:block text-4xl font-bold text-gray-300">·</div>
 
                             {/* Stat 4 */}
-                            <div className="text-center">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900">90+</h3>
+                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">90+</h3>
                                 <p className="text-slate-500 mt-2 text-sm md:text-base">Course Category</p>
                             </div>
                         </div>
