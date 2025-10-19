@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MessageSquareQuote } from 'lucide-react';
 import home from '../assets/Home_top.png';
 import featuresImage from '../assets/About.png';
 import BookDemoModal from '../components/BookDemoModal';
@@ -183,7 +184,7 @@ const Home = () => {
                                 </div>
                                 <div className="text-xs">
                                     <p className="font-bold">More than</p>
-                                    <p>800,000+ students</p>
+                                    <p>1000+ students</p>
                                 </div>
                             </div>
                             {/* Floating Card 2: Collaboration */}
@@ -246,19 +247,20 @@ const Home = () => {
 
 {/* --- Why Choose Haven Tutors Section --- */}
 <section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto bg-slate-50 rounded-3xl shadow-sm border border-gray-100  p-10 md:p-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+  <div className="max-w-7xl mx-auto bg-slate-50 rounded-3xl shadow-sm border border-gray-100 p-10 md:p-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
     
     {/* Left Column: Image with floating cards */}
-    <div className="relative flex justify-center w-full md:w-1/2 ">
+    <div className="relative flex justify-center w-full md:w-1/2">
       <div className="relative">
         <img
           src={featuresImage}
           alt="Student learning online with tutor"
-          className="rounded-2xl shadow-lg w-full max-w-sm md:max-w-md object-cover h-125"
+          className="relative rounded-3xl shadow-2xl w-full max-w-sm md:max-w-md object-cover h-125 z-10"
+          style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
         />
 
         {/* Floating Card: Progress Card */}
-        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg w-44 border border-gray-100">
+        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg w-44 border border-gray-100 z-20">
           <p className="text-xs text-gray-500 font-medium">Learning Progress</p>
           <p className="text-2xl font-bold text-slate-800 mt-1">55%</p>
           <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
@@ -270,7 +272,7 @@ const Home = () => {
         </div>
 
         {/* Floating Card: Growth / Rating */}
-        <div className="absolute -top-8 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 w-40 text-center">
+        <div className="absolute -top-8 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 w-40 text-center z-20">
           <p className="text-xs text-gray-500 font-medium">Last month</p>
           <p className="text-xl font-bold text-slate-800 flex items-center justify-center gap-1 mt-1">
             <span className="text-green-500">↗</span> 25.20%
@@ -362,8 +364,9 @@ const Home = () => {
           
 <section className="py-20 bg-white sm:px-6 lg:px-55">
   <div className="container mx-auto text-center">
-    <div className="inline-block bg-slate-100 text-slate-600 text-sm font-semibold py-1 px-4 rounded-full mb-4">
-      Our Feedbacks
+    <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
+      <MessageSquareQuote className="w-5 h-5" />
+      <span className="text-sm tracking-wide uppercase">Our Feedbacks</span>
     </div>
     <h2 className="text-4xl font-bold text-slate-900 mb-4">
       What Our Learners Are Saying

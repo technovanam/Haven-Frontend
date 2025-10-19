@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock } from "lucide-react";
+import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock, Target, MessageCircle, UserCheck } from "lucide-react";
 import approachImage from "../assets/approachImage.jpg"; 
 import BookDemoModal from "../components/BookDemoModal";
 
@@ -221,20 +221,7 @@ const About = () => {
   <div className="divide-y divide-gray-300 border-b border-gray-300">
     <div className="flex items-start gap-3 py-3">
       <div className="bg-blue-100 p-2 rounded-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-blue-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
-        </svg>
+        <Target className="h-5 w-5 text-blue-700" />
       </div>
       <p className="text-slate-700">
         <span className="font-semibold text-slate-900">
@@ -246,20 +233,7 @@ const About = () => {
 
     <div className="flex items-start gap-3 py-5">
       <div className="bg-blue-100 p-2 rounded-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-blue-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 8h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a2 2 0 012-2h2m10-4h-4a2 2 0 00-2 2v4h8V6a2 2 0 00-2-2z"
-          />
-        </svg>
+        <MessageCircle className="h-5 w-5 text-blue-700" />
       </div>
       <p className="text-slate-700">
         <span className="font-semibold text-slate-900">
@@ -271,20 +245,7 @@ const About = () => {
 
     <div className="flex items-start gap-3 py-5">
       <div className="bg-blue-100 p-2 rounded-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-blue-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5.121 17.804A3 3 0 016 17h12a3 3 0 01.879.804M15 10a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-        </svg>
+        <UserCheck className="h-5 w-5 text-blue-700" />
       </div>
       <p className="text-slate-700">
         <span className="font-semibold text-slate-900">
