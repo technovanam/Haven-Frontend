@@ -8,7 +8,7 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const activeLinkStyle = {
-    color: "#0284c7", // sky-600
+    color: "#2563eb", // blue-600
     fontWeight: "600",
   };
 
@@ -23,7 +23,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Haven Tutors Logo"
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain mix-blend-multiply"
               />
             </Link>
           </div>
@@ -37,7 +37,7 @@ const Header = () => {
                   style={({ isActive }) =>
                     isActive ? activeLinkStyle : undefined
                   }
-                  className="text-slate-600 hover:text-sky-600 transition-colors duration-300"
+                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   Home
                 </NavLink>
@@ -48,7 +48,7 @@ const Header = () => {
                   style={({ isActive }) =>
                     isActive ? activeLinkStyle : undefined
                   }
-                  className="text-slate-600 hover:text-sky-600 transition-colors duration-300"
+                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   About Us
                 </NavLink>
@@ -59,7 +59,7 @@ const Header = () => {
                   style={({ isActive }) =>
                     isActive ? activeLinkStyle : undefined
                   }
-                  className="text-slate-600 hover:text-sky-600 transition-colors duration-300"
+                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   Services
                 </NavLink>
@@ -70,7 +70,7 @@ const Header = () => {
                   style={({ isActive }) =>
                     isActive ? activeLinkStyle : undefined
                   }
-                  className="text-slate-600 hover:text-sky-600 transition-colors duration-300"
+                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
                 >
                   Contact
                 </NavLink>
@@ -106,7 +106,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-sky-600 focus:outline-none"
+              className="text-slate-600 hover:text-blue-600 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"

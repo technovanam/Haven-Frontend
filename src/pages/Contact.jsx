@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { Building2, Mail, Globe, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
 import contact from '../assets/contact.jpg';
 
-// Reusable contact info item - More attractive design
+// Reusable contact info item - Cleaner design
 const ContactInfoItem = ({ icon, title, value, href }) => {
   const content = href ? (
     <a
@@ -37,21 +37,23 @@ const Contact = () => {
   const form = useRef();
   const [formStatus, setFormStatus] = useState('');
 
+  // ✅ Using your actual EmailJS credentials directly
+  const SERVICE_ID = 'service_uxzfhhr';
+  const TEMPLATE_ID = 'template_otupah7';
+  const PUBLIC_KEY = 'UYZrHlvgCfPu_7vx0';
+
   const sendEmail = (e) => {
     e.preventDefault();
     setFormStatus('Sending...');
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
       () => {
-        setFormStatus('Message sent successfully! ✅');
+        setFormStatus('Message sent successfully!');
         form.current.reset();
       },
-      () => {
-        setFormStatus('Failed to send message. Please try again. ❌');
+      (error) => {
+        console.error('Email send failed:', error.text);
+        setFormStatus('Failed to send message. Please try again.');
       }
     );
   };
@@ -67,10 +69,8 @@ const Contact = () => {
             backgroundPosition: 'center 25%',
           }}
         >
-          {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-800/60"></div>
           
-          {/* Content */}
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
               <Building2 className="w-5 h-5" />
@@ -91,11 +91,11 @@ const Contact = () => {
         </div>
       </section>
 
-        {/* Main Content Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 sm:px-12 lg:px-24">
+      {/* Main Content Section */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4 sm:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Left 1/2 - Form */}
+            {/* Left: Form */}
             <div className="lg:col-span-1 flex flex-col justify-between">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
                 Send Us a Message
@@ -106,7 +106,6 @@ const Contact = () => {
                 className="bg-slate-50 p-8 rounded-xl shadow-sm border border-gray-100"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  {/* Name Field */}
                   <div>
                     <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
                       Name
@@ -121,7 +120,6 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Email Field */}
                   <div>
                     <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email
@@ -136,7 +134,6 @@ const Contact = () => {
                     />
                   </div>
 
-                  {/* Phone Field */}
                   <div className="md:col-span-2">
                     <label htmlFor="user_phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Phone
@@ -151,7 +148,6 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Message box - Full width at bottom */}
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Message
@@ -166,7 +162,6 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                {/* Button */}
                 <div className="flex justify-center">
                   <button
                     type="submit"
@@ -175,13 +170,35 @@ const Contact = () => {
                     Send Message
                   </button>
                 </div>
+
                 {formStatus && (
-                  <p className="mt-4 text-center text-sm text-gray-700">{formStatus}</p>
+                  <div className={`mt-6 p-4 rounded-lg flex items-center justify-center gap-2 ${
+                    formStatus.includes('successfully') 
+                      ? 'bg-green-50 border border-green-200' 
+                      : 'bg-red-50 border border-red-200'
+                  }`}>
+                    {formStatus.includes('successfully') ? (
+                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                    <p className={`text-sm font-semibold ${
+                      formStatus.includes('successfully') 
+                        ? 'text-green-800' 
+                        : 'text-red-800'
+                    }`}>
+                      {formStatus}
+                    </p>
+                  </div>
                 )}
               </form>
             </div>
 
-            {/* Right 1/2 - Get in Touch */}
+            {/* Right: Contact Info */}
             <div className="lg:col-span-1 flex flex-col">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">
                 Get in Touch
@@ -195,19 +212,16 @@ const Contact = () => {
                     icon={<Mail className="w-6 h-6" />}
                     title="Email Address"
                     value="info@haventutor.com"
-                    href="mailto:info@haventutor.com"
                   />
                   <ContactInfoItem
                     icon={<Globe className="w-6 h-6" />}
                     title="Website"
                     value="www.haventutor.com"
-                    href="https://www.haventutor.com"
                   />
                   <ContactInfoItem
                     icon={<Phone className="w-6 h-6" />}
                     title="Phone / WhatsApp"
-                    value="+1 (555) 123-4567"
-                    href="tel:+15551234567"
+                    value="+91 9606840892"
                   />
                 </div>
 
