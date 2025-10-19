@@ -178,7 +178,9 @@ const About = () => {
 
         {/* Card 4 */}
         <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
-          <div className="text-blue-600 mb-4 text-3xl">💡</div>
+         <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+            <Clock className="w-6 h-6 text-blue-600" />
+          </div>
           <h3 className="text-2xl font-semibold text-slate-900 mb-2">
             Flexible Scheduling
           </h3>
