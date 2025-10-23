@@ -9,7 +9,6 @@ const About = () => {
 
   return (
     <div className="bg-white text-slate-800 font-sans">
-      {/* ---------------------- HERO SECTION ---------------------- */}
       <section className="flex items-center justify-center text-center py-6 px-6 bg-white">
   <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-lg max-w-9xl w-full text-center py-35  md:px-24">
     <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
@@ -33,7 +32,6 @@ const About = () => {
 </section>
 
 
-      {/* ---------------------- OUR STORY / MISSION / VISION ---------------------- */}
 <section className="py-24 px-6 md:px-16 lg:px-24">
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
     {/* LEFT COLUMN */}
@@ -48,16 +46,13 @@ const About = () => {
       </h2>
 
       <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-        At Haven Tutors, we believe education should be personal, flexible,
-        and inspiring. Driven by a passion for meaningful learning, we’re
-        on a mission to create a calm, supportive environment where every
-        student can grow with confidence.
+        At Haven Tutors, we believe education should be personal, flexible, and inspiring. Guided by a passion for meaningful learning, we’ve built a calm, supportive environment where every student can grow with confidence.
       </p>
 
       <div className="flex flex-col md:flex-row justify-center md:justify-start gap-6 mt-10">
   {/* Stat 1 */}
   <div className="flex-1 bg-white border-2 border-gray-300 rounded-2xl shadow-md p-6 text-left hover:shadow-lg transition-all duration-300">
-    <h3 className="text-4xl font-bold text-blue-700">20K+</h3>
+    <h3 className="text-4xl font-bold text-blue-700">1K+</h3>
     <p className="text-slate-600 text-sm mt-2">
       Students guided toward <br/>success.
     </p>
@@ -88,10 +83,7 @@ const About = () => {
           Our Mission
         </h3>
         <p className="text-slate-600 mb-4">
-          Haven Tutors is built on the idea that every learner deserves
-          personal attention, clear guidance, and a pace that fits them.
-          Our mission is to make quality education accessible and enjoyable
-          for all.
+          Haven Tutors is founded on the belief that every learner deserves personal attention, clear guidance, and a learning pace that fits them. Our mission is to make quality education both accessible and enjoyable for all.
         </p>
         <ul className="space-y-2 text-slate-700">
           <li className="flex items-center gap-2"><BadgeCheck className="w-5 h-5 text-green-600 flex-shrink-0" /> Empower students to reach their full potential.</li>
@@ -109,9 +101,7 @@ const About = () => {
           Our Vision
         </h3>
         <p className="text-slate-600 mb-4">
-          We envision a world where education adapts to each learner — not
-          the other way around. Haven Tutors aims to build a safe, inspiring
-          space that encourages curiosity and lifelong learning.
+          We envision a world where education adapts to each learner — not the other way around. Haven Tutors strives to build a safe, inspiring space that nurtures curiosity and lifelong learning.
         </p>
         <ul className="space-y-2 text-slate-700">
           <li className="flex items-center gap-2"><BadgeCheck className="w-5 h-5 text-green-600 flex-shrink-0" /> Build confidence through personalized support.</li>
@@ -122,7 +112,7 @@ const About = () => {
     </div>
   </div>
 </section>
-{/* ---------------------- WHAT WE DO ---------------------- */}
+
 <section className="py-6 px-6 md:px-6 lg:px-6 bg-white">
   <div className="max-w-9xl mx-auto">
     {/* Outer white box */}
@@ -130,15 +120,14 @@ const About = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-slate-900 mb-4">What We Do</h2>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          We go beyond traditional tutoring — creating personalised learning
-          experiences that adapt to every student’s style, goals, and schedule.
+          We go beyond traditional tutoring — creating personalized learning experiences that adapt to every student’s style, goals, and schedule.
         </p>
       </div>
 
       {/* Four cards inside the white box */}
       <div className="grid md:grid-cols-2 gap-8 px-24">
         {/* Card 1 */}
-        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
+        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:scale-105 transition-all duration-300">
           <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             <User className="w-6 h-6 text-blue-600" />
           </div>
@@ -146,12 +135,12 @@ const About = () => {
             One-on-One Tutoring
           </h3>
           <p className="text-slate-600">
-            Focused attention with personalised lessons tailored to your pace and goals. Tutors build on strengths and address gaps to boost confidence.
+            Focused attention with customized lessons tailored to each student’s pace and goals. Tutors build on strengths, close learning gaps, and boost confidence with steady guidance.
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
+        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:scale-105 transition-all duration-300">
           <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             <Users className="w-6 h-6 text-blue-600" />
           </div>
@@ -159,12 +148,12 @@ const About = () => {
             Group Sessions
           </h3>
           <p className="text-slate-600">
-            Learn and grow together. Interactive sessions build teamwork, discussion, healthy competition, and motivation as students learn from one another.
+            Learn and grow together. Our interactive group classes encourage teamwork, discussion, and healthy competition while motivating students to learn from one another.
           </p>
         </div>
 
         {/* Card 3 */}
-        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
+        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:scale-105 transition-all duration-300">
           <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             <BookOpen className="w-6 h-6 text-blue-600" />
           </div>
@@ -172,12 +161,12 @@ const About = () => {
             All Boards Covered
           </h3>
           <p className="text-slate-600">
-          From CBSE and ICSE to IB, Cambridge, and State Boards — we cover it all. Each lesson fits your board's needs for strong understanding and exam readiness.
+          From CBSE and ICSE to IB, Cambridge, and State Boards — we cover it all. Each lesson is aligned with your curriculum to ensure solid understanding and exam readiness.
           </p>
         </div>
 
         {/* Card 4 */}
-        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-md transition-all duration-300">
+        <div className="bg-white rounded-2xl p-8 shadow hover:shadow-xl hover:scale-105 transition-all duration-300">
          <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
             <Clock className="w-6 h-6 text-blue-600" />
           </div>
@@ -185,7 +174,7 @@ const About = () => {
             Flexible Scheduling
           </h3>
           <p className="text-slate-600">
-           Morning, evening, or weekend classes — choose what fits best. It’s easy to balance studies with your routine while keeping learning consistent and stress-free.
+           Morning, evening, or weekend — choose what fits best. Our flexible timings help students balance academics with their routine while keeping learning consistent and stress-free.
           </p>
         </div>
       </div>
@@ -193,7 +182,6 @@ const About = () => {
   </div>
 </section>
 
-      {/* ---------------------- OUR APPROACH ---------------------- */}
 <section className="py-24 px-6 md:px-16 lg:px-24 bg-white">
   <div className="max-w-6xl mx-auto text-center mb-16">
     <h2 className="text-4xl font-bold text-slate-900">Our Approach</h2>
@@ -215,8 +203,7 @@ const About = () => {
     Empowering Minds Through Personalized and Interactive Learning
   </h3>
   <p className="text-slate-600 mb-6">
-    Every student learns differently. We focus on understanding each learner’s
-    strengths and building from there.
+    Every student learns differently. Our approach focuses on understanding each learner’s strengths and creating a path that builds confidence and lasting success.
   </p>
 
   {/* List with dividing lines */}
@@ -229,7 +216,7 @@ const About = () => {
         <span className="font-semibold text-slate-900">
           Personalized Learning Paths:
         </span>{" "}
-        Tailored content to match each student’s pace and goals.
+        Lessons designed to match each student’s pace, style, and academic goals.
       </p>
     </div>
 
@@ -241,7 +228,7 @@ const About = () => {
         <span className="font-semibold text-slate-900">
           Interactive Sessions:
         </span>{" "}
-        Engaging live classes and discussion forums.
+        Engaging live classes and discussions that make learning active, fun, and meaningful.
       </p>
     </div>
 
@@ -253,7 +240,7 @@ const About = () => {
         <span className="font-semibold text-slate-900">
           Mentorship Programs:
         </span>{" "}
-        One-on-one guidance from experienced educators.
+        Ongoing one-on-one support from experienced educators who guide, motivate, and inspire progress.
       </p>
     </div>
   </div>
@@ -263,8 +250,7 @@ const About = () => {
 </section>
 
 
-      {/* ---------------------- CTA SECTION ---------------------- */}
-      <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
+<section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-6xl font-bold mb-4">
             Ready to Discover Your Potential?

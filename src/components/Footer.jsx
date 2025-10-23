@@ -9,37 +9,71 @@ const Footer = ({ onBookDemoClick }) => {
     return (
         <footer className="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-700">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                {/* CHANGE 1: Added `lg:justify-items-start`.
+                  - `justify-items-center` (default) centers your columns on mobile/tablet.
+                  - `lg:justify-items-start` aligns columns to the left on large screens.
+                  This works with your `lg:text-left` to create a clean, aligned desktop layout.
+                */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 justify-items-center lg:justify-items-start text-center lg:text-left">
                     
                     {/* Column 1: Logo and Contact Info */}
+                    {/* Note: `lg:col-span-1` is the default, so I removed it for cleanliness. */}
                     <div>
                         <img 
                             src={logo}
                             alt="Haven Tutors Logo" 
-                            className="h-12 w-auto object-contain mb-6 mix-blend-multiply" 
+                            className="h-12 w-auto object-contain mb-6 mx-auto lg:mx-0" 
                         />
-                        <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-                            Empowering students worldwide with personalized online tutoring across all major curricula.
-                        </p>
-                        <div className="space-y-3 text-sm">
-                            <div className="flex items-center gap-3 group">
+                        <div className="space-y-3 text-sm mb-6">
+                            {/* Contact items align left on desktop via `lg:justify-start` */}
+                            <div className="flex items-center gap-3 group justify-center lg:justify-start">
                                 <div className="bg-blue-100 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
-                                    <Phone size={16} className="text-blue-600 group-hover:text-white" />
+                                    <Phone size={14} className="text-blue-600 group-hover:text-white" />
                                 </div>
                                 <span className="text-slate-700 font-medium">+91 9606840892</span>
                             </div>
-                            <div className="flex items-center gap-3 group">
+                            <div className="flex items-center gap-3 group justify-center lg:justify-start">
                                 <div className="bg-blue-100 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
-                                    <Mail size={16} className="text-blue-600 group-hover:text-white" />
+                                    <Mail size={14} className="text-blue-600 group-hover:text-white" />
                                 </div>
                                 <span className="text-slate-700 font-medium">info@haventutor.com</span>
+                            </div>
+                        </div>
+                        
+                        {/* Follow Us Section */}
+                        <div className="mt-6">
+                            {/* CHANGE 2: Added `pb-1` to the heading.
+                              This gives a little breathing room between the text and the underline span.
+                            */}
+                            <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
+                                Follow Us
+                                <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+                            </h3>
+                            {/* Social icons align left on desktop via `lg:justify-start` */}
+                            <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                <a href="https://www.facebook.com/haventutors" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                    <FaFacebookF size={16} />
+                                </a>
+                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" aria-label="LinkedIn" className="bg-white hover:bg-blue-700 text-blue-700 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                    <FaLinkedinIn size={16} />
+                                </a>
+                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" aria-label="Instagram" className="bg-white hover:bg-pink-600 text-pink-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                    <FaInstagram size={16} />
+                                </a>
+                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." aria-label="WhatsApp" className="bg-white hover:bg-green-500 text-green-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                    <FaWhatsapp size={16} />
+                                </a>
+                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" aria-label="YouTube" className="bg-white hover:bg-red-600 text-red-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                    <FaYoutube size={16} />
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     {/* Column 2: Quick Links */}
-                    <div className="flex flex-col items-center text-center">
-                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block">
+                    <div>
+                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
                             Quick Links
                             <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
                         </h3>
@@ -74,30 +108,185 @@ const Footer = ({ onBookDemoClick }) => {
                             </li>
                         </ul>
                     </div>
-                    
-                    {/* Column 3: Social Icons */}
-                    <div className="flex flex-col items-center lg:items-end text-center lg:text-right">
-                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block">
-                            Follow Us
+
+                    {/* Column 3: Subjects */}
+                    <div>
+                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
+                            Subjects
                             <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
                         </h3>
-                        <div className="flex flex-wrap gap-3 justify-center lg:justify-end">
-                            <a href="https://facebook.com" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
-                                <FaFacebookF size={18} />
-                            </a>
-                            <a href="https://linkedin.com" aria-label="LinkedIn" className="bg-white hover:bg-blue-700 text-blue-700 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
-                                <FaLinkedinIn size={18} />
-                            </a>
-                            <a href="https://instagram.com" aria-label="Instagram" className="bg-white hover:bg-pink-600 text-pink-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
-                                <FaInstagram size={18} />
-                            </a>
-                            <a href="https://twitter.com" aria-label="Twitter" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
-                                <FaTwitter size={18} />
-                            </a>
-                            <a href="https://youtube.com" aria-label="YouTube" className="bg-white hover:bg-red-600 text-red-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
-                                <FaYoutube size={18} />
-                            </a>
-                        </div>
+                        <ul className="space-y-3">
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    English & Grammar
+                                </button>
+                            </li>
+                            {/* ... other subject links ... */}
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Mathematics
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Physics
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Chemistry
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Biology
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Computer Science
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Social Studies
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 4: Services */}
+                    <div>
+                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
+                            Services
+                            <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+                        </h3>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-3A00">
+                                    One-on-One Tutoring
+                                </Link>
+                            </li>
+                             {/* ... other service links ... */}
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Group Classes
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Homework Help
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Exam Preparation
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Doubt Clearing
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Personalized Learning
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                    Interactive Classes
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 5: Curriculum */}
+                    <div>
+                        <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
+                            Curriculum
+                            <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+                        </h3>
+                        <ul className="space-y-3">
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    CBSE
+                                </button>
+                            </li>
+                            {/* ... other curriculum links ... */}
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    ICSE
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    IGCSE
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    State Board
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    IB
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    A-Level
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    onClick={onBookDemoClick} 
+                                    className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                >
+                                    Cambridge
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -105,21 +294,29 @@ const Footer = ({ onBookDemoClick }) => {
             {/* Copyright Bar */}
             <div className="border-t border-slate-200">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-                    <p className="text-sm text-slate-600">
+                    {/* CHANGE 3: Made text slightly smaller on mobile (`text-xs`) 
+                      and regular (`sm:text-sm`) on screens above mobile.
+                    */}
+                    <p className="text-xs sm:text-sm text-slate-600">
                         Copyright © 2025 <span className="text-blue-600 font-semibold">Haven Tutors</span> | All Rights Reserved
                     </p>
                 </div>
             </div>
 
-            {/* Floating WhatsApp Button */}
+            {/* CHANGE 4: Floating WhatsApp Button
+              - Made slightly smaller on mobile (p-3, size-20)
+              - Made it less close to the edge on mobile (bottom-4 right-4)
+              - This prevents it from feeling too obtrusive on small 360px screens.
+            */}
             <a 
-                href="https://wa.me/919606840892" 
+                href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="fixed bottom-5 right-5 bg-green-500 text-white p-3.5 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110"
+                className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 bg-green-500 text-white p-3 sm:p-3.5 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110"
                 aria-label="Chat on WhatsApp"
             >
-                <FaWhatsapp size={24} />
+                <FaWhatsapp size={20} className="sm:hidden" />
+                <FaWhatsapp size={24} className="hidden sm:block" />
             </a>
         </footer>
     );
