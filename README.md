@@ -665,6 +665,33 @@ node server.js
 
 ---
 
+## 🚨 Single-Page App (SPA) Refresh / 404 Issue on Vercel
+
+If your app uses client-side routing (React Router) and you see a 404 when refreshing a route or directly visiting a nested URL, Vercel needs to serve the app's `index.html` for all routes so the client router can handle navigation.
+
+What I added: a `vercel.json` file at the project root with a rewrite rule that sends all requests to `/index.html`.
+
+Why this fixes it:
+- Vercel by default tries to serve static files for each URL. When it can't find a match it returns a 404. The rewrite tells Vercel to always return `index.html` so React Router can render the correct page.
+
+How to redeploy on Vercel:
+1. Commit and push the new `vercel.json` to your GitHub repo.
+2. Go to your Vercel dashboard and trigger a redeploy for the Haven project (or Vercel will automatically redeploy on push if connected).
+
+Additional checks if it still fails:
+- Ensure your app builds to a static `dist/` or `build/` folder and Vercel's project settings point to the correct output directory. With Vite the default is `dist/`.
+- If you used a `BrowserRouter` with a `basename`, ensure the `basename` matches your deployed path.
+- Confirm `package.json` build script is `vite build` (it's already set).
+
+Quick local test (simulate SPA routing):
+```bash
+# 1. Build the app
+npm run build
+# 2. Serve the `dist/` locally with a simple static server (example using npm's serve package)
+npx serve dist
+# Then open http://localhost:3000 and try navigating to a nested route and refreshing
+```
+
 ### 🎯 Development Workflow
 
 ```mermaid

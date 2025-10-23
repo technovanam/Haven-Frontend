@@ -51,184 +51,41 @@
 
 </div>
 
-<table>
-<tr>
-<td width="25%" align="center" bgcolor="#2563eb">
-<br/><br/>
-<b style="color: white;">BLUE-600</b>
-<br/>
-<code style="color: white;">#2563eb</code>
-<br/><br/>
-<sub style="color: white;">Primary Buttons, Links, CTAs</sub>
-<br/><br/>
-</td>
-<td width="25%" align="center" bgcolor="#1d4ed8">
-<br/><br/>
-<b style="color: white;">BLUE-700</b>
-<br/>
-<code style="color: white;">#1d4ed8</code>
-<br/><br/>
-<sub style="color: white;">Hover States, Darker Accents</sub>
-<br/><br/>
-</td>
-<td width="25%" align="center" bgcolor="#eff6ff">
-<br/><br/>
-<b style="color: #1e293b;">BLUE-50</b>
-<br/>
-<code style="color: #1e293b;">#eff6ff</code>
-<br/><br/>
-<sub style="color: #1e293b;">Light Backgrounds, Highlights</sub>
-<br/><br/>
-</td>
-<td width="25%" align="center" bgcolor="#dbeafe">
-<br/><br/>
-<b style="color: #1e293b;">BLUE-100</b>
-<br/>
-<code style="color: #1e293b;">#dbeafe</code>
-<br/><br/>
-<sub style="color: #1e293b;">Icon Backgrounds, Badges</sub>
-<br/><br/>
-</td>
-</tr>
-</table>
+| Color | Hex Code | RGB | Usage |
+|-------|----------|-----|-------|
+| ![#2563eb](https://via.placeholder.com/100x40/2563eb/ffffff?text=BLUE-600) | `#2563eb` | `rgb(37, 99, 235)` | Primary buttons, links, CTAs |
+| ![#1d4ed8](https://via.placeholder.com/100x40/1d4ed8/ffffff?text=BLUE-700) | `#1d4ed8` | `rgb(29, 78, 216)` | Hover states, darker accents |
+| ![#eff6ff](https://via.placeholder.com/100x40/eff6ff/1e293b?text=BLUE-50) | `#eff6ff` | `rgb(239, 246, 255)` | Light backgrounds, highlights |
+| ![#dbeafe](https://via.placeholder.com/100x40/dbeafe/1e293b?text=BLUE-100) | `#dbeafe` | `rgb(219, 234, 254)` | Icon backgrounds, badges |
 
 ### Text Colors (Slate Palette)
 
-<table>
-<tr>
-<td width="20%" align="center" bgcolor="#0f172a">
-<br/><br/>
-<b style="color: white;">SLATE-900</b>
-<br/>
-<code style="color: white;">#0f172a</code>
-<br/><br/>
-<sub style="color: white;">Headings, Primary Text</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#1e293b">
-<br/><br/>
-<b style="color: white;">SLATE-800</b>
-<br/>
-<code style="color: white;">#1e293b</code>
-<br/><br/>
-<sub style="color: white;">Body Text, Dark Content</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#475569">
-<br/><br/>
-<b style="color: white;">SLATE-600</b>
-<br/>
-<code style="color: white;">#475569</code>
-<br/><br/>
-<sub style="color: white;">Secondary Text, Descriptions</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#64748b">
-<br/><br/>
-<b style="color: white;">SLATE-500</b>
-<br/>
-<code style="color: white;">#64748b</code>
-<br/><br/>
-<sub style="color: white;">Muted Text, Placeholders</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#94a3b8">
-<br/><br/>
-<b style="color: #1e293b;">SLATE-400</b>
-<br/>
-<code style="color: #1e293b;">#94a3b8</code>
-<br/><br/>
-<sub style="color: #1e293b;">Disabled, Subtle Elements</sub>
-<br/><br/>
-</td>
-</tr>
-</table>
+| Color | Hex Code | RGB | Usage |
+|-------|----------|-----|-------|
+| ![#0f172a](https://via.placeholder.com/100x40/0f172a/ffffff?text=SLATE-900) | `#0f172a` | `rgb(15, 23, 42)` | Headings, primary text |
+| ![#1e293b](https://via.placeholder.com/100x40/1e293b/ffffff?text=SLATE-800) | `#1e293b` | `rgb(30, 41, 59)` | Body text, dark content |
+| ![#475569](https://via.placeholder.com/100x40/475569/ffffff?text=SLATE-600) | `#475569` | `rgb(71, 85, 105)` | Secondary text, descriptions |
+| ![#64748b](https://via.placeholder.com/100x40/64748b/ffffff?text=SLATE-500) | `#64748b` | `rgb(100, 116, 139)` | Muted text, placeholders |
+| ![#94a3b8](https://via.placeholder.com/100x40/94a3b8/1e293b?text=SLATE-400) | `#94a3b8` | `rgb(148, 163, 184)` | Disabled, subtle elements |
 
 ### Neutral Colors
 
-<table>
-<tr>
-<td width="33%" align="center" bgcolor="#ffffff">
-<br/><br/>
-<b style="color: #1e293b;">WHITE</b>
-<br/>
-<code style="color: #1e293b;">#ffffff</code>
-<br/><br/>
-<sub style="color: #1e293b;">Main Background, Cards</sub>
-<br/><br/>
-</td>
-<td width="33%" align="center" bgcolor="#f9fafb">
-<br/><br/>
-<b style="color: #1e293b;">GRAY-50</b>
-<br/>
-<code style="color: #1e293b;">#f9fafb</code>
-<br/><br/>
-<sub style="color: #1e293b;">Subtle Backgrounds, Input Fields</sub>
-<br/><br/>
-</td>
-<td width="33%" align="center" bgcolor="#f3f4f6">
-<br/><br/>
-<b style="color: #1e293b;">GRAY-100</b>
-<br/>
-<code style="color: #1e293b;">#f3f4f6</code>
-<br/><br/>
-<sub style="color: #1e293b;">Card Hover, Borders</sub>
-<br/><br/>
-</td>
-</tr>
-</table>
+| Color | Hex Code | RGB | Usage |
+|-------|----------|-----|-------|
+| ![#ffffff](https://via.placeholder.com/100x40/ffffff/1e293b?text=WHITE) | `#ffffff` | `rgb(255, 255, 255)` | Main background, cards |
+| ![#f9fafb](https://via.placeholder.com/100x40/f9fafb/1e293b?text=GRAY-50) | `#f9fafb` | `rgb(249, 250, 251)` | Subtle backgrounds, input fields |
+| ![#f3f4f6](https://via.placeholder.com/100x40/f3f4f6/1e293b?text=GRAY-100) | `#f3f4f6` | `rgb(243, 244, 246)` | Card hover states, borders |
+| ![#d1d5db](https://via.placeholder.com/100x40/d1d5db/1e293b?text=GRAY-300) | `#d1d5db` | `rgb(209, 213, 219)` | Input borders, dividers |
 
 ### Accent & Social Media Colors
 
-<table>
-<tr>
-<td width="20%" align="center" bgcolor="#db2777">
-<br/><br/>
-<b style="color: white;">PINK-600</b>
-<br/>
-<code style="color: white;">#db2777</code>
-<br/><br/>
-<sub style="color: white;">Instagram</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#22c55e">
-<br/><br/>
-<b style="color: white;">GREEN-500</b>
-<br/>
-<code style="color: white;">#22c55e</code>
-<br/><br/>
-<sub style="color: white;">WhatsApp</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#16a34a">
-<br/><br/>
-<b style="color: white;">GREEN-600</b>
-<br/>
-<code style="color: white;">#16a34a</code>
-<br/><br/>
-<sub style="color: white;">Success States</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#dc2626">
-<br/><br/>
-<b style="color: white;">RED-600</b>
-<br/>
-<code style="color: white;">#dc2626</code>
-<br/><br/>
-<sub style="color: white;">YouTube, Errors</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center" bgcolor="#2563eb">
-<br/><br/>
-<b style="color: white;">BLUE-600</b>
-<br/>
-<code style="color: white;">#2563eb</code>
-<br/><br/>
-<sub style="color: white;">Facebook, LinkedIn</sub>
-<br/><br/>
-</td>
-</tr>
-</table>
+| Color | Hex Code | RGB | Brand Usage |
+|-------|----------|-----|-------------|
+| ![#db2777](https://via.placeholder.com/100x40/db2777/ffffff?text=PINK-600) | `#db2777` | `rgb(219, 39, 119)` | Instagram |
+| ![#22c55e](https://via.placeholder.com/100x40/22c55e/ffffff?text=GREEN-500) | `#22c55e` | `rgb(34, 197, 94)` | WhatsApp |
+| ![#16a34a](https://via.placeholder.com/100x40/16a34a/ffffff?text=GREEN-600) | `#16a34a` | `rgb(22, 163, 74)` | Success states |
+| ![#dc2626](https://via.placeholder.com/100x40/dc2626/ffffff?text=RED-600) | `#dc2626` | `rgb(220, 38, 38)` | YouTube, errors |
+| ![#2563eb](https://via.placeholder.com/100x40/2563eb/ffffff?text=BLUE-600) | `#2563eb` | `rgb(37, 99, 235)` | Facebook, LinkedIn |
 
 ### Gradient Combinations
 
@@ -269,65 +126,13 @@ background: linear-gradient(to bottom, #ffffff, #f9fafb);
 
 ### Font Weight Scale
 
-<table>
-<tr>
-<td width="20%" align="center">
-<br/>
-<span style="font-size: 24px; font-weight: 400;">Aa</span>
-<br/><br/>
-<b>Regular</b>
-<br/>
-<code>400</code>
-<br/>
-<sub>Body Text</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center">
-<br/>
-<span style="font-size: 24px; font-weight: 500;">Aa</span>
-<br/><br/>
-<b>Medium</b>
-<br/>
-<code>500</code>
-<br/>
-<sub>Emphasized Text</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center">
-<br/>
-<span style="font-size: 24px; font-weight: 600;">Aa</span>
-<br/><br/>
-<b>Semibold</b>
-<br/>
-<code>600</code>
-<br/>
-<sub>Subheadings, Buttons</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center">
-<br/>
-<span style="font-size: 24px; font-weight: 700;">Aa</span>
-<br/><br/>
-<b>Bold</b>
-<br/>
-<code>700</code>
-<br/>
-<sub>Headings</sub>
-<br/><br/>
-</td>
-<td width="20%" align="center">
-<br/>
-<span style="font-size: 24px; font-weight: 800;">Aa</span>
-<br/><br/>
-<b>Extrabold</b>
-<br/>
-<code>800</code>
-<br/>
-<sub>Hero Titles</sub>
-<br/><br/>
-</td>
-</tr>
-</table>
+| Weight | Code | Tailwind Class | Usage |
+|--------|------|----------------|-------|
+| **Regular** | `400` | `font-normal` | Body text, paragraphs |
+| **Medium** | `500` | `font-medium` | Emphasized text, links |
+| **Semibold** | `600` | `font-semibold` | Subheadings, buttons |
+| **Bold** | `700` | `font-bold` | Section headings |
+| **Extrabold** | `800` | `font-extrabold` | Hero titles, main headlines |
 
 ### Heading Hierarchy
 
@@ -926,12 +731,12 @@ text-blue-600 hover:text-blue-700 font-medium transition-colors
 
 ### 🎨 **Color Quick Pick**
 
-| Purpose | Color | Class |
-|---------|-------|-------|
-| Primary Action | <span style="background:#2563eb;color:white;padding:2px 8px;border-radius:4px;">Blue</span> | `bg-blue-600` |
-| Hover State | <span style="background:#1d4ed8;color:white;padding:2px 8px;border-radius:4px;">Darker Blue</span> | `bg-blue-700` |
-| Headings | <span style="background:#0f172a;color:white;padding:2px 8px;border-radius:4px;">Slate</span> | `text-slate-900` |
-| Body Text | <span style="background:#475569;color:white;padding:2px 8px;border-radius:4px;">Gray</span> | `text-slate-600` |
+| Purpose | Color Preview | Hex | Tailwind Class |
+|---------|---------------|-----|----------------|
+| Primary Action | ![#2563eb](https://via.placeholder.com/50x20/2563eb/2563eb) | `#2563eb` | `bg-blue-600` |
+| Hover State | ![#1d4ed8](https://via.placeholder.com/50x20/1d4ed8/1d4ed8) | `#1d4ed8` | `bg-blue-700` |
+| Headings | ![#0f172a](https://via.placeholder.com/50x20/0f172a/0f172a) | `#0f172a` | `text-slate-900` |
+| Body Text | ![#475569](https://via.placeholder.com/50x20/475569/475569) | `#475569` | `text-slate-600` |
 
 </td>
 <td width="50%">
@@ -951,19 +756,13 @@ text-blue-600 hover:text-blue-700 font-medium transition-colors
 
 ### 🔥 Most Used Component Classes
 
-```css
-/* Container */
-.container { @apply mx-auto px-4 sm:px-6 lg:px-8; }
-
-/* Primary Button */
-.btn-primary { @apply px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition; }
-
-/* Card */
-.card { @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all; }
-
-/* Input */
-.input { @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600; }
-```
+| Component | Tailwind Classes |
+|-----------|------------------|
+| **Container** | `mx-auto px-4 sm:px-6 lg:px-8` |
+| **Primary Button** | `px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition` |
+| **Card** | `bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all` |
+| **Input** | `w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600` |
+| **Link** | `text-blue-600 hover:text-blue-700 font-medium transition-colors` |
 
 ---
 
