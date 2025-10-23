@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { Building2, Mail, Globe, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
 import contact from '../assets/contact.jpg';
 
@@ -37,25 +36,30 @@ const Contact = () => {
   const form = useRef();
   const [formStatus, setFormStatus] = useState('');
 
-  // ✅ Using your actual EmailJS credentials directly
-  const SERVICE_ID = 'service_uxzfhhr';
-  const TEMPLATE_ID = 'template_otupah7';
-  const PUBLIC_KEY = 'UYZrHlvgCfPu_7vx0';
-
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setFormStatus('Sending...');
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
-      () => {
+    try {
+      const formData = new FormData(form.current);
+      
+      const res = await fetch('http://localhost:5001/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
         setFormStatus('Message sent successfully!');
         form.current.reset();
-      },
-      (error) => {
-        console.error('Email send failed:', error.text);
+      } else {
         setFormStatus('Failed to send message. Please try again.');
       }
-    );
+    } catch (error) {
+      console.error('Error:', error);
+      setFormStatus('Failed to send message. Please try again.');
+    }
   };
 
   return (

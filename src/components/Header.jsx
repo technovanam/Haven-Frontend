@@ -1,87 +1,87 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/logo.jpg"; // 👈 adjust the path to your actual logo file
+import logo from "../assets/logo.jpg";
 import BookDemoModal from "./BookDemoModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const activeLinkStyle = {
-    color: "#2563eb", // blue-600
-    fontWeight: "600",
+  // This is a cleaner, pure-Tailwind way to handle active NavLink styles
+  const navLinkClasses = ({ isActive }) =>
+    `transition-colors duration-300 ${
+      isActive
+        ? "text-blue-600 font-semibold"
+        : "text-slate-600 hover:text-blue-600"
+    }`;
+
+  // We can even make a separate one for mobile if we want larger text
+  const mobileNavLinkClasses = ({ isActive }) =>
+    `text-lg ${
+      isActive
+        ? "text-blue-600 font-semibold"
+        : "text-slate-600 hover:text-blue-600"
+    }`;
+
+  const closeMenu = () => setIsOpen(false);
+
+  const openDemoModal = () => {
+    closeMenu(); // Close mobile menu if it's open
+    setIsModalOpen(true);
   };
 
   return (
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-[0px]">
-        <div className="flex items-center justify-between h-20 relative">
-          {/* Left: Logo */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center space-x-2">
-              {/* Replace text with logo image */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* CHANGE 1: Replaced `relative` with a standard flex layout.
+            This is now a "thirds" layout on desktop (md) for perfect spacing.
+        */}
+        <div className="flex items-center justify-between h-20">
+          
+          {/* Left: Logo (Takes up 1/3 of the space on desktop) */}
+          <div className="md:w-1/3">
+            <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
               <img
                 src={logo}
                 alt="Haven Tutors Logo"
-                className="h-10 w-auto object-contain mix-blend-multiply"
+                className="h-10 w-auto object-contain"
               />
             </Link>
           </div>
 
-          {/* Centered Desktop Navigation */}
-          <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+          {/* Centered Desktop Navigation (Takes up 1/3 of the space) */}
+          {/* CHANGE 2: Removed `absolute`, `transform`, etc. Now part of the flex flow. */}
+          <nav className="hidden md:flex justify-center md:w-1/3">
             <ul className="flex items-center space-x-8">
               <li>
-                <NavLink
-                  to="/"
-                  style={({ isActive }) =>
-                    isActive ? activeLinkStyle : undefined
-                  }
-                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
-                >
+                {/* CHANGE 3: Using the pure-Tailwind `className` function */}
+                <NavLink to="/" className={navLinkClasses}>
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/about"
-                  style={({ isActive }) =>
-                    isActive ? activeLinkStyle : undefined
-                  }
-                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
-                >
+                <NavLink to="/about" className={navLinkClasses}>
                   About Us
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/services"
-                  style={({ isActive }) =>
-                    isActive ? activeLinkStyle : undefined
-                  }
-                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
-                >
+                <NavLink to="/services" className={navLinkClasses}>
                   Services
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/contact"
-                  style={({ isActive }) =>
-                    isActive ? activeLinkStyle : undefined
-                  }
-                  className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
-                >
+                <NavLink to="/contact" className={navLinkClasses}>
                   Contact
                 </NavLink>
               </li>
             </ul>
           </nav>
 
-          {/* Right-side actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Right-side actions (Takes up 1/3 of the space) */}
+          {/* CHANGE 4: Added `justify-end` to push the button to the far right. */}
+          <div className="hidden md:flex items-center justify-end md:w-1/3">
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={openDemoModal}
               className="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
             >
               <span>Book a demo</span>
@@ -102,11 +102,12 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button (Takes up the right side on mobile) */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 hover:text-blue-600 focus:outline-none"
+              aria-label="Toggle menu"
             >
               <svg
                 className="h-6 w-6"
@@ -131,83 +132,44 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-white pb-4 shadow-inner">
-          <ul className="flex flex-col items-center space-y-4 py-4">
-            <li>
-              <NavLink
-                to="/about"
-                style={({ isActive }) =>
-                  isActive ? activeLinkStyle : undefined
-                }
-                className="text-slate-600"
-                onClick={() => setIsOpen(false)}
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/courses"
-                style={({ isActive }) =>
-                  isActive ? activeLinkStyle : undefined
-                }
-                className="text-slate-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Courses
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/shop"
-                style={({ isActive }) =>
-                  isActive ? activeLinkStyle : undefined
-                }
-                className="text-slate-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Shop
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/blog"
-                style={({ isActive }) =>
-                  isActive ? activeLinkStyle : undefined
-                }
-                className="text-slate-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                style={({ isActive }) =>
-                  isActive ? activeLinkStyle : undefined
-                }
-                className="text-slate-600"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsModalOpen(true);
-                }}
-                className="bg-slate-900 text-white font-semibold py-2 px-6 rounded-md hover:bg-slate-800 transition-all duration-300"
-              >
-                Book a demo
-              </button>
-            </li>
-          </ul>
-        </div>
-      )}
+      {/* This uses a simple CSS transition for a smooth slide-down effect */}
+      <div
+        className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <ul className="flex flex-col items-center space-y-5 py-5">
+          <li>
+            <NavLink to="/" className={mobileNavLinkClasses} onClick={closeMenu}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={mobileNavLinkClasses} onClick={closeMenu}>
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/services" className={mobileNavLinkClasses} onClick={closeMenu}>
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={mobileNavLinkClasses} onClick={closeMenu}>
+              Contact
+            </NavLink>
+          </li>
+          <li>
+            {/* CHANGE 5: Styled mobile button to match desktop and be "finger-friendly" */}
+            <button
+              onClick={openDemoModal}
+              className="inline-flex items-center justify-center w-auto px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
+            >
+              Book a demo
+            </button>
+          </li>
+        </ul>
+      </div>
 
       {/* Book Demo Modal */}
       <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

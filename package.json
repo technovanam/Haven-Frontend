@@ -10,15 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.2.0",
-    "emailjs": "^4.0.3",
-    "emailjs-com": "^3.2.0",
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.4"
+    "react-phone-input-2": "^2.15.1",
+    "react-router-dom": "^7.9.4",
+    "world-countries": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -32,5 +31,18 @@
     "globals": "^16.4.0",
     "tailwindcss": "^4.1.14",
     "vite": "^7.1.7"
-  }
+  },
+  "description": "",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technovanam/Haven.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/technovanam/Haven/issues"
+  },
+  "homepage": "https://github.com/technovanam/Haven#readme"
 }

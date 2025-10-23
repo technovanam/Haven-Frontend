@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquareQuote } from 'lucide-react';
+import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
 import home from '../assets/Home_top.png';
-import featuresImage from '../assets/About.png';
 import BookDemoModal from '../components/BookDemoModal';
 
-// --- Feature List Item Component ---
 const FeatureListItem = ({ title, description }) => (
     <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
@@ -19,7 +17,6 @@ const FeatureListItem = ({ title, description }) => (
 );
 
 
-// --- SVG Icons (remain the same) ---
 const OneOnOneIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -146,18 +143,17 @@ const Home = () => {
 
     return (
         <div className="bg-white">
-            {/* --- Hero Section --- */}
             <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-16  px-24 md:pb-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <div className="text-center md:text-left">
-                            <p className="font-semibold text-gray-500 mb-2">#1 Online Course 2025</p>
+                            <p className="font-semibold text-gray-500 mb-2">#1 Online Tutor</p>
                             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
                                 Shape Your Future with the Right Knowledge
                             </h1>
                             <p className="text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-8">
-                                Discover a world of knowledge with our cutting-edge online course. Empower yourself to succeed in your career, passions & personal growth journey.
+                                Discover the joy of learning with expert tutors who guide you every step of the way. Build confidence, sharpen skills, and unlock your true potential.
                             </p>
                             <button 
                                 onClick={() => setIsModalOpen(true)}
@@ -178,40 +174,41 @@ const Home = () => {
                             {/* Floating Card 1: Students */}
                             <div className="absolute top-8 right-20 transform translate-x-1/4 bg-blue-500 text-white p-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
                                 <div className="flex -space-x-2 overflow-hidden">
-                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://placehold.co/24x24/E2E8F0/4A5568?text=A" alt=""/>
-                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://placehold.co/24x24/E2E8F0/4A5568?text=B" alt=""/>
-                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://placehold.co/24x24/E2E8F0/4A5568?text=C" alt=""/>
+                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1"/>
+                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2"/>
+                                    <img className="inline-block h-6 w-6 rounded-full ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3"/>
                                 </div>
                                 <div className="text-xs">
                                     <p className="font-bold">More than</p>
-                                    <p>1000+ students</p>
+                                    <p>1K students</p>
                                 </div>
                             </div>
                             {/* Floating Card 2: Collaboration */}
-                             <div className="absolute top-1/2 right-20 transform translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
+                             <div className="absolute top-2/3 right-20 transform translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
                                 <div className="bg-white/30 p-1 rounded-full">
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                                 </div>
                                 <span className="text-sm font-semibold">Best Collaboration</span>
                             </div>
-                            {/* Floating Card 3: Pricing */}
-                            <div className="absolute bottom-12 left-20 transform -translate-x-1/4 bg-blue-500 text-white p-4 rounded-xl shadow-lg z-20">
-                                <p className="text-xs font-bold bg-yellow-400 text-blue-800 rounded-full px-2 py-0.5 inline-block mb-1">50% OFF</p>
-                                <p className="font-bold text-lg">Premium+</p>
-                                <p className="text-3xl font-bold">$160</p>
-                                <p className="text-xs opacity-80">/ Year To Get All Access</p>
+                            {/* Floating Card 3: Trust Badge */}
+                            <div className="absolute bottom-12 left-20 transform -translate-x-1/4 bg-blue-500 text-white p-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
+                                <div className="bg-white/30 p-1 rounded-full">
+                                    <Shield className="w-5 h-5" />
+                                </div>
+                                <span className="text-sm font-semibold">Trusted Worldwide</span>
                             </div>
                         </div>
                     </div>
                 </div>
             {/* </section> */}
-            <div className="container mx-auto px-4 pt-16 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 pt-30 sm:px-6 lg:px-8">
                     <div className="w-full bg-slate-50 rounded-3xl shadow-sm border border-slate-200 py-10 px-4 transition-all duration-300 hover:shadow-md">
-                        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
+                        <div className="flex flex-wrap justify-center items-center lg:gap-16">
                             {/* Stat 1 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">100%</h3>
-                                <p className="text-slate-500 mt-2 text-sm md:text-base">Satisfaction rate</p>
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 .
+                                group-hover:text-blue-600 transition-colors duration-300">100%</h3>
+                                <p className="text-slate-500 mt-2 text-sm md:text-base">Parent Satisfaction</p>
                             </div>
 
                             {/* Dot separator */}
@@ -219,8 +216,8 @@ const Home = () => {
 
                             {/* Stat 2 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">12+</h3>
-                                <p className="text-slate-500 mt-2 text-sm md:text-base">Years of experience</p>
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">1K+</h3>
+                                <p className="text-slate-500 mt-2 text-sm md:text-base">Students Mentored</p>
                             </div>
 
                             {/* Dot separator */}
@@ -228,8 +225,8 @@ const Home = () => {
 
                             {/* Stat 3 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">20k+</h3>
-                                <p className="text-slate-500 mt-2 text-sm md:text-base">Total Courses</p>
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">12+</h3>
+                                <p className="text-slate-500 mt-2 text-sm md:text-base">Learning Boards Covered</p>
                             </div>
 
                             {/* Dot separator */}
@@ -237,55 +234,58 @@ const Home = () => {
 
                             {/* Stat 4 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">90+</h3>
-                                <p className="text-slate-500 mt-2 text-sm md:text-base">Course Category</p>
+                                <h3 className="text-4xl md:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">24/7</h3>
+                                <p className="text-slate-500 mt-2 text-sm md:text-base">Support & Guidance</p>
                             </div>
                         </div>
                     </div>
                 </div>
 </section>
 
-{/* --- Why Choose Haven Tutors Section --- */}
+{/* Why Choose Haven Tutors Section */}
 <section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto bg-slate-50 rounded-3xl shadow-sm border border-gray-100 p-10 md:p-8 flex flex-col md:flex-row items-center gap-10 md:gap-16">
     
     {/* Left Column: Image with floating cards */}
     <div className="relative flex justify-center w-full md:w-1/2">
-      <div className="relative">
+      <div className="relative w-full max-w-md mx-auto">
         <img
-          src={featuresImage}
+          src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=2000&q=100"
           alt="Student learning online with tutor"
-          className="relative rounded-3xl shadow-2xl w-full max-w-sm md:max-w-md object-cover h-125 z-10"
+          className="relative w-full object-cover h-[500px] z-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-300"
           style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
         />
 
-        {/* Floating Card: Progress Card */}
-        <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg w-44 border border-gray-100 z-20">
-          <p className="text-xs text-gray-500 font-medium">Learning Progress</p>
-          <p className="text-2xl font-bold text-slate-800 mt-1">55%</p>
-          <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-            <div
-              className="bg-blue-500 h-2 rounded-full transition-all duration-500"
-              style={{ width: "55%" }}
-            ></div>
+        {/* Floating Card: Parent Satisfaction - Top Left Corner */}
+        <div className="absolute -top-6 -left-20 bg-blue-500 text-white px-4 py-3 rounded-xl shadow-lg z-20">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1">
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            </div>
+            <div className="text-xs whitespace-nowrap">
+              <span className="font-bold">4.9/5 Rating</span>
+              <br />
+              <span>Parent Satisfaction</span>
+            </div>
           </div>
         </div>
 
-        {/* Floating Card: Growth / Rating */}
-        <div className="absolute -top-8 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-100 w-40 text-center z-20">
-          <p className="text-xs text-gray-500 font-medium">Last month</p>
-          <p className="text-xl font-bold text-slate-800 flex items-center justify-center gap-1 mt-1">
-            <span className="text-green-500">↗</span> 25.20%
-          </p>
-          <button className="mt-1 text-xs text-blue-600 font-semibold hover:text-blue-700">
-            View all →
-          </button>
+        {/* Floating Card: Personalized Learning - Bottom Right Corner */}
+        <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white px-4 py-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
+          <div className="bg-white/30 p-1.5 rounded-full">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <span className="text-sm font-semibold whitespace-nowrap">Personalized Learning</span>
         </div>
       </div>
     </div>
 
     {/* Right Column: Haven Tutors Content */}
-    <div className="w-full md:w-1/2 text-left">
+    <div className="w-full md:w-1/2 text-left pt-10">
       <p className="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
         Why Choose Haven Tutors
       </p>
@@ -295,12 +295,11 @@ const Home = () => {
       </h2>
 
       <p className="text-slate-600 mb-8 text-base leading-relaxed">
-        From personalized learning paths to interactive lessons, we’ve designed every feature
-        to make your learning experience simple, calm, and confidence-building.
+        From personalized learning paths to interactive sessions, every feature is designed to make your learning experience simple, engaging, and confidence-building.
       </p>
 
       {/* Features List */}
-      <div className="divide-y divide-gray-300 border-b border-gray-300">
+      <div className="divide-y divide-gray-300">
         <div className="flex items-start gap-3 py-3">
           <div className="bg-blue-100 text-blue-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
             ✓
@@ -310,7 +309,7 @@ const Home = () => {
               One-on-One Tutoring   
             </h4>
             <p className="text-slate-600 text-sm">
-              Personalized sessions focused on each student’s goals and learning pace.
+              Individualized lessons focused on each student’s goals and pace.
             </p>
           </div>
         </div>
@@ -324,7 +323,7 @@ const Home = () => {
               Flexible Scheduling
             </h4>
             <p className="text-slate-600 text-sm">
-              Book lessons at convenient times that fit your routine.
+              Book classes at times that suit your routine and comfort.
             </p>
           </div>
         </div>
@@ -338,7 +337,7 @@ const Home = () => {
               Curriculum-Aligned Learning
             </h4>
             <p className="text-slate-600 text-sm">
-              Covers CBSE, ICSE, IB, Cambridge, and State Boards.
+              Covering CBSE, ICSE, IB, Cambridge, and State Boards.
             </p>
           </div>
         </div>
@@ -352,7 +351,7 @@ const Home = () => {
               Continuous Support & Guidance
             </h4>
             <p className="text-slate-600 text-sm">
-              Regular updates, doubt clearing, and steady mentorship.
+              Regular progress updates, doubt-clearing sessions, and consistent mentorship.
             </p>
           </div>
         </div>
@@ -366,13 +365,13 @@ const Home = () => {
   <div className="container mx-auto text-center">
     <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
       <MessageSquareQuote className="w-5 h-5" />
-      <span className="text-sm tracking-wide uppercase">Our Feedbacks</span>
+      <span className="text-sm tracking-wide uppercase">Our Testimonials</span>
     </div>
     <h2 className="text-4xl font-bold text-slate-900 mb-4">
       What Our Learners Are Saying
     </h2>
     <p className="text-slate-600 max-w-2xl mx-auto mb-12">
-      Hear directly from our students about how our courses have transformed their learning journey.
+      Hear from our students and parents about how Haven Tutors has made learning easier and more rewarding
     </p>
 
     {/* Testimonials Grid */}
