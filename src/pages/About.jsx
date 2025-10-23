@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock, Target, MessageCircle, UserCheck } from "lucide-react";
-import approachImage from "../assets/approachImage.jpg"; 
 import BookDemoModal from "../components/BookDemoModal";
+
+// ============================================================
+// MAIN ABOUT COMPONENT
+// ============================================================
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="bg-white text-slate-800 font-sans">
+      
+      {/* ============================================================ */}
+      {/* HERO SECTION */}
+      {/* ============================================================ */}
+      
       <section className="flex items-center justify-center text-center py-6 px-6 bg-white">
   <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-lg max-w-9xl w-full text-center py-35  md:px-24">
     <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
@@ -31,6 +39,9 @@ const About = () => {
   </div>
 </section>
 
+{/* ============================================================ */}
+{/* STORY, MISSION & VISION SECTION */}
+{/* ============================================================ */}
 
 <section className="py-24 px-6 md:px-16 lg:px-24">
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
@@ -113,6 +124,10 @@ const About = () => {
   </div>
 </section>
 
+{/* ============================================================ */}
+{/* WHAT WE DO SECTION */}
+{/* ============================================================ */}
+
 <section className="py-6 px-6 md:px-6 lg:px-6 bg-white">
   <div className="max-w-9xl mx-auto">
     {/* Outer white box */}
@@ -191,9 +206,10 @@ const About = () => {
     {/* LEFT SIDE - IMAGE */}
     <div className="flex justify-center">
       <img
-        src={approachImage}
+        src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/approachImage_ova89m.jpg"
         alt="Student Learning"
         className="rounded-2xl shadow-lg w-full max-w-md object-cover"
+        loading="lazy"
       />
     </div>
 
@@ -249,6 +265,9 @@ const About = () => {
   </div>
 </section>
 
+{/* ============================================================ */}
+{/* OUR APPROACH SECTION */}
+{/* ============================================================ */}
 
 <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
         <div className="max-w-6xl mx-auto px-6">
@@ -268,7 +287,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Book Demo Modal */}
+      {/* ============================================================ */}
+      {/* BOOK DEMO MODAL */}
+      {/* ============================================================ */}
+
       <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );

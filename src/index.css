@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-/* Use Montserrat site-wide with basic fallbacks */
+/* ============================================================ */
+/* GLOBAL STYLES */
+/* ============================================================ */
+
 * {
   font-family: "Montserrat", Arial, sans-serif;
 }
 
-/* Rendering improvements */
 html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,22 +17,19 @@ html, body {
 
 body {
   background-color: #ffffff;
-  color: #0f172a; /* slate-800 */
+  color: #0f172a;
 }
 
-/* Headings: consistent spacing and crisp rendering */
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-/* Slightly more compact UI utility */
 .ui-compact {
   line-height: 1.2;
 }
 
-/* Buttons: ensure modern, consistent appearance */
 button, .btn, input[type="button"], input[type="submit"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -38,14 +37,13 @@ button, .btn, input[type="button"], input[type="submit"] {
   text-rendering: optimizeLegibility;
 }
 
-/* Hide scrollbar for modal while keeping scroll functionality */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none;
 }
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }

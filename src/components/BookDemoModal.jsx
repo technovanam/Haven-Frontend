@@ -4,13 +4,15 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import countries from "world-countries";
 
-// Tabs
+// ============================================================
+// CONSTANTS
+// ============================================================
+
 const TABS = {
   STUDENT: "Student Demo",
   TUTOR: "Tutor Application",
 };
 
-// Dropdown constants
 const boardOptions = [
   "ICSE", "IGCSE", "CBSE", "GCSE", "STATE & MATRIC", "IB",
   "AUSTRALIAN", "A – LEVEL", "BRITISH", "CAMBRIDGE", "CANADIAN",
@@ -18,8 +20,11 @@ const boardOptions = [
 ];
 const gradeOptions = [...Array(12).keys()].map((i) => `Grade ${i + 1}`);
 
-// Generate sorted list of all country names
 const countryList = countries.map((c) => c.name.common).sort();
+
+// ============================================================
+// MAIN BOOK DEMO MODAL COMPONENT
+// ============================================================
 
 const BookDemoModal = ({ isOpen, onClose }) => {
   const studentForm = useRef();
@@ -28,21 +33,17 @@ const BookDemoModal = ({ isOpen, onClose }) => {
   const [tutorFormStatus, setTutorFormStatus] = useState("");
   const [activeTab, setActiveTab] = useState(TABS.STUDENT);
 
-  // Phone states
   const [studentPhone, setStudentPhone] = useState("");
   const [tutorPhone, setTutorPhone] = useState("");
 
-  // Validation states
   const [studentPhoneError, setStudentPhoneError] = useState("");
   const [tutorPhoneError, setTutorPhoneError] = useState("");
 
-  // Validate phone number (minimum 10 digits)
   const validatePhone = (phone) => {
     const digits = phone.replace(/\D/g, '');
     return digits.length >= 10;
   };
 
-  // Small Alert component (Unchanged)
   const Alert = ({ type = 'info', children }) => {
     const base = 'w-full rounded-md px-4 py-3 flex items-start gap-3';
     const variants = {
@@ -62,7 +63,6 @@ const BookDemoModal = ({ isOpen, onClose }) => {
     );
   };
 
-  // --- Submit Student Form (Unchanged) ---
   const handleStudentSubmit = async (e) => {
     e.preventDefault();
     if (!validatePhone(studentPhone)) {
@@ -74,7 +74,6 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
     try {
       const formData = new FormData(studentForm.current);
-      // formData.append("mobile", studentPhone); // Already handled by inputProps
       
       const res = await fetch('http://localhost:5001/api/student-demo', {
         method: 'POST',
@@ -98,7 +97,6 @@ const BookDemoModal = ({ isOpen, onClose }) => {
     }
   };
 
-  // --- Submit Tutor Form (Unchanged) ---
   const handleTutorSubmit = async (e) => {
     e.preventDefault();
     if (!validatePhone(tutorPhone)) {
@@ -110,7 +108,6 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
     try {
       const formData = new FormData(tutorForm.current);
-      // formData.append("tutor_phone", tutorPhone); // Already handled by inputProps
       
       const res = await fetch('http://localhost:5001/api/tutor-application', {
         method: 'POST',
@@ -136,7 +133,6 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  // --- Styles (Unchanged) ---
   const formInputStyle =
     "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500";
   const formSelectStyle =
@@ -144,9 +140,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-sm bg-white/30 p-4">
-      {/* This container is already perfectly responsive */}
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative scrollbar-hide">
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors z-10"
@@ -154,9 +148,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
           <X className="w-6 h-6" />
         </button>
 
-        {/* CHANGE 1: Responsive padding. Was `p-8`. */}
         <div className="p-4 sm:p-6 md:p-8">
-          {/* CHANGE 2: Responsive title. Was `text-3xl`. */}
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
             Book Your Free Demo
           </h2>
@@ -164,15 +156,12 @@ const BookDemoModal = ({ isOpen, onClose }) => {
             Choose whether you're a student or tutor
           </p>
 
-          {/* Tabs */}
           <div className="mb-8 flex justify-center border-b border-gray-200">
-            {/* CHANGE 3: Responsive tab spacing. Was `space-x-8`. */}
             <div className="flex space-x-4 sm:space-x-8">
               {Object.values(TABS).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  // CHANGE 4: Responsive tab text. Was `text-lg`.
                   className={`py-3 px-1 text-base sm:text-lg font-semibold transition-colors duration-200 ${
                     activeTab === tab
                       ? "text-blue-600 border-b-2 border-blue-600"
@@ -185,14 +174,12 @@ const BookDemoModal = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* --- STUDENT FORM --- */}
           {activeTab === TABS.STUDENT && (
             <form
               ref={studentForm}
               onSubmit={handleStudentSubmit}
               className="space-y-4"
             >
-              {/* Alerts (Unchanged) */}
               {studentPhoneError && <Alert type="error">{studentPhoneError}</Alert>}
               {studentFormStatus && !studentPhoneError && (
                 <Alert type={studentFormStatus.includes('success') || studentFormStatus.includes('Demo booked') ? 'success' : studentFormStatus.includes('failed') ? 'error' : 'info'}>

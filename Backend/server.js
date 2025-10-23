@@ -81,7 +81,6 @@ ${message}
       `,
     };
 
-    // Send auto-reply to user
     const autoReply = {
       from: process.env.MAIL_USER,
       to: user_email,
@@ -233,7 +232,6 @@ ${file ? 'Resume attached: ' + file.originalname : 'No resume attached'}
         : [],
     };
 
-    // Send auto-reply to tutor applicant
     const autoReply = {
       from: process.env.MAIL_USER,
       to: tutor_email,
