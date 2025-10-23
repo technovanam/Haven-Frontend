@@ -2,7 +2,10 @@ import React, { useRef, useState } from 'react';
 import { Building2, Mail, Globe, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
 import contact from '../assets/contact.jpg';
 
-// Reusable contact info item - Cleaner design
+// ============================================================
+// CONTACT INFO ITEM COMPONENT
+// ============================================================
+
 const ContactInfoItem = ({ icon, title, value, href }) => {
   const content = href ? (
     <a
@@ -31,6 +34,10 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
     </div>
   );
 };
+
+// ============================================================
+// MAIN CONTACT COMPONENT
+// ============================================================
 
 const Contact = () => {
   const form = useRef();
@@ -64,6 +71,11 @@ const Contact = () => {
 
   return (
     <div className="bg-white">
+      
+      {/* ============================================================ */}
+      {/* HERO SECTION */}
+      {/* ============================================================ */}
+      
       {/* Hero Section */}
       <section className="flex items-center justify-center text-center pt-6 pb-16 px-6 bg-white">
         <div 
@@ -94,6 +106,10 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* ============================================================ */}
+      {/* CONTACT FORM & INFO SECTION */}
+      {/* ============================================================ */}
 
       {/* Main Content Section */}
       <section className="py-8 bg-white">

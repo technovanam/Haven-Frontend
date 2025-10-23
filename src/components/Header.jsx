@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/logo.jpg";
 import BookDemoModal from "./BookDemoModal";
+
+// ============================================================
+// MAIN HEADER COMPONENT
+// ============================================================
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // This is a cleaner, pure-Tailwind way to handle active NavLink styles
   const navLinkClasses = ({ isActive }) =>
     `transition-colors duration-300 ${
       isActive
@@ -15,7 +17,6 @@ const Header = () => {
         : "text-slate-600 hover:text-blue-600"
     }`;
 
-  // We can even make a separate one for mobile if we want larger text
   const mobileNavLinkClasses = ({ isActive }) =>
     `text-lg ${
       isActive
@@ -26,25 +27,23 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false);
 
   const openDemoModal = () => {
-    closeMenu(); // Close mobile menu if it's open
+    closeMenu();
     setIsModalOpen(true);
   };
 
   return (
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* CHANGE 1: Replaced `relative` with a standard flex layout.
-            This is now a "thirds" layout on desktop (md) for perfect spacing.
-        */}
         <div className="flex items-center justify-between h-20">
           
           {/* Left: Logo (Takes up 1/3 of the space on desktop) */}
           <div className="md:w-1/3">
             <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
               <img
-                src={logo}
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"
                 className="h-10 w-auto object-contain"
+                loading="eager"
               />
             </Link>
           </div>

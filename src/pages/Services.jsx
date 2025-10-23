@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import BookDemoModal from "../components/BookDemoModal";
 import { useLocation } from "react-router-dom";
 
+// ============================================================
+// SERVICES DATA
+// ============================================================
+
 const servicesData = [  {
     id: 101,
     category: "Tutoring Formats",
@@ -78,7 +82,6 @@ const servicesData = [  {
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1170&q=80",
   },
 
-  // Specialized Learning Services
   {
     id: 201,
     category: "Specialized Learning Services",
@@ -107,7 +110,6 @@ const servicesData = [  {
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1170&q=80",
   },
 
-  // Virtual Classroom Tools
   {
     id: 301,
     category: "Virtual Classroom Tools",
@@ -145,7 +147,6 @@ const servicesData = [  {
       "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1170&q=80",
   },
 
-  // Tutor & Scheduling Features
   {
     id: 401,
     category: "Tutor & Scheduling Features",
@@ -183,7 +184,6 @@ const servicesData = [  {
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1170&q=80",
   },
 
-  // Additional Services
   {
     id: 501,
     category: "Additional Services",
@@ -229,6 +229,10 @@ const categories = [
   "Additional Services",
 ];
 
+// ============================================================
+// CATEGORY INTRODUCTIONS
+// ============================================================
+
 const categoryIntro = {
   "Tutoring Formats":
     "Our tutoring formats are designed for flexibility and personal attention. Choose a mode that fits your pace and goals.",
@@ -242,6 +246,10 @@ const categoryIntro = {
     "Beyond tutoring, we provide ongoing academic support and guidance for students and parents.",
 };
 
+// ============================================================
+// SERVICE CARD COMPONENT
+// ============================================================
+
 const ServiceCard = ({ service }) => (
   <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 text-left">
     <div className="w-full h-48 overflow-hidden bg-gray-100">
@@ -250,6 +258,7 @@ const ServiceCard = ({ service }) => (
         src={service.image}
         alt={service.title}
         loading="lazy"
+        decoding="async"
       />
     </div>
     <div className="p-6">
@@ -261,6 +270,10 @@ const ServiceCard = ({ service }) => (
   </div>
 );
 
+// ============================================================
+// MAIN SERVICES COMPONENT
+// ============================================================
+
 const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState("Tutoring Formats");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -270,13 +283,17 @@ const ServicesPage = () => {
     (service) => service.category === activeCategory
   );
 
-  // Scroll to top only when entering this route
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
   return (
     <div className="bg-white text-slate-800 font-sans">
+      
+      {/* ============================================================ */}
+      {/* HERO SECTION */}
+      {/* ============================================================ */}
+      
       <section className="flex items-center justify-center text-center pt-6 pb-16 px-6 bg-white">
         <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-lg max-w-9xl w-full text-center py-35 md:px-24">
           <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
@@ -298,6 +315,10 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      {/* ============================================================ */}
+      {/* CATEGORY TABS */}
+      {/* ============================================================ */}
+
       <div className="flex justify-center mb-12">
         <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 border-b border-gray-200">
           {categories.map((category) => (
@@ -317,6 +338,10 @@ const ServicesPage = () => {
         </div>
       </div>
 
+      {/* ============================================================ */}
+      {/* SERVICES GRID SECTION */}
+      {/* ============================================================ */}
+
       <section className="mb-20 text-center px-6 sm:px-12 lg:px-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {filteredServices.map((service) => (
@@ -324,6 +349,10 @@ const ServicesPage = () => {
           ))}
         </div>
       </section>
+
+      {/* ============================================================ */}
+      {/* CALL TO ACTION SECTION */}
+      {/* ============================================================ */}
 
       <section className="py-24 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[7rem]">
         <div className="max-w-6xl mx-auto px-6">

@@ -5,6 +5,10 @@ import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import BookDemoModal from "./components/BookDemoModal.jsx";
 
+// ============================================================
+// MAIN APP LAYOUT COMPONENT
+// ============================================================
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

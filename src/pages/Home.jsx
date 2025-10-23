@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
-import home from '../assets/Home_top.png';
 import BookDemoModal from '../components/BookDemoModal';
+
+// ============================================================
+// REUSABLE COMPONENTS
+// ============================================================
 
 const FeatureListItem = ({ title, description }) => (
     <div className="flex items-start space-x-4">
@@ -16,6 +19,10 @@ const FeatureListItem = ({ title, description }) => (
     </div>
 );
 
+
+// ============================================================
+// ICON COMPONENTS
+// ============================================================
 
 const OneOnOneIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -42,6 +49,11 @@ const StarIcon = () => (
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
     </svg>
 );
+
+// ============================================================
+// TESTIMONIAL CARD COMPONENT
+// ============================================================
+
 const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
   <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
     <div className="flex items-center mb-4">
@@ -60,7 +72,10 @@ const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
   </div>
 );
 
-// Inside your Home component, before the return()
+// ============================================================
+// TESTIMONIALS DATA
+// ============================================================
+
 const testimonials = [
   {
     quote:
@@ -163,13 +178,15 @@ const Home = () => {
                                 <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </button>
                         </div>
+                        
                         {/* Right Image and Floating Cards */}
                         <div className="relative mt-12 md:mt-0 flex justify-center">
                             <img
-                                src={home}
+                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212329/Home_top_r0v709.png"
                                 alt="A smiling student wearing glasses and a plaid shirt"
                                 className="relative rounded-3xl shadow-2xl w-90 max-w-md h-120 z-10 object-cover"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
+                                loading="lazy"
                             />
                             {/* Floating Card 1: Students */}
                             <div className="absolute top-8 right-20 transform translate-x-1/4 bg-blue-500 text-white p-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
@@ -200,7 +217,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            {/* </section> */}
+                
+            {/* Statistics Bar */}
             <div className="container mx-auto px-4 pt-30 sm:px-6 lg:px-8">
                     <div className="w-full bg-slate-50 rounded-3xl shadow-sm border border-slate-200 py-10 px-4 transition-all duration-300 hover:shadow-md">
                         <div className="flex flex-wrap justify-center items-center lg:gap-16">
@@ -241,6 +259,10 @@ const Home = () => {
                     </div>
                 </div>
 </section>
+
+{/* ============================================================ */}
+{/* WHY CHOOSE HAVEN TUTORS SECTION */}
+{/* ============================================================ */}
 
 {/* Why Choose Haven Tutors Section */}
 <section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
@@ -360,7 +382,10 @@ const Home = () => {
   </div>
 </section>
 
-          
+{/* ============================================================ */}
+{/* TESTIMONIALS SECTION */}
+{/* ============================================================ */}
+
 <section className="py-20 bg-white sm:px-6 lg:px-55">
   <div className="container mx-auto text-center">
     <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
@@ -383,10 +408,6 @@ const Home = () => {
         <div
           key={i}
           className="opacity-0 animate-fadeIn"
-          // style={{
-          //   animationDelay: `${i * 0.01}s`,
-          //   animationFillMode: "forwards",
-          // }}
         >
           <TestimonialCard {...t} />
         </div>
@@ -400,7 +421,6 @@ const Home = () => {
           setShowAll(!showAll);
           setTimeout(() => {
             if (!showAll) {
-              // Smooth scroll to newly revealed section
               const el = document.getElementById("testimonial-section");
               if (el) el.scrollIntoView({ behavior: "smooth", block: "end" });
             }
@@ -414,7 +434,9 @@ const Home = () => {
   </div>
 </section>
 
-
+{/* ============================================================ */}
+{/* BOOK DEMO MODAL */}
+{/* ============================================================ */}
 
             {/* Book Demo Modal */}
             <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

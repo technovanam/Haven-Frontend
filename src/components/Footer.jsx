@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa6';
 import { Phone, Mail } from 'lucide-react';
-import logo from '../assets/logo.jpg';
+
+// ============================================================
+// MAIN FOOTER COMPONENT
+// ============================================================
 
 const Footer = ({ onBookDemoClick }) => {
 
@@ -10,20 +13,14 @@ const Footer = ({ onBookDemoClick }) => {
         <footer className="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-700">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 
-                {/* CHANGE 1: Added `lg:justify-items-start`.
-                  - `justify-items-center` (default) centers your columns on mobile/tablet.
-                  - `lg:justify-items-start` aligns columns to the left on large screens.
-                  This works with your `lg:text-left` to create a clean, aligned desktop layout.
-                */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 justify-items-center lg:justify-items-start text-center lg:text-left">
                     
-                    {/* Column 1: Logo and Contact Info */}
-                    {/* Note: `lg:col-span-1` is the default, so I removed it for cleanliness. */}
                     <div>
                         <img 
-                            src={logo}
+                            src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                             alt="Haven Tutors Logo" 
-                            className="h-12 w-auto object-contain mb-6 mx-auto lg:mx-0" 
+                            className="h-12 w-auto object-contain mb-6 mx-auto lg:mx-0"
+                            loading="lazy"
                         />
                         <div className="space-y-3 text-sm mb-6">
                             {/* Contact items align left on desktop via `lg:justify-start` */}
@@ -41,16 +38,11 @@ const Footer = ({ onBookDemoClick }) => {
                             </div>
                         </div>
                         
-                        {/* Follow Us Section */}
                         <div className="mt-6">
-                            {/* CHANGE 2: Added `pb-1` to the heading.
-                              This gives a little breathing room between the text and the underline span.
-                            */}
                             <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
                                 Follow Us
                                 <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
                             </h3>
-                            {/* Social icons align left on desktop via `lg:justify-start` */}
                             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                                 <a href="https://www.facebook.com/haventutors" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={16} />
@@ -71,7 +63,6 @@ const Footer = ({ onBookDemoClick }) => {
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Links */}
                     <div>
                         <h3 className="font-bold text-lg text-slate-900 mb-5 relative inline-block pb-1">
                             Quick Links
@@ -291,23 +282,14 @@ const Footer = ({ onBookDemoClick }) => {
                 </div>
             </div>
 
-            {/* Copyright Bar */}
             <div className="border-t border-slate-200">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-                    {/* CHANGE 3: Made text slightly smaller on mobile (`text-xs`) 
-                      and regular (`sm:text-sm`) on screens above mobile.
-                    */}
                     <p className="text-xs sm:text-sm text-slate-600">
                         Copyright © 2025 <span className="text-blue-600 font-semibold">Haven Tutors</span> | All Rights Reserved
                     </p>
                 </div>
             </div>
 
-            {/* CHANGE 4: Floating WhatsApp Button
-              - Made slightly smaller on mobile (p-3, size-20)
-              - Made it less close to the edge on mobile (bottom-4 right-4)
-              - This prevents it from feeling too obtrusive on small 360px screens.
-            */}
             <a 
                 href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." 
                 target="_blank" 
