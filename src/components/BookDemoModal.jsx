@@ -373,7 +373,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                   name="state"
                   placeholder="State"
                   required
-                  className={formInputLStyle}
+                  className={formInputStyle}
                 />
               </div>
 
