@@ -1,6 +1,0 @@
-[build]
-builder = "NIXPACKS"
-buildDir = "Backend"
-
-[deploy]
-startCommand = "npm start"
