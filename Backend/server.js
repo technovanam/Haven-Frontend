@@ -34,7 +34,7 @@ const transporter = nodemailer.createTransport({
 });
 
 console.log("📧 Email server configured");
-console.log("� Server starting...");
+console.log("🚀 Server starting...");
 
 app.get("/", (req, res) => {
   res.json({ 
@@ -178,8 +178,73 @@ Country: ${country}
       `,
     };
 
-    transporter.sendMail(mailOptions).catch(err => console.error("Student demo email error:", err));
-    transporter.sendMail(autoReply).catch(err => console.error("Student auto-reply error:", err));
+    const autoReply = {
+      from: process.env.MAIL_USER,
+      to: email,
+      subject: `Your Demo Session Request Is Confirmed - Haven Tutors`,
+      text: `
+Dear ${name},
+
+Thank you for booking a demo session with Haven Tutors.
+
+We have received your request and our team will contact you shortly to schedule your session at a convenient time.
+
+Submitted Details:
+• Class/Grade: ${class_grade}
+• Board: ${board}
+• City: ${city}
+• State: ${state}
+• Country: ${country}
+
+If you have any urgent queries, please reach out to us.
+
+Warm regards,
+The Haven Tutors Team
+
+Contact: info@haventutor.com
+WhatsApp: +91 9606840892
+      `,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
+          <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h2 style="color: #2563eb; margin-bottom: 20px;">🎉 Demo Request Received</h2>
+            <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${name},</p>
+            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+              Thank you for booking a <strong>demo session</strong> with Haven Tutors. Our team will contact you shortly to schedule your session at a convenient time.
+            </p>
+            <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="color: #1e40af; margin: 0 0 10px;">Submitted Details</h3>
+              <ul style="color: #374151; margin: 0; padding-left: 18px; line-height: 1.8;">
+                <li><strong>Class/Grade:</strong> ${class_grade}</li>
+                <li><strong>Board:</strong> ${board}</li>
+                <li><strong>City:</strong> ${city}</li>
+                <li><strong>State:</strong> ${state}</li>
+                <li><strong>Country:</strong> ${country}</li>
+              </ul>
+            </div>
+            <div style="background-color: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <p style="margin: 5px 0; color: #166534;">
+                Our consultant will reach out within <strong>24 hours</strong> to confirm your session time.
+              </p>
+            </div>
+            <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
+              <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
+            </div>
+            <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
+            <p style="color: #6b7280; font-size: 14px;">
+              Warm regards,<br>
+              <strong style="color: #2563eb;">The Haven Tutors Team</strong>
+            </p>
+          </div>
+        </div>
+      `,
+    };
+
+    Promise.all([
+      transporter.sendMail(mailOptions).catch(err => console.error("Student demo email error:", err)),
+      transporter.sendMail(autoReply).catch(err => console.error("Student auto-reply error:", err))
+    ]);
 
   } catch (err) {
     console.error("Student form error:", err);

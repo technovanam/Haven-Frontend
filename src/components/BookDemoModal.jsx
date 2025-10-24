@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import countries from "world-countries";
+import { API_BASE_URL } from "../config";
 
 // ============================================================
 // CONSTANTS
@@ -75,7 +76,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
     try {
       const formData = new FormData(studentForm.current);
       
-      const res = await fetch('http://localhost:5001/api/student-demo', {
+      const res = await fetch(`${API_BASE_URL}/api/student-demo`, {
         method: 'POST',
         body: formData,
       });
@@ -109,7 +110,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
     try {
       const formData = new FormData(tutorForm.current);
       
-      const res = await fetch('http://localhost:5001/api/tutor-application', {
+      const res = await fetch(`${API_BASE_URL}/api/tutor-application`, {
         method: 'POST',
         body: formData,
       });
