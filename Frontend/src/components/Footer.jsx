@@ -44,19 +44,19 @@ const Footer = ({ onBookDemoClick }) => {
                                 <span className="absolute bottom-0 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
                             </h3>
                             <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                                <a href="https://www.facebook.com/haventutors" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.facebook.com/haventutors" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={16} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" aria-label="LinkedIn" className="bg-white hover:bg-blue-700 text-blue-700 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="bg-white hover:bg-blue-700 text-blue-700 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaLinkedinIn size={16} />
                                 </a>
-                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" aria-label="Instagram" className="bg-white hover:bg-pink-600 text-pink-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-white hover:bg-pink-600 text-pink-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaInstagram size={16} />
                                 </a>
-                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." aria-label="WhatsApp" className="bg-white hover:bg-green-500 text-green-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-white hover:bg-green-500 text-green-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaWhatsapp size={16} />
                                 </a>
-                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" aria-label="YouTube" className="bg-white hover:bg-red-600 text-red-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-white hover:bg-red-600 text-red-600 hover:text-white p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
                                     <FaYoutube size={16} />
                                 </a>
                             </div>
@@ -70,22 +70,22 @@ const Footer = ({ onBookDemoClick }) => {
                         </h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link to="/" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/about" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Services
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/contact" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Contact
                                 </Link>
                             </li>
@@ -175,38 +175,38 @@ const Footer = ({ onBookDemoClick }) => {
                         </h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-3A00">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     One-on-One Tutoring
                                 </Link>
                             </li>
                              {/* ... other service links ... */}
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Group Classes
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Homework Help
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Exam Preparation
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Doubt Clearing
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Personalized Learning
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
                                     Interactive Classes
                                 </Link>
                             </li>
