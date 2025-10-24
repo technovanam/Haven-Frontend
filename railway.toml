@@ -1,7 +1,11 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "cd Backend && npm install"
-buildDir = "Backend"
 
-[deploy]
-startCommand = "npm start"
+[phases.setup]
+nixPkgs = ["nodejs_18"]
+
+[phases.install]
+cmds = ["cd Backend && npm install"]
+
+[start]
+cmd = "cd Backend && npm start"
