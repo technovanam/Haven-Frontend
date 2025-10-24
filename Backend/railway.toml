@@ -1,5 +1,9 @@
 [build]
-builder = "NIXPACKS"
+command = "npm install"
 
-[deploy]
-startCommand = "npm start"
+[start]
+command = "npm start"
+
+[env]
+PORT = "5001"
+NODE_ENV = "production"
