@@ -108,3 +108,22 @@ When deploying to production:
 - **Email not sending:** Verify MAIL_USER and MAIL_PASS in `.env`
 - **CORS errors:** Check that frontend URL is allowed in CORS configuration
 - **File upload fails:** Check file size (max 5MB) and type (PDF/DOC/DOCX only)
+
+## Railway deployment notes (non-Docker)
+
+If you deploy to Railway without Docker, follow these settings to ensure the Node runtime and npm are available during build:
+
+- Project root / Working Directory: `Backend`
+- Build command: `npm install`
+- Start command: `npm start` (or `./start.sh` if Railpack expects a `start.sh` script)
+- Environment variables: add `MAIL_USER`, `MAIL_PASS`, and any other keys from `.env` in Railway's Environment / Secrets
+
+Files included to help buildpacks detect Node and run install/start:
+
+- `.nvmrc` — requests Node 18 for runtime/build detection
+- `start.sh` — a small wrapper that installs production deps and runs `npm start` (Railpack sometimes looks for this file)
+
+If you still see `sh: 1: npm: not found` in Railway build logs after setting the working directory to `Backend`, ensure the service is configured to use the Node.js runtime or select the Node buildpack in Railway's UI. That error means the build image doesn't have Node/npm installed.
+
+If you'd like, I can remove the `Dockerfile` from the repo (I added it earlier) and help you re-trigger a Railway deploy with the above settings.
+
