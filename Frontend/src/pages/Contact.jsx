@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { Building2, Mail, Globe, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Building2, Mail, Globe, Phone } from "lucide-react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from 'react-icons/fa6';
 import contact from '../assets/contact.jpg';
 import { API_BASE_URL } from "../config";
 
@@ -11,6 +12,8 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
   const content = href ? (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-slate-700 hover:text-blue-600 transition-colors break-all font-medium"
     >
       {value}
@@ -253,25 +256,49 @@ const Contact = () => {
                   </h3>
                   <div className="flex gap-3">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/haventutors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                      className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
-                      <Facebook className="w-5 h-5" />
+                      <FaFacebookF className="w-5 h-5 text-blue-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="#"
-                      aria-label="Instagram"
-                      className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
-                    >
-                      <Instagram className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="#"
+                      href="https://www.linkedin.com/in/haven-tutors-5b89b638b"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group"
+                      className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <FaLinkedinIn className="w-5 h-5 text-blue-700 group-hover:text-white" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                    >
+                      <FaInstagram className="w-5 h-5 text-pink-600 group-hover:text-white" />
+                    </a>
+                    <a
+                      href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="WhatsApp"
+                      className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                    >
+                      <FaWhatsapp className="w-5 h-5 text-green-600 group-hover:text-white" />
+                    </a>
+                    <a
+                      href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      className="bg-white p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                    >
+                      <FaYoutube className="w-5 h-5 text-red-600 group-hover:text-white" />
                     </a>
                   </div>
                 </div>
