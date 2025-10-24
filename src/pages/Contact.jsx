@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Building2, Mail, Globe, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
 import contact from '../assets/contact.jpg';
+import { API_BASE_URL } from "../config";
 
 // ============================================================
 // CONTACT INFO ITEM COMPONENT
@@ -50,7 +51,7 @@ const Contact = () => {
     try {
       const formData = new FormData(form.current);
       
-      const res = await fetch('http://localhost:5001/api/contact', {
+      const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         body: formData,
       });
