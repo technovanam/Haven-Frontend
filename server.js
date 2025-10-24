@@ -1,5 +1,5 @@
 import express from "express";
-import nodemailer from "nodemailer";
+// We'll call Resend's HTTP API directly using fetch to avoid an extra npm dependency.
 import multer from "multer";
 import cors from "cors";
 import fs from "fs";
@@ -13,27 +13,40 @@ app.use(express.json());
 
 const upload = multer({ dest: "uploads/" });
 
-const transporter = nodemailer.createTransport({
-  host: "smtpout.secureserver.net",
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-  connectionTimeout: 15000,
-  greetingTimeout: 15000,
-  socketTimeout: 15000,
-  tls: {
-    rejectUnauthorized: false,
-    minVersion: 'TLSv1'
-  },
-  debug: false,
-  logger: false
-});
+// Resend API helper (uses global fetch available in Node 18+ / 22+)
+const RESEND_API_URL = "https://api.resend.com/emails";
+function ensureResendKey() {
+  if (!process.env.RESEND_API_KEY) console.warn("⚠️ RESEND_API_KEY is not set. Emails will fail until it's provided.");
+}
 
-console.log("📧 Email server configured");
+async function sendResendEmail({ from, to, subject, html, reply_to }) {
+  ensureResendKey();
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) throw new Error("RESEND_API_KEY not set");
+
+  const payload = { from, to, subject, html };
+  if (reply_to) payload.reply_to = reply_to;
+
+  const res = await fetch(RESEND_API_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    const err = new Error(`Resend API error ${res.status}: ${text}`);
+    err.status = res.status;
+    throw err;
+  }
+
+  return res.json();
+}
+
+console.log("📧 Email sending configured (Resend HTTP API)");
 console.log("🚀 Server starting...");
 
 app.get("/", (req, res) => {
@@ -55,85 +68,56 @@ app.post("/api/contact", upload.none(), async (req, res) => {
 
     res.status(200).json({ success: true, message: "Message received successfully" });
 
-    const mailOptions = {
+    const adminMessageHtml = `
+      <h3>New Contact Form Submission</h3>
+      <p><strong>Name:</strong> ${user_name}</p>
+      <p><strong>Email:</strong> ${user_email}</p>
+      <p><strong>Phone:</strong> ${user_phone || "Not provided"}</p>
+      <hr>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `;
+
+    const autoReplyHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
+        <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h2 style="color: #2563eb; margin-bottom: 20px;">We've Received Your Message</h2>
+          <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${user_name},</p>
+          <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+            Thank you for contacting Haven Tutors. We truly appreciate you reaching out to us.
+          </p>
+          <p style="color: #374151; font-size: 16px; line-height: 1.6;">
+            Your message has been successfully received by our team. One of our education consultants will review your inquiry and respond within 24 hours.
+          </p>
+          <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
+          </div>
+          <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
+          <p style="color: #6b7280; font-size: 14px;">
+            Warm regards,<br>
+            <strong style="color: #2563eb;">The Haven Tutors Team</strong>
+          </p>
+        </div>
+      </div>
+    `;
+
+    // Send admin email (fire-and-forget)
+    sendResendEmail({
       from: process.env.MAIL_USER,
       to: process.env.MAIL_USER,
-      replyTo: user_email,
       subject: `New Contact Form Submission from ${user_name}`,
-      text: `
-Contact Form Submission
+      html: adminMessageHtml,
+      reply_to: user_email
+    }).catch(err => console.error("Admin email error:", err));
 
-Name: ${user_name}
-Email: ${user_email}
-Phone: ${user_phone || "Not provided"}
-
-Message:
-${message}
-      `,
-      html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${user_name}</p>
-        <p><strong>Email:</strong> ${user_email}</p>
-        <p><strong>Phone:</strong> ${user_phone || "Not provided"}</p>
-        <hr>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    };
-
-    const autoReply = {
+    // Send auto-reply to user
+    sendResendEmail({
       from: process.env.MAIL_USER,
       to: user_email,
       subject: `We've Received Your Message - Haven Tutors`,
-      text: `
-Dear ${user_name},
-
-Thank you for contacting Haven Tutors. We truly appreciate you reaching out to us.
-
-Your message has been successfully received by our team. One of our education consultants will review your inquiry and respond within 24 hours.
-
-In the meantime, feel free to explore our website to learn more about our personalized tutoring programs and success stories.
-
-If you have any urgent questions, please don't hesitate to call us directly.
-
-Warm regards,
-The Haven Tutors Team
-
-Contact: info@haventutor.com
-WhatsApp: +91 9606840892
-      `,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
-          <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <h2 style="color: #2563eb; margin-bottom: 20px;">We've Received Your Message</h2>
-            <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${user_name},</p>
-            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-              Thank you for contacting Haven Tutors. We truly appreciate you reaching out to us.
-            </p>
-            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-              Your message has been successfully received by our team. One of our education consultants will review your inquiry and respond within 24 hours.
-            </p>
-            <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-              In the meantime, feel free to explore our website to learn more about our personalized tutoring programs and success stories.
-            </p>
-            <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-              <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
-              <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
-            </div>
-            <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
-            <p style="color: #6b7280; font-size: 14px;">
-              Warm regards,<br>
-              <strong style="color: #2563eb;">The Haven Tutors Team</strong>
-            </p>
-          </div>
-        </div>
-      `,
-    };
-
-    Promise.all([
-      transporter.sendMail(mailOptions).catch(err => console.error("Admin email error:", err)),
-      transporter.sendMail(autoReply).catch(err => console.error("Auto-reply error:", err))
-    ]);
+      html: autoReplyHtml
+    }).catch(err => console.error("Auto-reply error:", err));
 
   } catch (err) {
     console.error("Contact form error:", err);
@@ -241,10 +225,32 @@ WhatsApp: +91 9606840892
       `,
     };
 
-    Promise.all([
-      transporter.sendMail(mailOptions).catch(err => console.error("Student demo email error:", err)),
-      transporter.sendMail(autoReply).catch(err => console.error("Student auto-reply error:", err))
-    ]);
+    // Send admin notification (fire-and-forget)
+    sendResendEmail({
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_USER,
+      subject: `New Student Demo Booking - ${name}`,
+      html: `
+        <h3>New Student Demo Booking</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${mobile}</p>
+        <p><strong>Class/Grade:</strong> ${class_grade}</p>
+        <p><strong>Board:</strong> ${board}</p>
+        <p><strong>City:</strong> ${city}</p>
+        <p><strong>State:</strong> ${state}</p>
+        <p><strong>Country:</strong> ${country}</p>
+      `,
+      reply_to: email
+    }).catch(err => console.error("Student demo email error:", err));
+
+    // Send confirmation to user
+    sendResendEmail({
+      from: process.env.MAIL_USER,
+      to: email,
+      subject: `Your Demo Session Request Is Confirmed - Haven Tutors`,
+      html: autoReply.html
+    }).catch(err => console.error("Student auto-reply error:", err));
 
   } catch (err) {
     console.error("Student form error:", err);
@@ -382,12 +388,34 @@ WhatsApp: +91 9606840892
 
     res.status(200).json({ success: true, message: "Application received successfully" });
 
-    Promise.all([
-      transporter.sendMail(mailOptions).catch(err => console.error("Admin tutor email error:", err)),
-      transporter.sendMail(autoReply).catch(err => console.error("Tutor auto-reply error:", err))
-    ]).then(() => {
+    // Send admin email (note: attachments are not forwarded as binary here; include filename)
+    sendResendEmail({
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_USER,
+      subject: `New Tutor Application - ${tutor_name}`,
+      html: `
+        <h3>New Tutor Application</h3>
+        <p><strong>Name:</strong> ${tutor_name}</p>
+        <p><strong>Email:</strong> ${tutor_email}</p>
+        <p><strong>Phone:</strong> ${tutor_phone}</p>
+        <p><strong>City:</strong> ${city}</p>
+        <p><strong>State:</strong> ${state}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Expertise:</strong> ${expertise}</p>
+        <p><strong>Experience:</strong> ${experience} years</p>
+        <p><strong>Resume filename:</strong> ${file ? file.originalname : 'No resume attached'}</p>
+      `
+    }).catch(err => console.error("Admin tutor email error:", err)).finally(() => {
       if (file) fs.unlinkSync(file.path);
     });
+
+    // Send acknowledgement to applicant
+    sendResendEmail({
+      from: process.env.MAIL_USER,
+      to: tutor_email,
+      subject: `Application Received - Haven Tutors Teaching Opportunity`,
+      html: autoReply.html
+    }).catch(err => console.error("Tutor auto-reply error:", err));
 
   } catch (err) {
     console.error("Tutor form error:", err);
