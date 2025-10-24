@@ -13,19 +13,43 @@ app.use(express.json());
 
 const upload = multer({ dest: "uploads/" });
 
+// Default from with display name shown in inboxes
+const DEFAULT_FROM = `Haven Tutors <${process.env.MAIL_USER || 'info@haventutor.com'}>`;
+
 // Resend API helper (uses global fetch available in Node 18+ / 22+)
 const RESEND_API_URL = "https://api.resend.com/emails";
 function ensureResendKey() {
   if (!process.env.RESEND_API_KEY) console.warn("⚠️ RESEND_API_KEY is not set. Emails will fail until it's provided.");
 }
 
-async function sendResendEmail({ from, to, subject, html, reply_to }) {
+function getMimeType(filename) {
+  const ext = (filename || "").split('.').pop().toLowerCase();
+  switch (ext) {
+    case 'pdf': return 'application/pdf';
+    case 'docx': return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+    case 'doc': return 'application/msword';
+    case 'txt': return 'text/plain';
+    default: return 'application/octet-stream';
+  }
+}
+
+async function sendResendEmail({ from, to, subject, html, reply_to, attachments }) {
   ensureResendKey();
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) throw new Error("RESEND_API_KEY not set");
 
   const payload = { from, to, subject, html };
   if (reply_to) payload.reply_to = reply_to;
+
+  // If attachments provided, convert to the expected shape for Resend
+  if (attachments && Array.isArray(attachments) && attachments.length) {
+    payload.attachments = attachments.map(a => ({
+      filename: a.filename,
+      // Resend expects base64 content in `content` or `data` depending on API; use `content`
+      content: a.content,
+      type: a.type || getMimeType(a.filename)
+    }));
+  }
 
   const res = await fetch(RESEND_API_URL, {
     method: "POST",
@@ -104,7 +128,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
 
     // Send admin email (fire-and-forget)
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: process.env.MAIL_USER,
       subject: `New Contact Form Submission from ${user_name}`,
       html: adminMessageHtml,
@@ -113,7 +137,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
 
     // Send auto-reply to user
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: user_email,
       subject: `We've Received Your Message - Haven Tutors`,
       html: autoReplyHtml
@@ -133,7 +157,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
     res.status(200).json({ success: true, message: "Demo request received successfully" });
 
     const mailOptions = {
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: process.env.MAIL_USER,
       replyTo: email,
       subject: `New Student Demo Booking - ${name}`,
@@ -163,7 +187,7 @@ Country: ${country}
     };
 
     const autoReply = {
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: email,
       subject: `Your Demo Session Request Is Confirmed - Haven Tutors`,
       text: `
@@ -227,7 +251,7 @@ WhatsApp: +91 9606840892
 
     // Send admin notification (fire-and-forget)
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: process.env.MAIL_USER,
       subject: `New Student Demo Booking - ${name}`,
       html: `
@@ -242,11 +266,11 @@ WhatsApp: +91 9606840892
         <p><strong>Country:</strong> ${country}</p>
       `,
       reply_to: email
-    }).catch(err => console.error("Student demo email error:", err));
+  }).catch(err => console.error("Student demo email error:", err));
 
     // Send confirmation to user
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: email,
       subject: `Your Demo Session Request Is Confirmed - Haven Tutors`,
       html: autoReply.html
@@ -264,7 +288,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
     const file = req.file;
 
     const mailOptions = {
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: process.env.MAIL_USER,
       replyTo: tutor_email,
       subject: `New Tutor Application - ${tutor_name}`,
@@ -304,7 +328,7 @@ ${file ? 'Resume attached: ' + file.originalname : 'No resume attached'}
     };
 
     const autoReply = {
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: tutor_email,
       subject: `Application Received - Haven Tutors Teaching Opportunity`,
       text: `
@@ -388,9 +412,25 @@ WhatsApp: +91 9606840892
 
     res.status(200).json({ success: true, message: "Application received successfully" });
 
-    // Send admin email (note: attachments are not forwarded as binary here; include filename)
+    // Prepare attachments if file uploaded
+    let attachmentsForResend = [];
+    if (file) {
+      try {
+        const fileBuffer = fs.readFileSync(file.path);
+        const base64 = fileBuffer.toString('base64');
+        attachmentsForResend.push({
+          filename: file.originalname,
+          content: base64,
+          type: getMimeType(file.originalname)
+        });
+      } catch (e) {
+        console.error('Failed to read uploaded file for attachment:', e);
+      }
+    }
+
+    // Send admin email with attachment (if any)
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: process.env.MAIL_USER,
       subject: `New Tutor Application - ${tutor_name}`,
       html: `
@@ -404,14 +444,15 @@ WhatsApp: +91 9606840892
         <p><strong>Expertise:</strong> ${expertise}</p>
         <p><strong>Experience:</strong> ${experience} years</p>
         <p><strong>Resume filename:</strong> ${file ? file.originalname : 'No resume attached'}</p>
-      `
+      `,
+      attachments: attachmentsForResend
     }).catch(err => console.error("Admin tutor email error:", err)).finally(() => {
       if (file) fs.unlinkSync(file.path);
     });
 
-    // Send acknowledgement to applicant
+    // Send acknowledgement to applicant (from display name: Haven Tutors)
     sendResendEmail({
-      from: process.env.MAIL_USER,
+      from: DEFAULT_FROM,
       to: tutor_email,
       subject: `Application Received - Haven Tutors Teaching Opportunity`,
       html: autoReply.html
