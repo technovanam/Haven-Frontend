@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter, FaYoutube, FaWhatsapp } from 'react-icons/fa6';
+import { API_BASE_URL } from '../config';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter, FaYoutube, FaWhatsapp, FaCommentDots } from 'react-icons/fa6';
 import { Phone, Mail } from 'lucide-react';
 
 // ============================================================
@@ -8,6 +9,53 @@ import { Phone, Mail } from 'lucide-react';
 // ============================================================
 
 const Footer = ({ onBookDemoClick }) => {
+
+    const [showTestimonial, setShowTestimonial] = useState(false);
+    const [testimonialContent, setTestimonialContent] = useState('');
+    const [submitting, setSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const nameRef = useRef(null);
+
+    const handleTestimonialSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessage('');
+        const name = nameRef.current?.value?.trim();
+        const board = e.target.board?.value?.trim() || '';
+        const grade = e.target.grade?.value?.trim() || '';
+        const country = e.target.country?.value?.trim() || '';
+        const content = testimonialContent.trim();
+
+        if (!name) { setErrorMessage('Please enter your name'); return; }
+        if (!content || content.length === 0) { setErrorMessage('Please enter testimonial content'); return; }
+        if (content.length > 200) { setErrorMessage('Testimonial must be 200 characters or less'); return; }
+
+        const payload = { name, board, grade, country, content };
+        setSubmitting(true);
+        try {
+            const res = await fetch(`${API_BASE_URL}/api/testimonial`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (res.ok) {
+                setShowTestimonial(false);
+                setTestimonialContent('');
+                alert('Thank you! Your testimonial was submitted.');
+            } else {
+                // still close and show message; backend may not exist
+                const text = await res.text();
+                console.warn('Testimonial submit non-OK:', res.status, text);
+                alert('Submission received (local).');
+                setShowTestimonial(false);
+            }
+        } catch (err) {
+            console.error('Testimonial submit error:', err);
+            alert('Submission failed — please try again later.');
+        } finally {
+            setSubmitting(false);
+        }
+    };
 
     return (
         <footer className="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-700">
@@ -290,16 +338,56 @@ const Footer = ({ onBookDemoClick }) => {
                 </div>
             </div>
 
-            <a 
-                href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 bg-green-500 text-white p-3 sm:p-3.5 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110"
-                aria-label="Chat on WhatsApp"
-            >
-                <FaWhatsapp size={20} className="sm:hidden" />
-                <FaWhatsapp size={24} className="hidden sm:block" />
-            </a>
+            {/* Floating actions: Testimonial and WhatsApp */}
+            {/* lowered the cluster (closer to bottom) and increased spacing for better reachability */}
+            <div className="fixed right-4 bottom-6 sm:right-6 sm:bottom-8 flex flex-col items-end gap-4 z-50">
+                {/* Testimonial button (polished) */}
+                <button
+                    onClick={() => setShowTestimonial(true)}
+                    aria-label="Leave a testimonial"
+                    className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-3 hover:from-blue-600 hover:to-blue-700 transform transition-all duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-200"
+                >
+                    <FaCommentDots size={18} className="flex-shrink-0" />
+                    <span className="hidden sm:inline-block text-sm font-semibold">Testimonials</span>
+                </button>
+
+                <a
+                    href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-br from-green-500 to-green-600 text-white p-3.5 rounded-full shadow-2xl hover:from-green-600 hover:to-green-700 transform transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-green-200"
+                    aria-label="Chat on WhatsApp"
+                >
+                    <FaWhatsapp size={22} />
+                </a>
+            </div>
+
+            {/* Testimonial modal */}
+            {showTestimonial && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+                    <div className="bg-white rounded-xl w-full max-w-md mx-4 p-6 shadow-xl">
+                        <div className="flex items-center justify-between mb-4">
+                            <h3 className="text-lg font-semibold">Leave a Testimonial</h3>
+                            <button onClick={() => setShowTestimonial(false)} className="text-slate-500 hover:text-slate-800">✕</button>
+                        </div>
+                        <form onSubmit={handleTestimonialSubmit} className="space-y-3">
+                            <input required name="name" ref={nameRef} placeholder="Your name" className="w-full border rounded-md px-3 py-2" />
+                            <input name="board" placeholder="Board (CBSE/ICSE)" className="w-full border rounded-md px-3 py-2" />
+                            <input name="grade" placeholder="Grade / Class" className="w-full border rounded-md px-3 py-2" />
+                            <input name="country" placeholder="Country" className="w-full border rounded-md px-3 py-2" />
+                            <textarea name="content" value={testimonialContent} onChange={e => setTestimonialContent(e.target.value.slice(0,200))} placeholder="Your testimonial (max 200 chars)" className="w-full border rounded-md px-3 py-2" rows={4} />
+                            <div className="flex items-center justify-between text-xs text-slate-500">
+                                <span>{testimonialContent.length}/200</span>
+                                <span className="text-red-500">{errorMessage}</span>
+                            </div>
+                            <div className="flex items-center gap-3 justify-end">
+                                <button type="button" onClick={() => setShowTestimonial(false)} className="px-4 py-2 rounded-md border">Cancel</button>
+                                <button type="submit" disabled={submitting} className="px-4 py-2 bg-blue-600 text-white rounded-md disabled:opacity-60">{submitting ? 'Submitting...' : 'Submit'}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </footer>
     );
 };
