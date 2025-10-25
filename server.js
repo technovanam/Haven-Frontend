@@ -282,6 +282,65 @@ WhatsApp: +91 9606840892
   }
 });
 
+// Simple testimonial endpoint: validates 200-char limit, persists to data/testimonials.json and notifies admin
+app.post('/api/testimonial', upload.none(), async (req, res) => {
+  try {
+    const { name, board, grade, country, content } = req.body;
+
+    if (!name || !content) return res.status(400).json({ success: false, message: 'Name and content are required' });
+    if (content.length > 200) return res.status(400).json({ success: false, message: 'Testimonial must be 200 characters or less' });
+
+    const testimonial = {
+      id: Date.now(),
+      name: name.trim(),
+      board: (board || '').trim(),
+      grade: (grade || '').trim(),
+      country: (country || '').trim(),
+      content: content.trim(),
+      createdAt: new Date().toISOString()
+    };
+
+    // Persist to a simple JSON file under data/
+    try {
+      const dataDir = 'data';
+      const filePath = `${dataDir}/testimonials.json`;
+      if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+      let arr = [];
+      if (fs.existsSync(filePath)) {
+        const raw = fs.readFileSync(filePath, 'utf8');
+        arr = raw ? JSON.parse(raw) : [];
+      }
+      arr.push(testimonial);
+      fs.writeFileSync(filePath, JSON.stringify(arr, null, 2), 'utf8');
+    } catch (e) {
+      console.error('Failed to persist testimonial:', e);
+    }
+
+    // Notify admin (fire-and-forget)
+    const adminHtml = `
+      <h3>New Testimonial Submitted</h3>
+      <p><strong>Name:</strong> ${testimonial.name}</p>
+      <p><strong>Board:</strong> ${testimonial.board || 'N/A'}</p>
+      <p><strong>Grade:</strong> ${testimonial.grade || 'N/A'}</p>
+      <p><strong>Country:</strong> ${testimonial.country || 'N/A'}</p>
+      <hr>
+      <p>${testimonial.content}</p>
+    `;
+
+    sendResendEmail({
+      from: DEFAULT_FROM,
+      to: process.env.MAIL_USER,
+      subject: `New Testimonial from ${testimonial.name}`,
+      html: adminHtml
+    }).catch(err => console.error('Testimonial email error:', err));
+
+    return res.status(200).json({ success: true, message: 'Testimonial submitted' });
+  } catch (err) {
+    console.error('Testimonial endpoint error:', err);
+    return res.status(500).json({ success: false, message: 'Failed to submit testimonial' });
+  }
+});
+
 app.post("/api/tutor-application", upload.single("resume"), async (req, res) => {
   try {
     const { tutor_name, tutor_email, tutor_phone, city, state, country, expertise, experience } = req.body;
