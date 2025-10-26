@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import BookDemoModal from "./BookDemoModal";
 
 // ============================================================
-// MAIN HEADER COMPONENT
+// MAIN HEADER COMPONENT - FULLY RESPONSIVE
 // ============================================================
 
 const Header = () => {
@@ -34,41 +34,39 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           
-          {/* Left: Logo (Takes up 1/3 of the space on desktop) */}
+          {/* Left: Logo */}
           <div className="md:w-1/3">
             <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
               <img
                 src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
                 loading="eager"
               />
             </Link>
           </div>
 
-          {/* Centered Desktop Navigation (Takes up 1/3 of the space) */}
-          {/* CHANGE 2: Removed `absolute`, `transform`, etc. Now part of the flex flow. */}
+          {/* Center: Desktop Navigation */}
           <nav className="hidden md:flex justify-center md:w-1/3">
-            <ul className="flex items-center space-x-8">
-              <li>
-                {/* CHANGE 3: Using the pure-Tailwind `className` function */}
+            <ul className="flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+              <li className="whitespace-nowrap">
                 <NavLink to="/" className={navLinkClasses}>
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="whitespace-nowrap">
                 <NavLink to="/about" className={navLinkClasses}>
                   About Us
                 </NavLink>
               </li>
-              <li>
+              <li className="whitespace-nowrap">
                 <NavLink to="/services" className={navLinkClasses}>
                   Services
                 </NavLink>
               </li>
-              <li>
+              <li className="whitespace-nowrap">
                 <NavLink to="/contact" className={navLinkClasses}>
                   Contact
                 </NavLink>
@@ -76,12 +74,11 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Right-side actions (Takes up 1/3 of the space) */}
-          {/* CHANGE 4: Added `justify-end` to push the button to the far right. */}
+          {/* Right: Desktop CTA Button */}
           <div className="hidden md:flex items-center justify-end md:w-1/3">
             <button
               onClick={openDemoModal}
-              className="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
+              className="inline-flex items-center justify-center w-auto px-5 lg:px-8 py-2 lg:py-3 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
             >
               <span>Book a demo</span>
               <svg
@@ -101,11 +98,11 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button (Takes up the right side on mobile) */}
+          {/* Mobile/Tablet Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-blue-600 focus:outline-none"
+              className="text-slate-600 hover:text-blue-600 focus:outline-none p-2"
               aria-label="Toggle menu"
             >
               <svg
@@ -130,14 +127,13 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {/* This uses a simple CSS transition for a smooth slide-down effect */}
+      {/* Mobile Navigation Menu */}
       <div
         className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <ul className="flex flex-col items-center space-y-5 py-5">
+        <ul className="flex flex-col items-center space-y-4 sm:space-y-5 py-6 sm:py-8">
           <li>
             <NavLink to="/" className={mobileNavLinkClasses} onClick={closeMenu}>
               Home
@@ -158,11 +154,10 @@ const Header = () => {
               Contact
             </NavLink>
           </li>
-          <li>
-            {/* CHANGE 5: Styled mobile button to match desktop and be "finger-friendly" */}
+          <li className="pt-2">
             <button
               onClick={openDemoModal}
-              className="inline-flex items-center justify-center w-auto px-8 py-3 rounded-full bg-blue-600 text-white font-medium hover:opacity-95 transition"
+              className="inline-flex items-center justify-center px-8 sm:px-10 py-3 rounded-full bg-blue-600 text-white text-base sm:text-lg font-medium hover:opacity-95 transition min-w-[200px]"
             >
               Book a demo
             </button>
