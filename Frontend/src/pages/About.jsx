@@ -26,30 +26,29 @@ const About = () => {
 
   return (
     <div className="bg-white text-slate-800 font-sans">
-      
-      {/* ============================================================ */}
-      {/* HERO SECTION */}
-      {/* ============================================================ */}
-      
-      <section className="flex items-center justify-center text-center pt-6 pb-16 px-4 sm:px-6 bg-white">
-        <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-24">
-          <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-6">
-            <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-sm md:text-base tracking-wide uppercase">
-              About Us
-            </span>
-          </div>
+     {/* ============================================================ */}
+{/* HERO SECTION */}
+{/* ============================================================ */}
 
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
-            Empowering Students Through <br />
-            <span className="italic text-blue-700">Personalized Learning</span>
-          </h1>
+<section className="flex items-center justify-center text-center py-6 px-4 sm:px-6 bg-white">
+  <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-20 md:py-35 px-4 sm:px-6 md:px-24">
+    <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-4 sm:mb-6">
+      <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
+      <span className="text-xs sm:text-sm md:text-md tracking-wide uppercase">
+        About Us
+      </span>
+    </div>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
-            At Haven Tutors, we make learning inspiring, flexible, and supportive so every student can grow with confidence.
-          </p>
-        </div>
-      </section>
+    <h1 className="text-2xl sm:text-3xl md:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
+      Empowering Students Through <br />
+      <span className="italic text-blue-700">Personalized Learning</span>
+    </h1>
+
+    <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+      At Haven Tutors, we make learning inspiring, flexible, and supportive so every student can grow with confidence.
+    </p>
+  </div>
+</section>
 
       {/* ============================================================ */}
       {/* STORY, MISSION & VISION SECTION */}
@@ -227,79 +226,78 @@ const About = () => {
         </div>
       </section>
 
-      {/* ============================================================ */}
-      {/* OUR APPROACH SECTION */}
-      {/* ============================================================ */}
+ {/* ============================================================ */}
+{/* OUR APPROACH SECTION */}
+{/* ============================================================ */}
 
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 bg-white">
-        <div className="max-w-6xl mx-auto text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
-            Our Approach
-          </h2>
+<section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 bg-white">
+  <div className="max-w-6xl mx-auto text-center mb-8 sm:mb-12 md:mb-16">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">
+      Our Approach
+    </h2>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+    {/* LEFT SIDE - IMAGE */}
+    <div className="flex justify-center order-2 md:order-1">
+      <img
+        src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/approachImage_ova89m.jpg"
+        alt="Student Learning"
+        className="rounded-xl sm:rounded-2xl shadow-lg w-full max-w-md object-cover"
+        loading="lazy"
+      />
+    </div>
+
+    {/* RIGHT SIDE - CONTENT */}
+    <div className="text-left order-1 md:order-2">
+      <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-3 sm:mb-4">
+        Empowering Minds Through Personalized and Interactive Learning
+      </h3>
+      <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
+        Every student learns differently. Our approach focuses on understanding each learner's strengths and creating a path that builds confidence and lasting success.
+      </p>
+
+      {/* List with dividing lines */}
+      <div className="divide-y divide-gray-300">
+        <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
+          <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
+            <Target className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
+          </div>
+          <p className="text-sm sm:text-base text-slate-700">
+            <span className="font-semibold text-slate-900">
+              Personalized Learning Paths:
+            </span>{" "}
+            Lessons designed to match each student's pace, style, and academic goals.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
-          {/* LEFT SIDE - IMAGE */}
-          <div className="flex justify-center order-2 md:order-1">
-            <img
-              src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/approachImage_ova89m.jpg"
-              alt="Student Learning"
-              className="rounded-xl sm:rounded-2xl shadow-lg w-full max-w-md object-cover"
-              loading="lazy"
-            />
+        <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
+          <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
+            <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
           </div>
-
-          {/* RIGHT SIDE - CONTENT */}
-          <div className="text-left order-1 md:order-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-blue-700 mb-3 sm:mb-4">
-              Empowering Minds Through Personalized and Interactive Learning
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
-              Every student learns differently. Our approach focuses on understanding each learner's strengths and creating a path that builds confidence and lasting success.
-            </p>
-
-            {/* List with dividing lines */}
-            <div className="divide-y divide-gray-300 border-b border-gray-300">
-              <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
-                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
-                  <Target className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
-                </div>
-                <p className="text-sm sm:text-base text-slate-700">
-                  <span className="font-semibold text-slate-900">
-                    Personalized Learning Paths:
-                  </span>{" "}
-                  Lessons designed to match each student's pace, style, and academic goals.
-                </p>
-              </div>
-
-              <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
-                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
-                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
-                </div>
-                <p className="text-sm sm:text-base text-slate-700">
-                  <span className="font-semibold text-slate-900">
-                    Interactive Sessions:
-                  </span>{" "}
-                  Engaging live classes and discussions that make learning active, fun, and meaningful.
-                </p>
-              </div>
-
-              <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
-                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
-                  <UserCheck className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
-                </div>
-                <p className="text-sm sm:text-base text-slate-700">
-                  <span className="font-semibold text-slate-900">
-                    Mentorship Programs:
-                  </span>{" "}
-                  Ongoing one-on-one support from experienced educators who guide, motivate, and inspire progress.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-sm sm:text-base text-slate-700">
+            <span className="font-semibold text-slate-900">
+              Interactive Sessions:
+            </span>{" "}
+            Engaging live classes and discussions that make learning active, fun, and meaningful.
+          </p>
         </div>
-      </section>
 
+        <div className="flex items-start gap-2 sm:gap-3 py-3 sm:py-4">
+          <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full flex-shrink-0">
+            <UserCheck className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
+          </div>
+          <p className="text-sm sm:text-base text-slate-700">
+            <span className="font-semibold text-slate-900">
+              Mentorship Programs:
+            </span>{" "}
+            Ongoing one-on-one support from experienced educators who guide, motivate, and inspire progress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* ============================================================ */}
       {/* CALL TO ACTION SECTION */}
       {/* ============================================================ */}

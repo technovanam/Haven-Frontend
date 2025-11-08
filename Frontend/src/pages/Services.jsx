@@ -252,7 +252,7 @@ const categoryIntro = {
 
 const ServiceCard = ({ service }) => (
   <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 text-left">
-    <div className="w-full h-48 overflow-hidden bg-gray-100">
+    <div className="w-full h-40 sm:h-48 md:h-52 lg:h-56 overflow-hidden bg-gray-100">
       <img
         className="w-full h-full object-cover"
         src={service.image}
@@ -261,15 +261,14 @@ const ServiceCard = ({ service }) => (
         decoding="async"
       />
     </div>
-    <div className="p-4 sm:p-6 md:p-6">
+    <div className="p-4 sm:p-5 md:p-6">
       <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900">
         {service.title}
       </h3>
-      <p className="text-slate-600 mt-3 text-sm sm:text-base md:text-base">{service.description}</p>
+      <p className="text-slate-600 mt-2 sm:mt-3 text-sm sm:text-base md:text-base leading-relaxed">{service.description}</p>
     </div>
   </div>
 );
-
 // ============================================================
 // MAIN SERVICES COMPONENT
 // ============================================================
@@ -290,43 +289,43 @@ const ServicesPage = () => {
   return (
     <div className="bg-white text-slate-800 font-sans">
       
-      {/* ============================================================ */}
-      {/* HERO SECTION */}
-      {/* ============================================================ */}
-      
-      <section className="flex items-center justify-center text-center pt-6 pb-16 px-4 sm:px-6 bg-white">
-        <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-20 sm:py-24 md:py-28 md:px-24">
-          <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-6">
-            <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-sm md:text-md tracking-wide uppercase">
-              Our Services
-            </span>
-          </div>
+{/* ============================================================ */}
+{/* HERO SECTION */}
+{/* ============================================================ */}
 
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
-            Designed for <br />
-            <span className="italic text-blue-700">Confident Learning</span>
-          </h1>
+<section className="flex items-center justify-center text-center py-6 px-4 sm:px-6 bg-white">
+  <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-20 md:py-35 px-4 sm:px-6 md:px-24">
+    
+    <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-4 sm:mb-6">
+      <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
+      <span className="text-xs sm:text-sm md:text-md tracking-wide uppercase">
+        Our Services
+      </span>
+    </div>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
-            Discover flexible, personalized tutoring options built to fit every
-            student’s pace, goals, and board of education.
-          </p>
-        </div>
-      </section>
+    <h1 className="text-2xl sm:text-3xl md:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
+      Designed for <br />
+      <span className="italic text-blue-700">Confident Learning</span>
+    </h1>
+
+    <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+      Discover flexible, personalized tutoring options built to fit every
+      student's pace, goals, and board of education.
+    </p>
+  </div>
+</section>
 
       {/* ============================================================ */}
       {/* CATEGORY TABS */}
       {/* ============================================================ */}
 
-      <div className="flex justify-center mb-12 px-4 sm:px-0">
-        <div className="w-full max-w-6xl overflow-x-auto scrollbar-hide">
-          <div className="flex flex-nowrap gap-x-4 sm:gap-x-6 md:gap-x-10 gap-y-2 border-b border-gray-200 py-2">
+      <div className="flex justify-center mt-12 mb-12">
+        <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 border-b border-gray-200">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`py-2 sm:py-3 px-3 sm:px-1 text-sm sm:text-[18px] md:text-base font-medium rounded-t-lg transition-all duration-300 ease-in-out whitespace-nowrap -mb-px 
+              className={`py-3 px-1 text-[18px] font-medium rounded-t-lg transition-all duration-300 ease-in-out whitespace-nowrap -mb-px 
                 ${
                   activeCategory === category
                     ? "text-blue-600 border-b-3 border-blue-600"
@@ -336,7 +335,6 @@ const ServicesPage = () => {
               {category}
             </button>
           ))}
-          </div>
         </div>
       </div>
 
@@ -356,24 +354,26 @@ const ServicesPage = () => {
       {/* CALL TO ACTION SECTION */}
       {/* ============================================================ */}
 
-      <section className="py-20 sm:py-24 lg:py-28 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[3rem] sm:rounded-t-[4rem] md:rounded-t-[7rem]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
+ 
+      <section className="py-12 sm:py-16 md:py-20 lg:py-28 text-center bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-[2rem] sm:rounded-t-[3rem] md:rounded-t-[4rem] lg:rounded-t-[7rem]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 px-2">
             Ready to Discover Your Potential?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 opacity-90">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 px-4">
             Join Haven Tutors today and take the first step toward confident,
-            <br />
+            <br className="hidden sm:block" />
             personalized, and flexible learning.
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-white text-blue-700 font-semibold py-2 sm:py-3 md:py-3 px-5 sm:px-8 rounded-md sm:rounded-lg md:rounded-full hover:bg-blue-50 transition-all duration-300 shadow-md text-base sm:text-lg md:text-xl"
+            className="bg-white text-blue-700 font-semibold py-2 sm:py-2.5 md:py-3 px-5 sm:px-6 md:px-8 rounded-lg sm:rounded-xl md:rounded-full hover:bg-blue-50 transition-all duration-300 shadow-md text-sm sm:text-base md:text-lg lg:text-xl"
           >
             Book a Free Demo
           </button>
         </div>
       </section>
+
 
       {/* Book Demo Modal */}
       <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

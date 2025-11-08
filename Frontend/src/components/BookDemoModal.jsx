@@ -75,7 +75,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
     try {
       const formData = new FormData(studentForm.current);
-      
+
       const res = await fetch(`${API_BASE_URL}/api/student-demo`, {
         method: 'POST',
         body: formData,
@@ -109,7 +109,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
     try {
       const formData = new FormData(tutorForm.current);
-      
+
       const res = await fetch(`${API_BASE_URL}/api/tutor-application`, {
         method: 'POST',
         body: formData,
@@ -256,7 +256,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                 ))}
               </select>
 
-              {/* CHANGE 5: Responsive grid. Was `grid-cols-2`. */}
+              {/* CHANGE 5: Responsive grid. Was grid-cols-2. */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -314,7 +314,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                 Become part of our growing global tutor network.
               </p>
 
-              {/* CHANGE 6: Responsive grid. Was `grid-cols-2`. */}
+              {/* CHANGE 6: Responsive grid. Was grid-cols-2. */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -360,7 +360,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                 )}
               </div>
 
-              {/* CHANGE 7: Responsive grid. Was `grid-cols-2`. */}
+              {/* CHANGE 7: Responsive grid. Was grid-cols-2. */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
