@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from 'r
 import contact from '../assets/contact.jpg';
 import { API_BASE_URL } from "../config";
 
+
 // ============================================================
 // CONTACT INFO ITEM COMPONENT
 // ============================================================
@@ -14,12 +15,12 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-700 hover:text-blue-600 transition-colors break-all font-medium text-sm sm:text-base"
+      className="text-slate-700 hover:text-blue-600 transition-colors break-all font-medium"
     >
       {value}
     </a>
   ) : (
-    <p className="text-slate-700 break-all font-medium text-sm sm:text-base">{value}</p>
+    <p className="text-slate-700 break-all font-medium">{value}</p>
   );
 
   return (
@@ -31,7 +32,7 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
           </div>
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">{title}</h3>
+          <h3 className="text-sm font-bold text-slate-900 mb-1">{title}</h3>
           {content}
         </div>
       </div>
@@ -53,7 +54,7 @@ const Contact = () => {
 
     try {
       const formData = new FormData(form.current);
-      
+
       const res = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         body: formData,
@@ -80,23 +81,34 @@ const Contact = () => {
       {/* HERO SECTION */}
       {/* ============================================================ */}
       
-      <section className="flex items-center justify-center text-center pt-6 pb-16 px-4 sm:px-6 bg-white">
-        <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-20 sm:py-24 md:py-28 px-6 md:px-24">
-          <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-6">
-            <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-sm md:text-md tracking-wide uppercase">
-              Contact Us
-            </span>
+      {/* Hero Section */}
+      <section className="flex items-center justify-center text-center pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-white">
+        <div 
+          className="relative rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-24 md:py-35 px-6 sm:px-12 md:px-24 bg-cover overflow-hidden"
+          style={{
+            backgroundImage: `url(${contact})`,
+            backgroundPosition: 'center 25%',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-800/60"></div>
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-4 sm:mb-6">
+              <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-md tracking-wide uppercase">
+                Contact Us
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-7xl mx-auto font-bold text-white leading-tight mb-4 sm:mb-6 px-2">
+              Start Your <br />
+              <span className="italic text-blue-200">Learning Journey</span> with Us
+            </h1>
+
+            <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto px-4">
+              We are here to help you learn better and grow stronger. Get in touch with us today.
+            </p>
           </div>
-
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl max-w-7xl text-center justify-center mx-auto font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
-            Start Your <br />
-            <span className="italic text-blue-700">Learning Journey</span> with Us
-          </h1>
-
-          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
-            We are here to help you learn better and grow stronger. Get in touch with us today.
-          </p>
         </div>
       </section>
 
@@ -104,23 +116,23 @@ const Contact = () => {
       {/* CONTACT FORM & INFO SECTION */}
       {/* ============================================================ */}
 
-      <section className="py-6 sm:py-8 md:py-12 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch">
-            
+      {/* Main Content Section */}
+      <section className="py-6 sm:py-8 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
             {/* Left: Form */}
-            <div className="w-full flex flex-col">
+            <div className="lg:col-span-1 flex flex-col justify-between">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 sm:mb-8">
                 Send Us a Message
               </h2>
               <form
                 ref={form}
                 onSubmit={sendEmail}
-                className="bg-slate-50 p-4 sm:p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex-1"
+                className="bg-slate-50 p-5 sm:p-6 md:p-8 rounded-xl shadow-sm border border-gray-100"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-                  <div className="sm:col-span-1">
-                    <label htmlFor="user_name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                  <div>
+                    <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
                       Name
                     </label>
                     <input
@@ -129,12 +141,12 @@ const Contact = () => {
                       name="user_name"
                       id="user_name"
                       required
-                      className="block w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                     />
                   </div>
 
-                  <div className="sm:col-span-1">
-                    <label htmlFor="user_email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <div>
+                    <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email
                     </label>
                     <input
@@ -143,12 +155,12 @@ const Contact = () => {
                       name="user_email"
                       id="user_email"
                       required
-                      className="block w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                     />
                   </div>
 
-                  <div className="sm:col-span-2">
-                    <label htmlFor="user_phone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <div className="md:col-span-2">
+                    <label htmlFor="user_phone" className="block text-sm font-medium text-gray-700 mb-1">
                       Phone
                     </label>
                     <input
@@ -156,29 +168,29 @@ const Contact = () => {
                       type="tel"
                       name="user_phone"
                       id="user_phone"
-                      className="block w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                     />
                   </div>
                 </div>
 
                 <div className="mb-4 sm:mb-6">
-                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Message
                   </label>
                   <textarea
                     placeholder="How can we help you?"
                     name="message"
                     id="message"
-                    rows="5"
+                    rows="6"
                     required
-                    className="block w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                    className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                   ></textarea>
                 </div>
 
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto py-2.5 sm:py-3 px-8 sm:px-10 text-sm sm:text-base text-white font-medium rounded-md bg-blue-600 hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                    className="w-full sm:w-auto py-2.5 sm:py-3 px-8 sm:px-10 text-white font-medium rounded-md bg-blue-600 hover:bg-blue-700 transition-colors text-sm sm:text-base"
                   >
                     Send Message
                   </button>
@@ -212,11 +224,11 @@ const Contact = () => {
             </div>
 
             {/* Right: Contact Info */}
-            <div className="w-full flex flex-col">
+            <div className="lg:col-span-1 flex flex-col">
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 sm:mb-8">
                 Get in Touch
               </h2>
-              <div className="p-4 sm:p-6 md:p-8 bg-white rounded-xl border border-gray-100 shadow-sm flex-1">
+              <div className="p-5 sm:p-6 md:p-8 bg-white rounded-xl">
                 <p className="text-slate-600 mb-4 text-sm sm:text-base">
                   We'd love to hear from you. Reach out to us through any of these channels.
                 </p>
@@ -249,7 +261,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="bg-blue-50 hover:bg-blue-600 p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
                       <FaFacebookF className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 group-hover:text-white" />
                     </a>
@@ -258,7 +270,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="bg-blue-50 hover:bg-blue-700 p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
                       <FaLinkedinIn className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 group-hover:text-white" />
                     </a>
@@ -267,7 +279,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="bg-pink-50 hover:bg-pink-600 p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
                       <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 group-hover:text-white" />
                     </a>
@@ -276,7 +288,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp"
-                      className="bg-green-50 hover:bg-green-600 p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
                       <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:text-white" />
                     </a>
@@ -285,7 +297,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="YouTube"
-                      className="bg-red-50 hover:bg-red-600 p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
                     >
                       <FaYoutube className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:text-white" />
                     </a>
