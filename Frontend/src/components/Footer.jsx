@@ -338,7 +338,7 @@ const Footer = ({ onBookDemoClick }) => {
 
             {/* Floating actions: Testimonial and WhatsApp */}
             <div className="fixed right-3 bottom-4 sm:right-4 sm:bottom-6 md:right-6 md:bottom-8 flex flex-col items-end gap-3 sm:gap-4 z-50">
-                {/* Testimonial button */}
+                {/* Testimonial button
                 <button
                     onClick={() => setShowTestimonial(true)}
                     aria-label="Leave a testimonial"
@@ -346,7 +346,7 @@ const Footer = ({ onBookDemoClick }) => {
                 >
                     <FaCommentDots size={16} className="sm:w-4.5 sm:h-4.5 flex-shrink-0" />
                     <span className="hidden sm:inline-block text-xs sm:text-sm font-semibold">Testimonials</span>
-                </button>
+                </button> */}
 
                 {/* WhatsApp button */}
                 <a
@@ -361,7 +361,7 @@ const Footer = ({ onBookDemoClick }) => {
             </div>
 
             {/* Testimonial modal */}
-            {showTestimonial && (
+            {/* {showTestimonial && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
                     <div className="bg-white rounded-xl w-full max-w-md p-4 sm:p-6 shadow-xl">
                         <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -385,7 +385,7 @@ const Footer = ({ onBookDemoClick }) => {
                         </form>
                     </div>
                 </div>
-            )}
+            )} */}
         </footer>
     );
 };
