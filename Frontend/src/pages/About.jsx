@@ -324,6 +324,7 @@ const About = () => {
       {/* Book Demo Modal */}
       <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
+    
   );
 };
 
