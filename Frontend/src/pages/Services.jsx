@@ -320,7 +320,7 @@ const ServicesPage = () => {
       {/* ============================================================ */}
 
       <div className="flex justify-center mt-12 mb-12">
-        <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 border-b border-gray-200">
+        <div className="flex flex-wrap gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 border-b border-gray-200 pl-6 pr-4">
           {categories.map((category) => (
             <button
               key={category}
