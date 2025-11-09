@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BookDemoModal from "../components/BookDemoModal";
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
 
 // ============================================================
@@ -119,25 +120,7 @@ const testimonials = [
   },
 ];
 
-// Mock BookDemoModal component
-const BookDemoModal = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-  
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full">
-        <h3 className="text-2xl font-bold mb-4">Book a Demo</h3>
-        <p className="text-slate-600 mb-6">Get started with a free demo session!</p>
-        <button 
-          onClick={onClose}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  );
-};
+
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -191,7 +174,7 @@ const Home = () => {
                             </div>
                             
                             {/* Floating Card 2: Collaboration - Now visible on mobile */}
-                            <div className="flex absolute top-3/4 sm:top-3/4 right-1 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
+                            <div className="flex absolute top-3/4 sm:top-3/4 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="bg-white/30 p-0.5 sm:p-1 rounded-full">
                                     <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                                 </div>
