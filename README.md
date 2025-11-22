@@ -2,7 +2,10 @@
 
 <div align="center">
 
-![Haven Tutors Logo](https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg)
+<img src="https://img.icons8.com/fluency/96/000000/education.png" alt="Haven Tutors" width="120"/>
+
+<h1>🎓 HAVEN TUTORS</h1>
+<h3>Frontend Application</h3>
 
 ### 🌟 Empowering Students Through Personalized Online Learning 🌟
 
