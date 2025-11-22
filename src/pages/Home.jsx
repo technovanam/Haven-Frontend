@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BookDemoModal from "../components/BookDemoModal";
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
+import { testimonials } from '../data/testimonials';
 
 // ============================================================
 // REUSABLE COMPONENTS
@@ -33,94 +34,22 @@ const StarIcon = () => (
 // ============================================================
 
 const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
-  <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-    <div className="flex items-center mb-4">
-      {[...Array(rating)].map((_, i) => (
-        <StarIcon key={i} />
-      ))}
+    <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div className="flex items-center mb-4">
+            {[...Array(rating)].map((_, i) => (
+                <StarIcon key={i} />
+            ))}
+        </div>
+        <p className="text-slate-600 mb-6 italic text-sm sm:text-base">"{quote}"</p>
+        <div className="flex items-center">
+            <img src={imgSrc} alt={name} className="w-12 h-12 rounded-full mr-4" />
+            <div>
+                <p className="font-bold text-slate-800 text-sm sm:text-base">{name}</p>
+                <p className="text-xs text-slate-500">{role}</p>
+            </div>
+        </div>
     </div>
-    <p className="text-slate-600 mb-6 italic text-sm sm:text-base">"{quote}"</p>
-    <div className="flex items-center">
-      <img src={imgSrc} alt={name} className="w-12 h-12 rounded-full mr-4" />
-      <div>
-        <p className="font-bold text-slate-800 text-sm sm:text-base">{name}</p>
-        <p className="text-xs text-slate-500">{role}</p>
-      </div>
-    </div>
-  </div>
 );
-
-// ============================================================
-// TESTIMONIALS DATA
-// ============================================================
-
-const testimonials = [
-  {
-    quote: "Haven Tutors made ICSE Physics and Chemistry simple and engaging. My concepts finally clicked, and my grades improved drastically!",
-    name: "Aarav Mehta",
-    role: "ICSE Student – Grade 10",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AM",
-    rating: 5,
-  },
-  {
-    quote: "As an IGCSE student, I struggled with balancing Math and Biology, but Haven Tutors' personalized sessions helped me manage both with ease.",
-    name: "Sophia Thomas",
-    role: "IGCSE Student – Grade 9",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=ST",
-    rating: 5,
-  },
-  {
-    quote: "CBSE grammar and vocabulary used to be my weak points. The Spoken English sessions gave me the confidence to communicate clearly.",
-    name: "Rahul Sharma",
-    role: "CBSE Student – Grade 8",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=RS",
-    rating: 4,
-  },
-  {
-    quote: "I loved the A-Level Math and AI coding classes. The tutors made even complex problems easy to follow, and the support was outstanding.",
-    name: "Emily Brown",
-    role: "A-Level Student – UK Curriculum",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=EB",
-    rating: 5,
-  },
-  {
-    quote: "The IB curriculum can be tough, but my Economics and Sociology tutor helped me understand real-world applications. I scored higher than expected.",
-    name: "Daniel Wong",
-    role: "IB Student – Singapore",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=DW",
-    rating: 5,
-  },
-  {
-    quote: "As a State Board student, I appreciated the flexible schedule. My Hindi and Mathematics tutors were patient, friendly, and always prepared.",
-    name: "Keerthi Raj",
-    role: "State & Matriculation – Tamil Nadu",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=KR",
-    rating: 4,
-  },
-  {
-    quote: "The Cambridge English and Social Studies courses were brilliant. My tutor explained every topic in depth and made learning enjoyable.",
-    name: "Olivia Green",
-    role: "Cambridge Student – Grade 7",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=OG",
-    rating: 5,
-  },
-  {
-    quote: "Thanks to Haven Tutors' Canadian curriculum lessons, my child improved drastically in vocabulary and writing structure. Highly recommend!",
-    name: "Anita Patel",
-    role: "Parent – Canadian Curriculum",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AP",
-    rating: 5,
-  },
-  {
-    quote: "I joined for Computer Science and Programming skills. The tutors are skilled, encouraging, and up-to-date with modern coding practices.",
-    name: "Arjun Nair",
-    role: "High School Student – Coding & AI",
-    imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AN",
-    rating: 5,
-  },
-];
-
-
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -141,7 +70,7 @@ const Home = () => {
                             <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-6 sm:mb-8">
                                 Discover the joy of learning with expert tutors who guide you every step of the way. Build confidence, sharpen skills, and unlock your true potential.
                             </p>
-                            <button 
+                            <button
                                 onClick={() => setIsModalOpen(true)}
                                 className="inline-flex items-center space-x-2 bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-slate-800 transition-all duration-300 group text-sm sm:text-base"
                             >
@@ -149,7 +78,7 @@ const Home = () => {
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </button>
                         </div>
-                        
+
                         {/* Right Image and Floating Cards */}
                         <div className="relative mt-8 md:mt-0 flex justify-center">
                             <img
@@ -159,20 +88,20 @@ const Home = () => {
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
                                 loading="lazy"
                             />
-                            
+
                             {/* Floating Card 1: Students - Now visible on mobile */}
                             <div className="flex absolute top-4 sm:top-8 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/4 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="flex -space-x-1.5 sm:-space-x-2 overflow-hidden">
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1"/>
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2"/>
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3"/>
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3" />
                                 </div>
                                 <div className="text-[10px] sm:text-xs">
                                     <p className="font-bold">More than</p>
                                     <p>1K students</p>
                                 </div>
                             </div>
-                            
+
                             {/* Floating Card 2: Collaboration - Now visible on mobile */}
                             <div className="flex absolute top-3/4 sm:top-3/4 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="bg-white/30 p-0.5 sm:p-1 rounded-full">
@@ -180,7 +109,7 @@ const Home = () => {
                                 </div>
                                 <span className="text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap">Best <br /> Collaboration</span>
                             </div>
-                            
+
                             {/* Floating Card 3: Trust Badge - Now visible on mobile */}
                             <div className="flex absolute bottom-8 sm:bottom-12 left-2 sm:left-4 lg:left-20 lg:transform lg:-translate-x-1/4 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="bg-white/30 p-0.5 sm:p-1 rounded-full">
@@ -188,10 +117,10 @@ const Home = () => {
                                 </div>
                                 <span className="text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap">Trusted Worldwide</span>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 {/* Statistics Bar */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 lg:mt-20">
                     <div className="w-full bg-slate-50 rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200 py-6 sm:py-8 lg:py-10 px-4 transition-all duration-300 hover:shadow-md">
@@ -227,7 +156,7 @@ const Home = () => {
             {/* Why Choose Haven Tutors Section */}
             <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto bg-slate-50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-                    
+
                     {/* Left Column: Image with floating cards */}
                     <div className="relative flex justify-center w-full lg:w-1/2">
                         <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
@@ -243,7 +172,7 @@ const Home = () => {
                                 <div className="flex items-center gap-2">
                                     <div className="flex gap-0.5 sm:gap-1">
                                         {[...Array(5)].map((_, i) => (
-                                            <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
                                         ))}
                                     </div>
                                     <div className="text-xs whitespace-nowrap">
@@ -286,7 +215,7 @@ const Home = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-base sm:text-lg font-semibold text-slate-800">
-                                        One-on-One Tutoring   
+                                        One-on-One Tutoring
                                     </h4>
                                     <p className="text-slate-600 text-xs sm:text-sm">
                                         Individualized lessons focused on each student's goals and pace.
