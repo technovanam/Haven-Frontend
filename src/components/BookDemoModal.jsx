@@ -48,16 +48,16 @@ const BookDemoModal = ({ isOpen, onClose }) => {
   const Alert = ({ type = 'info', children }) => {
     const base = 'w-full rounded-md px-4 py-3 flex items-start gap-3';
     const variants = {
-      info: 'bg-blue-50 text-blue-700 border border-blue-100',
+      info: 'bg-[#e8b112]/10 text-[#0a2d4a] border border-[#e8b112]/30',
       success: 'bg-green-50 text-green-700 border border-green-100',
       error: 'bg-red-50 text-red-700 border border-red-100',
     };
     return (
       <div role="status" aria-live="polite" className={`${base} ${variants[type]}`}>
         <div className="flex-shrink-0 mt-0.5">
-          {type === 'success' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/></svg>}
-          {type === 'error' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/></svg>}
-          {type === 'info' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/></svg>}
+          {type === 'success' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>}
+          {type === 'error' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>}
+          {type === 'info' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" /></svg>}
         </div>
         <div className="text-sm">{children}</div>
       </div>
@@ -135,9 +135,9 @@ const BookDemoModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const formInputStyle =
-    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500";
+    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112]";
   const formSelectStyle =
-    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-600";
+    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112] text-gray-600";
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-sm bg-white/30 p-4">
@@ -163,11 +163,10 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`py-3 px-1 text-base sm:text-lg font-semibold transition-colors duration-200 ${
-                    activeTab === tab
-                      ? "text-blue-600 border-b-2 border-blue-600"
-                      : "text-gray-500 hover:text-blue-600"
-                  }`}
+                  className={`py-3 px-1 text-base sm:text-lg font-semibold transition-colors duration-200 ${activeTab === tab
+                      ? "text-[#e8b112] border-b-2 border-[#e8b112]"
+                      : "text-gray-500 hover:text-[#e8b112]"
+                    }`}
                 >
                   {tab}
                 </button>
@@ -229,7 +228,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                   enableSearch={true}
                   searchPlaceholder="Search country..."
                   containerClass="w-full"
-                  inputClass="!w-full !h-[48px] !px-4 !py-3 !pl-12 !text-base !text-gray-700 !border !border-gray-300 !rounded-lg focus:!outline-none focus:!ring-2 focus:!ring-blue-500 focus:!border-transparent"
+                  inputClass="!w-full !h-[48px] !px-4 !py-3 !pl-12 !text-base !text-gray-700 !border !border-gray-300 !rounded-lg focus:!outline-none focus:!ring-2 focus:!ring-[#e8b112] focus:!border-[#e8b112]"
                   buttonClass="!h-[48px] !border !border-gray-300 !rounded-l-lg !bg-gray-50 hover:!bg-gray-100 !transition"
                   dropdownClass="!border-gray-200 !shadow-lg !rounded-lg"
                 />
@@ -286,7 +285,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
               <button
                 type="submit"
-                className="w-full py-3 px-6 text-base font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                className="w-full py-3 px-6 text-base font-bold rounded-lg text-[#0a2d4a] bg-[#e8b112] hover:bg-[#d4a010] transition-colors shadow-md"
               >
                 Book My Free Demo
               </button>
@@ -351,7 +350,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                   enableSearch={true}
                   searchPlaceholder="Search country..."
                   containerClass="w-full"
-                  inputClass="!w-full !h-[48px] !px-4 !py-3 !pl-12 !text-base !text-gray-700 !border !border-gray-300 !rounded-lg focus:!outline-none focus:!ring-2 focus:!ring-blue-500 focus:!border-transparent"
+                  inputClass="!w-full !h-[48px] !px-4 !py-3 !pl-12 !text-base !text-gray-700 !border !border-gray-300 !rounded-lg focus:!outline-none focus:!ring-2 focus:!ring-[#e8b112] focus:!border-[#e8b112]"
                   buttonClass="!h-[48px] !border !border-gray-300 !rounded-l-lg !bg-gray-50 hover:!bg-gray-100 !transition"
                   dropdownClass="!border-gray-200 !shadow-lg !rounded-lg"
                 />
@@ -401,8 +400,8 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                   accept=".pdf,.doc,.docx"
                   required
                   className="w-full text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-full 
-                            file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 
-                            hover:file:bg-blue-100"
+                            file:border-0 file:font-semibold file:bg-[#e8b112]/20 file:text-[#0a2d4a] 
+                            hover:file:bg-[#e8b112]/30"
                 />
               </div>
 
@@ -425,7 +424,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
               <button
                 type="submit"
-                className="w-full py-3 px-6 text-base font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                className="w-full py-3 px-6 text-base font-bold rounded-lg text-[#0a2d4a] bg-[#e8b112] hover:bg-[#d4a010] transition-colors shadow-md"
               >
                 Submit Tutor Application
               </button>

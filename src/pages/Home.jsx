@@ -10,7 +10,7 @@ import { testimonials } from '../data/testimonials';
 const FeatureListItem = ({ title, description }) => (
     <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
-            <svg className="w-6 h-6 text-white bg-blue-500 rounded-full p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+            <svg className="w-6 h-6 text-white bg-[#e8b112] rounded-full p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
         </div>
         <div>
             <h3 className="text-lg font-semibold text-slate-800">{title}</h3>
@@ -72,7 +72,7 @@ const Home = () => {
                             </p>
                             <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="inline-flex items-center space-x-2 bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-slate-800 transition-all duration-300 group text-sm sm:text-base"
+                                className="inline-flex items-center space-x-2 bg-[#e8b112] text-[#0a2d4a] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-[#d4a010] transition-all duration-300 group text-sm sm:text-base"
                             >
                                 <span>GET STARTED</span>
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -90,11 +90,11 @@ const Home = () => {
                             />
 
                             {/* Floating Card 1: Students - Now visible on mobile */}
-                            <div className="flex absolute top-4 sm:top-8 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/4 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
+                            <div className="flex absolute top-4 sm:top-8 right-2 sm:right-4 lg:right-10 lg:transform lg:translate-x-1/4 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="flex -space-x-1.5 sm:-space-x-2 overflow-hidden">
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 rounded-full ring-1 sm:ring-2 ring-blue-400" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3" />
                                 </div>
                                 <div className="text-[10px] sm:text-xs">
                                     <p className="font-bold">More than</p>
@@ -103,17 +103,17 @@ const Home = () => {
                             </div>
 
                             {/* Floating Card 2: Collaboration - Now visible on mobile */}
-                            <div className="flex absolute top-3/4 sm:top-3/4 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
-                                <div className="bg-white/30 p-0.5 sm:p-1 rounded-full">
-                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            <div className="flex absolute top-3/4 sm:top-3/4 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
+                                <div className="bg-[#e8b112]/30 p-0.5 sm:p-1 rounded-full">
+                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="#e8b112"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                                 </div>
-                                <span className="text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap">Best <br /> Collaboration</span>
+                                <span className="text-[10px] sm:text-xs md:text-sm font-bold whitespace-nowrap">Best <br /> Collaboration</span>
                             </div>
 
                             {/* Floating Card 3: Trust Badge - Now visible on mobile */}
-                            <div className="flex absolute bottom-8 sm:bottom-12 left-2 sm:left-4 lg:left-20 lg:transform lg:-translate-x-1/4 bg-blue-500 text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
-                                <div className="bg-white/30 p-0.5 sm:p-1 rounded-full">
-                                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                            <div className="flex absolute bottom-8 sm:bottom-12 left-2 sm:left-4 lg:left-20 lg:transform lg:-translate-x-1/4 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
+                                <div className="bg-[#e8b112]/30 p-0.5 sm:p-1 rounded-full">
+                                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#e8b112]" />
                                 </div>
                                 <span className="text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap">Trusted Worldwide</span>
                             </div>
@@ -127,25 +127,25 @@ const Home = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
                             {/* Stat 1 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">100%</h3>
+                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">100%</h3>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Parent Satisfaction</p>
                             </div>
 
                             {/* Stat 2 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">1K+</h3>
+                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">1K+</h3>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Students Mentored</p>
                             </div>
 
                             {/* Stat 3 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">12+</h3>
+                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">12+</h3>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Learning Boards Covered</p>
                             </div>
 
                             {/* Stat 4 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">24/7</h3>
+                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">24/7</h3>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Support & Guidance</p>
                             </div>
                         </div>
@@ -168,11 +168,11 @@ const Home = () => {
                             />
 
                             {/* Floating Card: Parent Satisfaction - Responsive positioning */}
-                            <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-left-20 bg-blue-500 text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20">
+                            <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-left-20 bg-[#0a2d4a] text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20">
                                 <div className="flex items-center gap-2">
                                     <div className="flex gap-0.5 sm:gap-1">
                                         {[...Array(5)].map((_, i) => (
-                                            <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
+                                            <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-[#e8b112] fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" /></svg>
                                         ))}
                                     </div>
                                     <div className="text-xs whitespace-nowrap">
@@ -184,18 +184,18 @@ const Home = () => {
                             </div>
 
                             {/* Floating Card: Personalized Learning - Responsive positioning */}
-                            <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-blue-500 text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
-                                <div className="bg-white/30 p-1 sm:p-1.5 rounded-full">
-                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-[#0a2d4a] text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
+                                <div className="bg-[#e8b112]/30 p-1 sm:p-1.5 rounded-full">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b112]    " fill="none" viewBox="0 0 24 24" stroke="#e8b112"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                                 </div>
-                                <span className="text-xs sm:text-sm font-semibold whitespace-nowrap">Personalized Learning</span>
+                                <span className="text-xs sm:text-sm font-bold whitespace-nowrap">Personalized Learning</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Right Column: Haven Tutors Content */}
                     <div className="w-full lg:w-1/2 text-left">
-                        <p className="text-xs sm:text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
+                        <p className="text-xs sm:text-sm font-semibold text-[#e8b112] uppercase tracking-wide mb-2">
                             Why Choose Haven Tutors
                         </p>
 
@@ -210,7 +210,7 @@ const Home = () => {
                         {/* Features List */}
                         <div className="divide-y divide-gray-300">
                             <div className="flex items-start gap-3 py-3">
-                                <div className="bg-blue-100 text-blue-600 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm">
+                                <div className="bg-[#e8b112]/20 text-[#0a2d4a] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm font-bold">
                                     ✓
                                 </div>
                                 <div>
@@ -224,7 +224,7 @@ const Home = () => {
                             </div>
 
                             <div className="flex items-start gap-3 py-4 sm:py-5">
-                                <div className="bg-blue-100 text-blue-600 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm">
+                                <div className="bg-[#e8b112]/20 text-[#0a2d4a] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm font-bold">
                                     ✓
                                 </div>
                                 <div>
@@ -238,7 +238,7 @@ const Home = () => {
                             </div>
 
                             <div className="flex items-start gap-3 py-4 sm:py-5">
-                                <div className="bg-blue-100 text-blue-600 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm">
+                                <div className="bg-[#e8b112]/20 text-[#0a2d4a] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm font-bold">
                                     ✓
                                 </div>
                                 <div>
@@ -252,7 +252,7 @@ const Home = () => {
                             </div>
 
                             <div className="flex items-start gap-3 py-4 sm:py-5">
-                                <div className="bg-blue-100 text-blue-600 rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm">
+                                <div className="bg-[#e8b112]/20 text-[#0a2d4a] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0 text-xs sm:text-sm font-bold">
                                     ✓
                                 </div>
                                 <div>
@@ -272,8 +272,8 @@ const Home = () => {
             {/* Testimonials Section */}
             <section className="py-12 sm:py-16 lg:py-20 bg-white px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl text-center">
-                    <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-4 py-2 rounded-full shadow-sm border border-blue-100 mb-6">
-                        <MessageSquareQuote className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <div className="inline-flex items-center gap-2 bg-white text-[#0a2d4a] font-semibold px-4 py-2 rounded-full shadow-sm border border-[#e8b112] mb-6">
+                        <MessageSquareQuote className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b112]" />
                         <span className="text-xs sm:text-sm tracking-wide uppercase">Our Testimonials</span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
@@ -307,7 +307,7 @@ const Home = () => {
                                     }
                                 }, 150);
                             }}
-                            className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all duration-300 shadow-md text-sm sm:text-base"
+                            className="px-6 py-3 rounded-full bg-[#e8b112] text-[#0a2d4a] font-bold hover:bg-[#d4a010] transition-all duration-300 shadow-md text-sm sm:text-base"
                         >
                             {showAll ? "See Less" : "See More"}
                         </button>

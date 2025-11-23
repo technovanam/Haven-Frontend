@@ -15,7 +15,7 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-700 hover:text-blue-600 transition-colors break-all font-medium"
+      className="text-slate-700 hover:text-[#e8b112] transition-colors break-all font-medium"
     >
       {value}
     </a>
@@ -24,10 +24,10 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
   );
 
   return (
-    <div className="group hover:bg-blue-50 p-3 sm:p-4 rounded-xl transition-all duration-300 cursor-pointer">
+    <div className="group hover:bg-[#e8b112]/10 p-3 sm:p-4 rounded-xl transition-all duration-300 cursor-pointer">
       <div className="flex items-start gap-3 sm:gap-4">
         <div className="flex-shrink-0">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#e8b112] to-[#d4a010] text-white rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
             {icon}
           </div>
         </div>
@@ -76,25 +76,25 @@ const Contact = () => {
 
   return (
     <div className="bg-white">
-      
+
       {/* ============================================================ */}
       {/* HERO SECTION */}
       {/* ============================================================ */}
-      
+
       {/* Hero Section */}
       <section className="flex items-center justify-center text-center pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-white">
-        <div 
+        <div
           className="relative rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-24 md:py-35 px-6 sm:px-12 md:px-24 bg-cover overflow-hidden"
           style={{
             backgroundImage: `url(${contact})`,
             backgroundPosition: 'center 25%',
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-blue-800/60"></div>
-          
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a2d4a]/80 to-[#0a2d4a]/70"></div>
+
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm border border-blue-100 mb-4 sm:mb-6">
-              <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="inline-flex items-center gap-2 bg-white text-[#0a2d4a] font-semibold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm border border-[#e8b112] mb-4 sm:mb-6">
+              <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b112]" />
               <span className="text-xs sm:text-md tracking-wide uppercase">
                 Contact Us
               </span>
@@ -102,7 +102,7 @@ const Contact = () => {
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-7xl mx-auto font-bold text-white leading-tight mb-4 sm:mb-6 px-2">
               Start Your <br />
-              <span className="italic text-blue-200">Learning Journey</span> with Us
+              <span className="italic text-[#e8b112]">Learning Journey</span> with Us
             </h1>
 
             <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto px-4">
@@ -141,7 +141,7 @@ const Contact = () => {
                       name="user_name"
                       id="user_name"
                       required
-                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112] text-sm sm:text-base"
                     />
                   </div>
 
@@ -155,7 +155,7 @@ const Contact = () => {
                       name="user_email"
                       id="user_email"
                       required
-                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112] text-sm sm:text-base"
                     />
                   </div>
 
@@ -168,7 +168,7 @@ const Contact = () => {
                       type="tel"
                       name="user_phone"
                       id="user_phone"
-                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+                      className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112] text-sm sm:text-base"
                     />
                   </div>
                 </div>
@@ -183,25 +183,24 @@ const Contact = () => {
                     id="message"
                     rows="6"
                     required
-                    className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+                    className="block w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#e8b112] focus:border-[#e8b112] text-sm sm:text-base"
                   ></textarea>
                 </div>
 
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto py-2.5 sm:py-3 px-8 sm:px-10 text-white font-medium rounded-md bg-blue-600 hover:bg-blue-700 transition-colors text-sm sm:text-base"
+                    className="w-full sm:w-auto py-2.5 sm:py-3 px-8 sm:px-10 text-[#0a2d4a] font-bold rounded-md bg-[#e8b112] hover:bg-[#d4a010] transition-colors text-sm sm:text-base shadow-md"
                   >
                     Send Message
                   </button>
                 </div>
 
                 {formStatus && (
-                  <div className={`mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg flex items-center justify-center gap-2 ${
-                    formStatus.includes('successfully') 
-                      ? 'bg-green-50 border border-green-200' 
+                  <div className={`mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg flex items-center justify-center gap-2 ${formStatus.includes('successfully')
+                      ? 'bg-green-50 border border-green-200'
                       : 'bg-red-50 border border-red-200'
-                  }`}>
+                    }`}>
                     {formStatus.includes('successfully') ? (
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -211,11 +210,10 @@ const Contact = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     )}
-                    <p className={`text-xs sm:text-sm font-semibold ${
-                      formStatus.includes('successfully') 
-                        ? 'text-green-800' 
+                    <p className={`text-xs sm:text-sm font-semibold ${formStatus.includes('successfully')
+                        ? 'text-green-800'
                         : 'text-red-800'
-                    }`}>
+                      }`}>
                       {formStatus}
                     </p>
                   </div>
@@ -261,7 +259,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-600 transition-all duration-300 group hover:scale-105"
                     >
                       <FaFacebookF className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 group-hover:text-white" />
                     </a>
@@ -270,7 +268,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300 group hover:scale-105"
                     >
                       <FaLinkedinIn className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 group-hover:text-white" />
                     </a>
@@ -279,7 +277,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-pink-600 transition-all duration-300 group hover:scale-105"
                     >
                       <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 group-hover:text-white" />
                     </a>
@@ -288,7 +286,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-green-600 transition-all duration-300 group hover:scale-105"
                     >
                       <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:text-white" />
                     </a>
@@ -297,7 +295,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="YouTube"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group hover:scale-105"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-red-600 transition-all duration-300 group hover:scale-105"
                     >
                       <FaYoutube className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:text-white" />
                     </a>
