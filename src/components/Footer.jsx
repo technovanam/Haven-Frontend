@@ -16,14 +16,21 @@ import { Phone, Mail } from 'lucide-react';
 // - Social media links (Facebook, LinkedIn, Instagram, WhatsApp, YouTube)
 // - Copyright information
 // - Floating WhatsApp button for quick contact
+// Color Scheme: #0a2d4a (Navy Blue) and #e8b112 (Golden Yellow)
 // ============================================================
 
 const Footer = ({ onBookDemoClick }) => {
 
     return (
-        <footer className="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-700">
+        <footer className="bg-gradient-to-br from-[#0a2d4a] via-[#0d3a5c] to-[#0a2d4a] text-slate-200 relative overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#e8b112] rounded-full filter blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#e8b112] rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+            </div>
+
             {/* Main footer container with responsive padding */}
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative z-10">
 
                 {/* Footer grid layout - 5 columns on large screens, responsive on smaller devices */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-8 justify-items-center lg:justify-items-start text-center lg:text-left">
@@ -36,7 +43,7 @@ const Footer = ({ onBookDemoClick }) => {
                         <img
                             src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                             alt="Haven Tutors Logo"
-                            className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0"
+                            className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0 brightness-110 hover:brightness-125 transition-all duration-300"
                             loading="lazy"
                         />
 
@@ -44,46 +51,46 @@ const Footer = ({ onBookDemoClick }) => {
                         <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm mb-4 sm:mb-6">
                             {/* Phone Number */}
                             <div className="flex items-center gap-2 sm:gap-3 group justify-center lg:justify-start">
-                                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
-                                    <Phone size={12} className="sm:w-3.5 sm:h-3.5 text-blue-600 group-hover:text-white" />
+                                <div className="bg-[#0a2d4a]/50 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg group-hover:bg-[#e8b112] transition-all duration-300 border border-[#e8b112]/30 group-hover:border-[#e8b112]">
+                                    <Phone size={12} className="sm:w-3.5 sm:h-3.5 text-[#e8b112] group-hover:text-[#0a2d4a] transition-colors" />
                                 </div>
-                                <span className="text-slate-700 font-medium text-xs sm:text-sm">+91 9606840892</span>
+                                <span className="text-slate-200 font-medium text-xs sm:text-sm group-hover:text-[#e8b112] transition-colors">+91 9606840892</span>
                             </div>
 
                             {/* Email Address */}
                             <div className="flex items-center gap-2 sm:gap-3 group justify-center lg:justify-start">
-                                <div className="bg-blue-100 p-1.5 sm:p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
-                                    <Mail size={12} className="sm:w-3.5 sm:h-3.5 text-blue-600 group-hover:text-white" />
+                                <div className="bg-[#0a2d4a]/50 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg group-hover:bg-[#e8b112] transition-all duration-300 border border-[#e8b112]/30 group-hover:border-[#e8b112]">
+                                    <Mail size={12} className="sm:w-3.5 sm:h-3.5 text-[#e8b112] group-hover:text-[#0a2d4a] transition-colors" />
                                 </div>
-                                <span className="text-slate-700 font-medium text-xs sm:text-sm">info@haventutor.com</span>
+                                <span className="text-slate-200 font-medium text-xs sm:text-sm group-hover:text-[#e8b112] transition-colors">info@haventutor.com</span>
                             </div>
                         </div>
 
                         {/* Social Media Links */}
                         <div className="mt-4 sm:mt-6">
-                            <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-3 sm:mb-5 relative inline-block pb-1">
+                            <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                                 Follow Us
-                                <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-blue-600 rounded-full"></span>
+                                <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                             </h3>
                             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start">
                                 {/* Facebook */}
-                                <a href="https://www.facebook.com/haventutors" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-white hover:bg-blue-600 text-blue-600 hover:text-white p-2 sm:p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.facebook.com/haventutors" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* LinkedIn */}
-                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="bg-white hover:bg-blue-700 text-blue-700 hover:text-white p-2 sm:p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaLinkedinIn size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* Instagram */}
-                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-white hover:bg-pink-600 text-pink-600 hover:text-white p-2 sm:p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaInstagram size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* WhatsApp */}
-                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-white hover:bg-green-500 text-green-600 hover:text-white p-2 sm:p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaWhatsapp size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* YouTube */}
-                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-white hover:bg-red-600 text-red-600 hover:text-white p-2 sm:p-2.5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-110">
+                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaYoutube size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                             </div>
@@ -94,28 +101,28 @@ const Footer = ({ onBookDemoClick }) => {
                     {/* Column 2: Quick Navigation Links */}
                     {/* ============================================================ */}
                     <div className="w-full">
-                        <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-3 sm:mb-5 relative inline-block pb-1">
+                        <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Quick Links
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-blue-600 rounded-full"></span>
+                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             <li>
-                                <Link to="/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/about" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Services
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/contact" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Contact
                                 </Link>
                             </li>
@@ -123,7 +130,7 @@ const Footer = ({ onBookDemoClick }) => {
                                 {/* Button to open demo booking modal */}
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Book a Free Demo
                                 </button>
@@ -135,16 +142,16 @@ const Footer = ({ onBookDemoClick }) => {
                     {/* Column 3: Subject Categories */}
                     {/* ============================================================ */}
                     <div className="w-full">
-                        <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-3 sm:mb-5 relative inline-block pb-1">
+                        <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Subjects
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-blue-600 rounded-full"></span>
+                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Each subject button opens the demo booking modal */}
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     English & Grammar
                                 </button>
@@ -152,7 +159,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Mathematics
                                 </button>
@@ -160,7 +167,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Physics
                                 </button>
@@ -168,7 +175,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Chemistry
                                 </button>
@@ -176,7 +183,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Biology
                                 </button>
@@ -184,7 +191,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Computer Science
                                 </button>
@@ -192,7 +199,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Social Studies
                                 </button>
@@ -204,44 +211,44 @@ const Footer = ({ onBookDemoClick }) => {
                     {/* Column 4: Service Offerings */}
                     {/* ============================================================ */}
                     <div className="w-full">
-                        <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-3 sm:mb-5 relative inline-block pb-1">
+                        <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Services
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-blue-600 rounded-full"></span>
+                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Links to services page for detailed information */}
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     One-on-One Tutoring
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Group Classes
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Homework Help
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Exam Preparation
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Doubt Clearing
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Personalized Learning
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300">
+                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Interactive Classes
                                 </Link>
                             </li>
@@ -252,16 +259,16 @@ const Footer = ({ onBookDemoClick }) => {
                     {/* Column 5: Curriculum/Board Options */}
                     {/* ============================================================ */}
                     <div className="w-full">
-                        <h3 className="font-bold text-base sm:text-lg text-slate-900 mb-3 sm:mb-5 relative inline-block pb-1">
+                        <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Curriculum
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-blue-600 rounded-full"></span>
+                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Each curriculum button opens the demo booking modal */}
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     CBSE
                                 </button>
@@ -269,7 +276,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     ICSE
                                 </button>
@@ -277,7 +284,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     IGCSE
                                 </button>
@@ -285,7 +292,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     State Board
                                 </button>
@@ -293,7 +300,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     IB
                                 </button>
@@ -301,7 +308,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     A-Level
                                 </button>
@@ -309,7 +316,7 @@ const Footer = ({ onBookDemoClick }) => {
                             <li>
                                 <button
                                     onClick={onBookDemoClick}
-                                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-600 inline-block transition-all duration-300"
+                                    className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1"
                                 >
                                     Cambridge
                                 </button>
@@ -322,11 +329,21 @@ const Footer = ({ onBookDemoClick }) => {
             {/* ============================================================ */}
             {/* Copyright Section */}
             {/* ============================================================ */}
-            <div className="border-t border-slate-200">
+            <div className="border-t border-[#e8b112]/30 backdrop-blur-sm relative z-10">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-center">
-                    <p className="text-xs sm:text-sm text-slate-600">
-                        Copyright © 2025 <span className="text-blue-600 font-semibold">Haven Tutors</span> | All Rights Reserved
-                    </p>
+                    <p className="text-xs sm:text-sm text-slate-300">
+  Copyright © 2025{" "}
+  <a
+    href="https://www.haventutor.com"
+    target="_self"
+    rel="noopener noreferrer"
+    className="text-[#e8b112] font-semibold hover:underline"
+  >
+    Haven Tutors
+  </a>{" "}
+  | All Rights Reserved
+</p>
+
                 </div>
             </div>
 
@@ -339,7 +356,7 @@ const Footer = ({ onBookDemoClick }) => {
                     href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-br from-green-500 to-green-600 text-white p-3 sm:p-3.5 rounded-full shadow-2xl hover:from-green-600 hover:to-green-700 transform transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-green-200"
+                    className="bg-gradient-to-br from-green-500 to-green-600 text-white p-3 sm:p-3.5 rounded-full shadow-2xl hover:from-green-600 hover:to-green-600 transform transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-green-500"
                     aria-label="Chat on WhatsApp"
                 >
                     <FaWhatsapp size={20} className="sm:w-5.5 sm:h-5.5" />

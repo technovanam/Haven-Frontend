@@ -29,16 +29,16 @@
     <td align="center"><b>📚 Services</b></td>
   </tr>
   <tr>
-    <td><img src="https://via.placeholder.com/400x250/0a2d4a/e8b112?text=Home+Page" alt="Home Page" width="400"/></td>
-    <td><img src="https://via.placeholder.com/400x250/0a2d4a/e8b112?text=Services+Page" alt="Services" width="400"/></td>
+    <td><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop&q=80" alt="Students Learning Online" width="400"/></td>
+    <td><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop&q=80" alt="Group Study Session" width="400"/></td>
   </tr>
   <tr>
     <td align="center"><b>ℹ️ About Us</b></td>
     <td align="center"><b>📞 Contact</b></td>
   </tr>
   <tr>
-    <td><img src="https://via.placeholder.com/400x250/0a2d4a/e8b112?text=About+Page" alt="About" width="400"/></td>
-    <td><img src="https://via.placeholder.com/400x250/0a2d4a/e8b112?text=Contact+Page" alt="Contact" width="400"/></td>
+    <td><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&h=500&fit=crop&q=80" alt="Students in Classroom" width="400"/></td>
+    <td><img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=800&h=500&fit=crop&q=80" alt="Online Learning" width="400"/></td>
   </tr>
 </table>
 
