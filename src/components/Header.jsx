@@ -7,13 +7,13 @@ const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinkClasses = ({ isActive }) =>
-    `transition-colors duration-300 whitespace-nowrap ${isActive
+    `transition-colors duration-300 whitespace-nowrap text-base md:text-lg ${isActive
       ? "text-[#e8b112] font-semibold"
       : "text-slate-600 hover:text-[#e8b112]"
     }`;
 
   const mobileNavLinkClasses = ({ isActive }) =>
-    `text-lg whitespace-nowrap ${isActive
+    `text-xl whitespace-nowrap ${isActive
       ? "text-[#e8b112] font-semibold"
       : "text-slate-600 hover:text-[#e8b112]"
     }`;
@@ -35,7 +35,7 @@ const Header = () => {
               <img
                 src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"
-                className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                 loading="eager"
               />
             </Link>
@@ -71,7 +71,7 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-end flex-shrink-0">
             <button
               onClick={openDemoModal}
-              className="inline-flex items-center px-4 lg:px-5 py-2 rounded-full bg-[#e8b112] text-[#0a2d4a] text-sm lg:text-base font-semibold hover:bg-[#d4a010] transition whitespace-nowrap"
+              className="inline-flex items-center px-4 lg:px-5 py-2 rounded-full bg-[#e8b112] text-[#0a2d4a] text-base lg:text-lg font-semibold hover:bg-[#d4a010] transition whitespace-nowrap"
             >
               <span>Book a demo</span>
               <svg
