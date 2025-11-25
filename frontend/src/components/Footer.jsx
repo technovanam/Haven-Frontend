@@ -105,22 +105,22 @@ const Footer = ({ onBookDemoClick }) => {
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             <li>
-                                <Link to="/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/about" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Services
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/contact" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Contact
                                 </Link>
                             </li>
@@ -216,37 +216,37 @@ const Footer = ({ onBookDemoClick }) => {
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Links to services page for detailed information */}
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     One-on-One Tutoring
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Group Classes
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Homework Help
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Exam Preparation
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Doubt Clearing
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Personalized Learning
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/services" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
+                                <Link to="/services" className="text-xs sm:text-sm text-slate-300 hover:text-[#e8b112] inline-block transition-all duration-300 hover:translate-x-1">
                                     Interactive Classes
                                 </Link>
                             </li>
