@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BookDemoModal from "../components/BookDemoModal";
+const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 
@@ -86,7 +86,9 @@ const Home = () => {
                                 alt="A smiling student wearing glasses and a plaid shirt"
                                 className="relative rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md h-auto z-10 object-cover"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
-                                loading="lazy"
+                                width="500"
+                                height="600"
+                                fetchPriority="high"
                             />
 
                             {/* Floating Card 1: Students - Now visible on mobile */}
@@ -161,10 +163,13 @@ const Home = () => {
                     <div className="relative flex justify-center w-full lg:w-1/2">
                         <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
                             <img
-                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=2000&q=100"
+                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80"
                                 alt="Student learning online with tutor"
                                 className="relative w-full object-cover h-[400px] sm:h-[450px] lg:h-[500px] z-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
+                                width="500"
+                                height="600"
+                                loading="lazy"
                             />
 
                             {/* Floating Card: Parent Satisfaction - Responsive positioning */}
@@ -316,7 +321,11 @@ const Home = () => {
             </section>
 
             {/* Book Demo Modal */}
-            <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            {isModalOpen && (
+                <React.Suspense fallback={null}>
+                    <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                </React.Suspense>
+            )}
         </div>
     );
 };
