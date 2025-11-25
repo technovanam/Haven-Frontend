@@ -129,25 +129,25 @@ const Home = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
                             {/* Stat 1 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">100%</div>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">100%</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Parent Satisfaction</p>
                             </div>
 
                             {/* Stat 2 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">1K+</div>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">1K+</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Students Mentored</p>
                             </div>
 
                             {/* Stat 3 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">12+</div>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">12+</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Learning Boards Covered</p>
                             </div>
 
                             {/* Stat 4 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">24/7</div>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">24/7</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Support & Guidance</p>
                             </div>
                         </div>

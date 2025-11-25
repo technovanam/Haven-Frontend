@@ -15,7 +15,7 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-700 hover:text-[#b38600] transition-colors break-all font-medium"
+      className="text-slate-700 hover:text-[#e8b112] transition-colors break-all font-medium"
     >
       {value}
     </a>
