@@ -8,13 +8,13 @@ const Header = () => {
 
   const navLinkClasses = ({ isActive }) =>
     `transition-colors duration-300 whitespace-nowrap text-base md:text-lg ${isActive
-      ? "text-[#b38600] font-semibold"
+      ? "text-[#e8b112] font-semibold"
       : "text-slate-600 hover:text-[#e8b112]"
     }`;
 
   const mobileNavLinkClasses = ({ isActive }) =>
     `text-xl whitespace-nowrap ${isActive
-      ? "text-[#b38600] font-semibold"
+      ? "text-[#e8b112] font-semibold"
       : "text-slate-600 hover:text-[#e8b112]"
     }`;
 
