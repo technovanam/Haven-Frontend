@@ -31,7 +31,12 @@ const Header = () => {
 
           {/* Left: Logo */}
           <div className="flex-shrink-0 min-w-0">
-            <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
+            <Link
+              to="/"
+              className="flex items-center space-x-2"
+              onClick={closeMenu}
+              aria-label="Haven Tutors Home"
+            >
               <img
                 src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_200/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"

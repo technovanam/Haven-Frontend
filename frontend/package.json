@@ -35,13 +35,13 @@
   "main": "vite.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/technovanam/Haven.git"
+    "url": "git+https://github.com/technovanam/haventutor.com.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/technovanam/Haven/issues"
+    "url": "https://github.com/technovanam/haventutor.com/issues"
   },
-  "homepage": "https://github.com/technovanam/Haven#readme"
+  "homepage": "https://github.com/technovanam/haventutor.com#readme"
 }
