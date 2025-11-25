@@ -22,7 +22,7 @@ const About = () => {
 
           <h1 className="text-2xl sm:text-3xl md:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
             Empowering Students Through <br />
-            <span className="italic text-[#e8b112]">Personalized Learning</span>
+            <span className="italic text-[#b38600]">Personalized Learning</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 sm:mt-10">
               {/* Stat 1 */}
               <div className="flex-1 bg-white border-2 border-[#e8b112]/30 rounded-xl sm:rounded-2xl shadow-md p-4 sm:p-6 text-left hover:shadow-lg hover:border-[#e8b112] transition-all duration-300">
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#e8b112]">1K+</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#b38600]">1K+</h3>
                 <p className="text-slate-600 text-xs sm:text-sm mt-2">
                   Students guided toward success.
                 </p>
@@ -63,7 +63,7 @@ const About = () => {
 
               {/* Stat 2 */}
               <div className="flex-1 bg-white border-2 border-[#e8b112]/30 rounded-xl sm:rounded-2xl shadow-md p-4 sm:p-6 text-left hover:shadow-lg hover:border-[#e8b112] transition-all duration-300">
-                <h3 className="text-3xl sm:text-4xl font-bold text-[#e8b112]">90%</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold text-[#b38600]">90%</h3>
                 <p className="text-slate-600 text-xs sm:text-sm mt-2">
                   Improved confidence and understanding.
                 </p>
@@ -233,7 +233,7 @@ const About = () => {
 
           {/* RIGHT SIDE - CONTENT */}
           <div className="text-left order-1 md:order-2">
-            <h3 className="text-xl sm:text-2xl font-bold text-[#e8b112] mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#b38600] mb-3 sm:mb-4">
               Empowering Minds Through Personalized and Interactive Learning
             </h3>
             <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
