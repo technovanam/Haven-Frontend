@@ -264,15 +264,6 @@ const Contact = () => {
                       <FaFacebookF className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/haven-tutors-5b89b638b"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300 group hover:scale-105"
-                    >
-                      <FaLinkedinIn className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 group-hover:text-white" />
-                    </a>
-                    <a
                       href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA=="
                       target="_blank"
                       rel="noopener noreferrer"
