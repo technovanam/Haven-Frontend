@@ -79,10 +79,6 @@ const Footer = ({ onBookDemoClick }) => {
                                 <a href="https://www.facebook.com/haventutors" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={14} className="sm:w-4 sm:h-4" />
                                 </a>
-                                {/* LinkedIn */}
-                                <a href="https://www.linkedin.com/in/haven-tutors-5b89b638b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
-                                    <FaLinkedinIn size={14} className="sm:w-4 sm:h-4" />
-                                </a>
                                 {/* Instagram */}
                                 <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaInstagram size={14} className="sm:w-4 sm:h-4" />
