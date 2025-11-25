@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import BookDemoModal from "./BookDemoModal";
+const BookDemoModal = React.lazy(() => import("./BookDemoModal"));
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,10 @@ const Header = () => {
                 src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"
                 className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+                width="60"
+                height="60"
                 loading="eager"
+                fetchPriority="high"
               />
             </Link>
           </div>
@@ -158,7 +161,11 @@ const Header = () => {
       </div>
 
       {/* Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {isModalOpen && (
+        <React.Suspense fallback={null}>
+          <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        </React.Suspense>
+      )}
     </header>
   );
 };

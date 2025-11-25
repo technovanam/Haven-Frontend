@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock, Target, MessageCircle, UserCheck } from "lucide-react";
-import BookDemoModal from "../components/BookDemoModal";
-
-// Mock BookDemoModal component
-
+const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -229,6 +226,8 @@ const About = () => {
               alt="Student Learning"
               className="rounded-xl sm:rounded-2xl shadow-lg w-full max-w-md object-cover"
               loading="lazy"
+              width="448"
+              height="300"
             />
           </div>
 
@@ -312,7 +311,11 @@ const About = () => {
       </section>
 
       {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {isModalOpen && (
+        <React.Suspense fallback={null}>
+          <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        </React.Suspense>
+      )}
     </div>
 
   );

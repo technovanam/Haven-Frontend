@@ -5,9 +5,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Services from './pages/Services.jsx';  
-import Contact from './pages/Contact.jsx';
+// Lazy load other pages
+const About = React.lazy(() => import('./pages/About.jsx'));
+const Services = React.lazy(() => import('./pages/Services.jsx'));
+const Contact = React.lazy(() => import('./pages/Contact.jsx'));
 import './index.css';
 
 // ============================================================
