@@ -82,7 +82,7 @@ const Home = () => {
                         {/* Right Image and Floating Cards */}
                         <div className="relative mt-8 md:mt-0 flex justify-center">
                             <img
-                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto/v1761212329/Home_top_r0v709.png"
+                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1761212329/Home_top_r0v709.png"
                                 alt="A smiling student wearing glasses and a plaid shirt"
                                 className="relative rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md h-auto z-10 object-cover"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
@@ -94,9 +94,9 @@ const Home = () => {
                             {/* Floating Card 1: Students - Now visible on mobile */}
                             <div className="flex absolute top-4 sm:top-8 right-2 sm:right-4 lg:right-10 lg:transform lg:translate-x-1/4 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
                                 <div className="flex -space-x-1.5 sm:-space-x-2 overflow-hidden">
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student 1" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student 2" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Student 3" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Student 1" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/men/32.jpg" alt="Student 2" />
+                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/women/65.jpg" alt="Student 3" />
                                 </div>
                                 <div className="text-[10px] sm:text-xs">
                                     <p className="font-bold">More than</p>
@@ -163,7 +163,7 @@ const Home = () => {
                     <div className="relative flex justify-center w-full lg:w-1/2">
                         <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
                             <img
-                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=60"
+                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&q=50"
                                 alt="Student learning online with tutor"
                                 className="relative w-full object-cover h-[400px] sm:h-[450px] lg:h-[500px] z-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
@@ -200,7 +200,7 @@ const Home = () => {
 
                     {/* Right Column: Haven Tutors Content */}
                     <div className="w-full lg:w-1/2 text-left">
-                        <p className="text-xs sm:text-sm font-semibold text-[#b38600] uppercase tracking-wide mb-2">
+                        <p className="text-xs sm:text-sm font-semibold text-[#0a2d4a] uppercase tracking-wide mb-2">
                             Why Choose Haven Tutors
                         </p>
 
