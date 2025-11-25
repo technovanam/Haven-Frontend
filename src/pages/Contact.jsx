@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Building2, Mail, Globe, Phone } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from 'react-icons/fa6';
-import contact from '../assets/contact.jpg';
 import { API_BASE_URL } from "../config";
 
 
@@ -86,7 +85,7 @@ const Contact = () => {
         <div
           className="relative rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-24 md:py-35 px-6 sm:px-12 md:px-24 bg-cover overflow-hidden"
           style={{
-            backgroundImage: `url(${contact})`,
+            backgroundImage: "url(https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212329/contact_dqk3ur.jpg) ",
             backgroundPosition: 'center 25%',
           }}
         >
