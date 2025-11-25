@@ -72,7 +72,7 @@ const Footer = ({ onBookDemoClick }) => {
                         <div className="mt-4 sm:mt-6">
                             <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                                 Follow Us
-                                <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
+                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                             </h3>
                             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start">
                                 {/* Facebook */}
@@ -105,7 +105,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Quick Links
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             <li>
@@ -146,7 +146,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Subjects
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Each subject button opens the demo booking modal */}
@@ -215,7 +215,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Services
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Links to services page for detailed information */}
@@ -263,7 +263,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         <h3 className="font-bold text-base sm:text-lg text-white mb-3 sm:mb-5 relative inline-block pb-1">
                             Curriculum
-                            <span className="absolute bottom-0 left-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-10 sm:w-12 h-0.5 sm:h-1 bg-[#e8b112] rounded-full"></span>
                         </h3>
                         <ul className="space-y-2 sm:space-y-3">
                             {/* Each curriculum button opens the demo booking modal */}
