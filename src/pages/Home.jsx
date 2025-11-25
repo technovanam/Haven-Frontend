@@ -82,7 +82,7 @@ const Home = () => {
                         {/* Right Image and Floating Cards */}
                         <div className="relative mt-8 md:mt-0 flex justify-center">
                             <img
-                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212329/Home_top_r0v709.png"
+                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto/v1761212329/Home_top_r0v709.png"
                                 alt="A smiling student wearing glasses and a plaid shirt"
                                 className="relative rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md h-auto z-10 object-cover"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
@@ -129,25 +129,25 @@ const Home = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
                             {/* Stat 1 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">100%</h3>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">100%</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Parent Satisfaction</p>
                             </div>
 
                             {/* Stat 2 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">1K+</h3>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">1K+</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Students Mentored</p>
                             </div>
 
                             {/* Stat 3 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">12+</h3>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">12+</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Learning Boards Covered</p>
                             </div>
 
                             {/* Stat 4 */}
                             <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">24/7</h3>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#b38600] transition-colors duration-300">24/7</div>
                                 <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Support & Guidance</p>
                             </div>
                         </div>
@@ -163,7 +163,7 @@ const Home = () => {
                     <div className="relative flex justify-center w-full lg:w-1/2">
                         <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
                             <img
-                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80"
+                                src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=60"
                                 alt="Student learning online with tutor"
                                 className="relative w-full object-cover h-[400px] sm:h-[450px] lg:h-[500px] z-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_70px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                                 style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
@@ -200,7 +200,7 @@ const Home = () => {
 
                     {/* Right Column: Haven Tutors Content */}
                     <div className="w-full lg:w-1/2 text-left">
-                        <p className="text-xs sm:text-sm font-semibold text-[#e8b112] uppercase tracking-wide mb-2">
+                        <p className="text-xs sm:text-sm font-semibold text-[#b38600] uppercase tracking-wide mb-2">
                             Why Choose Haven Tutors
                         </p>
 
@@ -219,9 +219,9 @@ const Home = () => {
                                     ✓
                                 </div>
                                 <div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-800">
+                                    <h3 className="text-base sm:text-lg font-semibold text-slate-800">
                                         One-on-One Tutoring
-                                    </h4>
+                                    </h3>
                                     <p className="text-slate-600 text-xs sm:text-sm">
                                         Individualized lessons focused on each student's goals and pace.
                                     </p>
@@ -233,9 +233,9 @@ const Home = () => {
                                     ✓
                                 </div>
                                 <div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-800">
+                                    <h3 className="text-base sm:text-lg font-semibold text-slate-800">
                                         Flexible Scheduling
-                                    </h4>
+                                    </h3>
                                     <p className="text-slate-600 text-xs sm:text-sm">
                                         Book classes at times that suit your routine and comfort.
                                     </p>
@@ -247,9 +247,9 @@ const Home = () => {
                                     ✓
                                 </div>
                                 <div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-800">
+                                    <h3 className="text-base sm:text-lg font-semibold text-slate-800">
                                         Curriculum-Aligned Learning
-                                    </h4>
+                                    </h3>
                                     <p className="text-slate-600 text-xs sm:text-sm">
                                         Covering CBSE, ICSE, IB, Cambridge, and State Boards.
                                     </p>
@@ -261,9 +261,9 @@ const Home = () => {
                                     ✓
                                 </div>
                                 <div>
-                                    <h4 className="text-base sm:text-lg font-semibold text-slate-800">
+                                    <h3 className="text-base sm:text-lg font-semibold text-slate-800">
                                         Continuous Support & Guidance
-                                    </h4>
+                                    </h3>
                                     <p className="text-slate-600 text-xs sm:text-sm">
                                         Regular progress updates, doubt-clearing sessions, and consistent mentorship.
                                     </p>
