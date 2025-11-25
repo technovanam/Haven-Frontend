@@ -281,6 +281,100 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* ============================================================ */}
+      {/* MEET OUR TEAM SECTION */}
+      {/* ============================================================ */}
+
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Meet Our Team
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+            Our dedicated team of educators and professionals is committed to providing the best learning experience for every student.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* Team Member 1 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+                alt="James Anderson"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">James Anderson</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO</p>
+              <p className="text-slate-600 text-sm">
+                Passionate about transforming education through technology and personalized mentorship.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Member 2 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                alt="Sarah Mitchell"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Sarah Mitchell</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of Academics</p>
+              <p className="text-slate-600 text-sm">
+                Expert in curriculum design with over 15 years of experience in international education.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Member 3 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
+                alt="David Chen"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">David Chen</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Senior Tutor (Math)</p>
+              <p className="text-slate-600 text-sm">
+                Specializes in making complex mathematical concepts simple and engaging for students.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Member 4 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+                alt="Emily Rodriguez"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Emily Rodriguez</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Student Counselor</p>
+              <p className="text-slate-600 text-sm">
+                Dedicated to guiding students through their academic journey and career choices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============================================================ */}
       {/* CALL TO ACTION SECTION */}
       {/* ============================================================ */}
@@ -317,7 +411,6 @@ const About = () => {
         </React.Suspense>
       )}
     </div>
-
   );
 };
 
