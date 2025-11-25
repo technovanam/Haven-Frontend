@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import { X } from "lucide-react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import countries from "world-countries";
 import { API_BASE_URL } from "../config";
+import { countryList } from "../data/countries";
 
 // ============================================================
 // CONSTANTS
@@ -20,8 +20,6 @@ const boardOptions = [
   "EDEXEL", "SINGAPORE",
 ];
 const gradeOptions = [...Array(12).keys()].map((i) => `Grade ${i + 1}`);
-
-const countryList = countries.map((c) => c.name.common).sort();
 
 // ============================================================
 // MAIN BOOK DEMO MODAL COMPONENT
@@ -164,8 +162,8 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`py-3 px-1 text-base sm:text-lg font-semibold transition-colors duration-200 ${activeTab === tab
-                      ? "text-[#e8b112] border-b-2 border-[#e8b112]"
-                      : "text-gray-500 hover:text-[#e8b112]"
+                    ? "text-[#e8b112] border-b-2 border-[#e8b112]"
+                    : "text-gray-500 hover:text-[#e8b112]"
                     }`}
                 >
                   {tab}

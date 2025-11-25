@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-import BookDemoModal from "./components/BookDemoModal.jsx";
+const BookDemoModal = React.lazy(() => import("./components/BookDemoModal.jsx"));
 
 // ============================================================
 // MAIN APP LAYOUT COMPONENT
@@ -23,15 +23,21 @@ function App() {
       <ScrollToTop />
 
       <main className="flex-grow pt-20">
-        <Outlet />
+        <React.Suspense fallback={<div className="flex justify-center items-center h-screen text-[#e8b112]">Loading...</div>}>
+          <Outlet />
+        </React.Suspense>
       </main>
 
       <Footer onBookDemoClick={handleOpenModal} />
 
-      <BookDemoModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+      {isModalOpen && (
+        <React.Suspense fallback={null}>
+          <BookDemoModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </React.Suspense>
+      )}
     </div>
   );
 }

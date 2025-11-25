@@ -44,6 +44,8 @@ const Footer = ({ onBookDemoClick }) => {
                             src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/logo_jgnqdd.jpg"
                             alt="Haven Tutors Logo"
                             className="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0 brightness-110 hover:brightness-125 transition-all duration-300"
+                            width="60"
+                            height="60"
                             loading="lazy"
                         />
 
@@ -332,18 +334,17 @@ const Footer = ({ onBookDemoClick }) => {
             <div className="border-t border-[#e8b112]/30 backdrop-blur-sm relative z-10">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-center">
                     <p className="text-xs sm:text-sm text-slate-300">
-  Copyright © 2025{" "}
-  <a
-    href="https://www.haventutor.com"
-    target="_self"
-    rel="noopener noreferrer"
-    className="text-[#e8b112] font-semibold hover:underline"
-  >
-    Haven Tutors
-  </a>{" "}
-  | All Rights Reserved
-</p>
-
+                        Copyright © 2025{" "}
+                        <a
+                            href="https://www.haventutor.com"
+                            target="_self"
+                            rel="noopener noreferrer"
+                            className="text-[#e8b112] font-semibold hover:underline"
+                        >
+                            Haven Tutors
+                        </a>{" "}
+                        | All Rights Reserved
+                    </p>
                 </div>
             </div>
 

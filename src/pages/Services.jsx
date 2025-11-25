@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Building2 } from "lucide-react";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import BookDemoModal from "../components/BookDemoModal";
+const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
 import { useLocation } from "react-router-dom";
 
 // ============================================================
@@ -381,7 +381,11 @@ const ServicesPage = () => {
 
 
       {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {isModalOpen && (
+        <React.Suspense fallback={null}>
+          <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        </React.Suspense>
+      )}
     </div>
   );
 };
