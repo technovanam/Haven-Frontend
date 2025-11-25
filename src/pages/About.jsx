@@ -303,7 +303,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
                 alt="James Anderson"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
@@ -322,7 +322,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
                 alt="Sarah Mitchell"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
@@ -341,7 +341,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
                 alt="David Chen"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
@@ -360,7 +360,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
                 alt="Emily Rodriguez"
-                className="w-full h-64 sm:h-72 lg:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
