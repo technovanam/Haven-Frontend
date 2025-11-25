@@ -15,7 +15,7 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-700 hover:text-[#e8b112] transition-colors break-all font-medium"
+      className="text-slate-700 hover:text-[#b38600] transition-colors break-all font-medium"
     >
       {value}
     </a>
@@ -27,7 +27,7 @@ const ContactInfoItem = ({ icon, title, value, href }) => {
     <div className="group hover:bg-[#e8b112]/10 p-3 sm:p-4 rounded-xl transition-all duration-300 cursor-pointer">
       <div className="flex items-start gap-3 sm:gap-4">
         <div className="flex-shrink-0">
-          <div className="bg-gradient-to-br from-[#e8b112] to-[#d4a010] text-white rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#e8b112] to-[#d4a010] text-[#0a2d4a] rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
             {icon}
           </div>
         </div>
@@ -198,8 +198,8 @@ const Contact = () => {
 
                 {formStatus && (
                   <div className={`mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg flex items-center justify-center gap-2 ${formStatus.includes('successfully')
-                      ? 'bg-green-50 border border-green-200'
-                      : 'bg-red-50 border border-red-200'
+                    ? 'bg-green-50 border border-green-200'
+                    : 'bg-red-50 border border-red-200'
                     }`}>
                     {formStatus.includes('successfully') ? (
                       <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,8 +211,8 @@ const Contact = () => {
                       </svg>
                     )}
                     <p className={`text-xs sm:text-sm font-semibold ${formStatus.includes('successfully')
-                        ? 'text-green-800'
-                        : 'text-red-800'
+                      ? 'text-green-800'
+                      : 'text-red-800'
                       }`}>
                       {formStatus}
                     </p>
