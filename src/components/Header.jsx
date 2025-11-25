@@ -33,7 +33,7 @@ const Header = () => {
           <div className="flex-shrink-0 min-w-0">
             <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto/v1761212328/logo_jgnqdd.jpg"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_200/v1761212328/logo_jgnqdd.jpg"
                 alt="Haven Tutors Logo"
                 className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                 width="60"
