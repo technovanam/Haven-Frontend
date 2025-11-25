@@ -305,7 +305,7 @@ const ServicesPage = () => {
 
           <h1 className="text-2xl sm:text-3xl md:text-6xl max-w-7xl text-center justify-center font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
             Designed for <br />
-            <span className="italic text-[#e8b112]">Confident Learning</span>
+            <span className="italic text-[#b38600]">Confident Learning</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
@@ -327,8 +327,8 @@ const ServicesPage = () => {
               onClick={() => setActiveCategory(category)}
               className={`py-3 px-1 text-[18px] font-medium rounded-t-lg transition-all duration-300 ease-in-out whitespace-nowrap -mb-px 
                 ${activeCategory === category
-                  ? "text-[#e8b112] border-b-3 border-[#e8b112]"
-                  : "text-slate-600 hover:text-[#e8b112] border-b-2 border-transparent"
+                  ? "text-[#b38600] border-b-3 border-[#b38600]"
+                  : "text-slate-600 hover:text-[#b38600] border-b-2 border-transparent"
                 }`}
             >
               {category}
