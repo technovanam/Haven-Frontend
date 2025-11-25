@@ -1,0 +1,9 @@
+[build]
+command = "npm install"
+
+[start]
+command = "npm start"
+
+[env]
+PORT = "5001"
+NODE_ENV = "production"
