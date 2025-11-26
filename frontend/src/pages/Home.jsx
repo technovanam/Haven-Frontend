@@ -110,7 +110,7 @@ const Home = () => {
                                 alt={slide.title}
                                 className="absolute inset-0 w-full h-full object-cover"
                                 loading={index === 0 ? "eager" : "lazy"}
-                                fetchPriority={index === 0 ? "high" : "auto"}
+                                fetchpriority={index === 0 ? "high" : "auto"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
                         </div>
