@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
@@ -54,106 +54,159 @@ const TestimonialCard = ({ quote, name, role, imgSrc, rating }) => (
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showAll, setShowAll] = useState(false);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % 3);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
 
     return (
-        <div className="bg-white">
-            {/* Hero Section */}
-            <section className="relative overflow-hidden bg-white pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 px-4 sm:px-6 lg:px-8">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                        {/* Left Content */}
-                        <div className="text-center md:text-left">
-                            <p className="font-semibold text-gray-500 mb-2 text-sm sm:text-base">#1 Online Tutor</p>
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
-                                Shape Your Future with the Right Knowledge
-                            </h1>
-                            <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto md:mx-0 mb-6 sm:mb-8">
-                                Discover the joy of learning with expert tutors who guide you every step of the way. Build confidence, sharpen skills, and unlock your true potential.
-                            </p>
-                            <button
-                                onClick={() => setIsModalOpen(true)}
-                                className="inline-flex items-center space-x-2 bg-[#e8b112] text-[#0a2d4a] font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-[#d4a010] transition-all duration-300 group text-sm sm:text-base"
-                            >
-                                <span>GET STARTED</span>
-                                <svg className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                            </button>
+        <div className="-mt-8 md:-mt-22 bg-white">
+            {/* Hero Section with Slider */}
+            <section className="relative h-[500px] sm:h-[600px] lg:h-[800px] w-full overflow-hidden">
+                {/* Slides */}
+                {[
+                    {
+                        id: 1,
+                        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80",
+                        title: "Shape Your Future with the Right Knowledge",
+                        description: "Discover the joy of learning with expert tutors who guide you every step of the way. Build confidence, sharpen skills, and unlock your true potential.",
+                        cta: "GET STARTED"
+                    },
+                    {
+                        id: 2,
+                        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80",
+                        title: "Expert One-on-One Tutoring",
+                        description: "Experience personalized learning tailored to your unique needs. Our dedicated tutors help you master difficult concepts and achieve academic excellence.",
+                        cta: "BOOK A DEMO"
+                    },
+                    {
+                        id: 3,
+                        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80",
+                        title: "Achieve Your Academic Goals",
+                        description: "From exam preparation to homework help, we provide the strategic guidance and comprehensive resources you need to succeed.",
+                        cta: "START LEARNING"
+                    }
+                ].map((slide, index) => (
+                    <div
+                        key={slide.id}
+                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                            }`}
+                    >
+                        {/* Background Image with Zoom Effect */}
+                        <div
+                            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[6000ms] ease-out ${index === currentSlide ? 'scale-110' : 'scale-100'
+                                }`}
+                            style={{ backgroundImage: `url(${slide.image})` }}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
                         </div>
 
-                        {/* Right Image and Floating Cards */}
-                        <div className="relative mt-8 md:mt-0 flex justify-center">
-                            <img
-                                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1761212329/Home_top_r0v709.png"
-                                alt="A smiling student wearing glasses and a plaid shirt"
-                                className="relative rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md h-auto z-10 object-cover"
-                                style={{ borderRadius: '10% 10% 70% 70% / 10% 10% 60% 60%' }}
-                                width="500"
-                                height="600"
-                                fetchPriority="high"
-                            />
+                        {/* Content with Staggered Out-then-In Animation */}
+                        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+                            <div className="max-w-4xl flex flex-col items-center">
+                                {/* Badge */}
+                                <div className={`mb-4 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
+                                    ? 'translate-y-0 opacity-100 delay-300'
+                                    : '-translate-y-4 opacity-0 duration-300'
+                                    }`}>
+                                    <span className="py-1 px-3 rounded-full bg-[#e8b112]/20 border border-[#e8b112] text-[#e8b112] font-semibold text-xs sm:text-sm tracking-wider uppercase backdrop-blur-sm">
+                                        #1 Online Tutoring Platform
+                                    </span>
+                                </div>
 
-                            {/* Floating Card 1: Students - Now visible on mobile */}
-                            <div className="flex absolute top-4 sm:top-8 right-2 sm:right-4 lg:right-10 lg:transform lg:translate-x-1/4 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
-                                <div className="flex -space-x-1.5 sm:-space-x-2 overflow-hidden">
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/women/44.jpg" alt="Student 1" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/men/32.jpg" alt="Student 2" />
-                                    <img className="inline-block h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 rounded-full ring-1 sm:ring-2 ring-[#0a2d4a]" src="https://randomuser.me/api/portraits/thumb/women/65.jpg" alt="Student 3" />
-                                </div>
-                                <div className="text-[10px] sm:text-xs">
-                                    <p className="font-bold">More than</p>
-                                    <p>1K students</p>
-                                </div>
-                            </div>
+                                {/* Title */}
+                                <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg mb-4 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
+                                    ? 'translate-y-0 opacity-100 delay-500'
+                                    : 'translate-y-8 opacity-0 duration-300'
+                                    }`}>
+                                    {slide.title}
+                                </h1>
 
-                            {/* Floating Card 2: Collaboration - Now visible on mobile */}
-                            <div className="flex absolute top-3/4 sm:top-3/4 right-2 sm:right-4 lg:right-20 lg:transform lg:translate-x-1/2 -translate-y-1/2 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
-                                <div className="bg-[#e8b112]/30 p-0.5 sm:p-1 rounded-full">
-                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="#e8b112"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                </div>
-                                <span className="text-[10px] sm:text-xs md:text-sm font-bold whitespace-nowrap">Best <br /> Collaboration</span>
-                            </div>
+                                {/* Description */}
+                                <p className={`text-base sm:text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md mb-6 sm:mb-8 transition-all duration-700 transform ${index === currentSlide
+                                    ? 'translate-y-0 opacity-100 delay-700'
+                                    : 'translate-y-8 opacity-0 duration-300'
+                                    }`}>
+                                    {slide.description}
+                                </p>
 
-                            {/* Floating Card 3: Trust Badge - Now visible on mobile */}
-                            <div className="flex absolute bottom-8 sm:bottom-12 left-2 sm:left-4 lg:left-20 lg:transform lg:-translate-x-1/4 bg-[#0a2d4a] text-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-lg z-20 items-center space-x-1.5 sm:space-x-2">
-                                <div className="bg-[#e8b112]/30 p-0.5 sm:p-1 rounded-full">
-                                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#e8b112]" />
+                                {/* Buttons */}
+                                <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 transition-all duration-700 transform ${index === currentSlide
+                                    ? 'translate-y-0 opacity-100 delay-1000'
+                                    : 'translate-y-8 opacity-0 duration-300'
+                                    }`}>
+                                    <button
+                                        onClick={() => setIsModalOpen(true)}
+                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#e8b112] text-[#0a2d4a] font-bold px-8 py-3 sm:py-4 rounded-full shadow-[0_0_20px_rgba(232,177,18,0.5)] hover:bg-[#d4a010] hover:shadow-[0_0_30px_rgba(232,177,18,0.7)] transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
+                                    >
+                                        <span>{slide.cta}</span>
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            const el = document.getElementById("testimonial-section");
+                                            if (el) el.scrollIntoView({ behavior: "smooth" });
+                                        }}
+                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 text-white border border-white/30 font-semibold px-8 py-3 sm:py-4 rounded-full hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+                                    >
+                                        <span>View Success Stories</span>
+                                    </button>
                                 </div>
-                                <span className="text-[10px] sm:text-xs md:text-sm font-semibold whitespace-nowrap">Trusted Worldwide</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                ))}
 
-                {/* Statistics Bar */}
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 lg:mt-20">
-                    <div className="w-full bg-slate-50 rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200 py-6 sm:py-8 lg:py-10 px-4 transition-all duration-300 hover:shadow-md">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+                {/* Navigation Dots */}
+                <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-20 flex justify-center space-x-3">
+                    {[0, 1, 2].map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-2.5 rounded-full transition-all duration-500 ${index === currentSlide ? 'bg-[#e8b112] w-10' : 'bg-white/40 w-2.5 hover:bg-white/70'
+                                }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            </section>
+
+            {/* Statistics Bar - Overlapping */}
+            <div className="relative z-30 px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 lg:-mt-24 mb-12 sm:mb-16">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="w-full bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 py-8 sm:py-10 px-6 sm:px-10">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
                             {/* Stat 1 */}
-                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                            <div className="text-center group cursor-default">
                                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">100%</div>
-                                <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Parent Satisfaction</p>
+                                <p className="text-slate-500 mt-2 text-xs sm:text-sm font-medium uppercase tracking-wide">Parent Satisfaction</p>
                             </div>
 
                             {/* Stat 2 */}
-                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                            <div className="text-center group cursor-default">
                                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">1K+</div>
-                                <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Students Mentored</p>
+                                <p className="text-slate-500 mt-2 text-xs sm:text-sm font-medium uppercase tracking-wide">Students Mentored</p>
                             </div>
 
                             {/* Stat 3 */}
-                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                            <div className="text-center group cursor-default">
                                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">12+</div>
-                                <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Learning Boards Covered</p>
+                                <p className="text-slate-500 mt-2 text-xs sm:text-sm font-medium uppercase tracking-wide">Boards Covered</p>
                             </div>
 
                             {/* Stat 4 */}
-                            <div className="text-center group cursor-default transition-transform duration-300 hover:scale-105">
+                            <div className="text-center group cursor-default">
                                 <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 group-hover:text-[#e8b112] transition-colors duration-300">24/7</div>
-                                <p className="text-slate-500 mt-2 text-xs sm:text-sm lg:text-base">Support & Guidance</p>
+                                <p className="text-slate-500 mt-2 text-xs sm:text-sm font-medium uppercase tracking-wide">Support & Guidance</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
             {/* Why Choose Haven Tutors Section */}
             <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
@@ -172,7 +225,7 @@ const Home = () => {
                                 loading="lazy"
                             />
 
-                            {/* Floating Card: Parent Satisfaction - Responsive positioning */}
+                            {/* Floating Card: Parent Satisfaction */}
                             <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 lg:-left-20 bg-[#0a2d4a] text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20">
                                 <div className="flex items-center gap-2">
                                     <div className="flex gap-0.5 sm:gap-1">
@@ -188,7 +241,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            {/* Floating Card: Personalized Learning - Responsive positioning */}
+                            {/* Floating Card: Personalized Learning */}
                             <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-[#0a2d4a] text-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-lg z-20 flex items-center space-x-2">
                                 <div className="bg-[#e8b112]/30 p-1 sm:p-1.5 rounded-full">
                                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#e8b112]    " fill="none" viewBox="0 0 24 24" stroke="#e8b112"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
