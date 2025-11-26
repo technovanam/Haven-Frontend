@@ -104,11 +104,14 @@ const Home = () => {
                             }`}
                     >
                         {/* Background Image with Zoom Effect */}
-                        <div
-                            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[6000ms] ease-out ${index === currentSlide ? 'scale-110' : 'scale-100'
-                                }`}
-                            style={{ backgroundImage: `url(${slide.image})` }}
-                        >
+                        <div className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${index === currentSlide ? 'scale-110' : 'scale-100'}`}>
+                            <img
+                                src={slide.image}
+                                alt={slide.title}
+                                className="absolute inset-0 w-full h-full object-cover"
+                                loading={index === 0 ? "eager" : "lazy"}
+                                fetchPriority={index === 0 ? "high" : "auto"}
+                            />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
                         </div>
 
