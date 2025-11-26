@@ -72,20 +72,14 @@ const Contact = () => {
       setFormStatus('Failed to send message. Please try again.');
     }
   };
-
   return (
     <div className="bg-white">
-
-      {/* ============================================================ */}
-      {/* HERO SECTION */}
-      {/* ============================================================ */}
-
       {/* Hero Section */}
       <section className="flex items-center justify-center text-center pt-4 sm:pt-6 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 bg-white">
         <div
           className="relative rounded-2xl sm:rounded-3xl shadow-lg max-w-9xl w-full text-center py-16 sm:py-24 md:py-35 px-6 sm:px-12 md:px-24 bg-cover overflow-hidden"
           style={{
-            backgroundImage: "url(https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212329/contact_dqk3ur.jpg) ",
+            backgroundImage: "url(https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212329/contact_dqk3ur.jpg)",
             backgroundPosition: 'center 25%',
           }}
         >
@@ -115,7 +109,6 @@ const Contact = () => {
       {/* CONTACT FORM & INFO SECTION */}
       {/* ============================================================ */}
 
-      {/* Main Content Section */}
       <section className="py-6 sm:py-8 bg-white">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
@@ -296,7 +289,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+    </div >
   );
 };
 
