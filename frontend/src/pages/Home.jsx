@@ -58,7 +58,7 @@ const Home = () => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % 3);
+            setCurrentSlide((prev) => (prev + 1) % 4);
         }, 5000);
         return () => clearInterval(timer);
     }, []);
@@ -89,6 +89,13 @@ const Home = () => {
                         title: "Achieve Your Academic Goals",
                         description: "From exam preparation to homework help, we provide the strategic guidance and comprehensive resources you need to succeed.",
                         cta: "START LEARNING"
+                    },
+                    {
+                        id: 4,
+                        image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1920&q=80",
+                        title: "Comprehensive Syllabus Coverage",
+                        description: "We cover all major boards including CBSE, ICSE, IB, Cambridge, and State Boards, ensuring you stay ahead in your curriculum.",
+                        cta: "EXPLORE SYLLABUS"
                     }
                 ].map((slide, index) => (
                     <div
@@ -109,17 +116,17 @@ const Home = () => {
                         <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
                             <div className="max-w-4xl flex flex-col items-center">
                                 {/* Badge */}
-                                <div className={`mb-4 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
+                                <div className={`mb-2 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
                                     ? 'translate-y-0 opacity-100 delay-300'
                                     : '-translate-y-4 opacity-0 duration-300'
                                     }`}>
-                                    <span className="py-1 px-3 rounded-full bg-[#e8b112]/20 border border-[#e8b112] text-[#e8b112] font-semibold text-xs sm:text-sm tracking-wider uppercase backdrop-blur-sm">
+                                    <span className="py-1 px-3 rounded-full bg-[#e8b112]/20 border border-[#e8b112] text-[#e8b112] font-semibold text-[10px] sm:text-sm tracking-wider uppercase backdrop-blur-sm">
                                         #1 Online Tutoring Platform
                                     </span>
                                 </div>
 
                                 {/* Title */}
-                                <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg mb-4 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
+                                <h1 className={`text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg mb-2 sm:mb-6 transition-all duration-700 transform ${index === currentSlide
                                     ? 'translate-y-0 opacity-100 delay-500'
                                     : 'translate-y-8 opacity-0 duration-300'
                                     }`}>
@@ -127,7 +134,7 @@ const Home = () => {
                                 </h1>
 
                                 {/* Description */}
-                                <p className={`text-base sm:text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md mb-6 sm:mb-8 transition-all duration-700 transform ${index === currentSlide
+                                <p className={`text-sm sm:text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md mb-4 sm:mb-8 transition-all duration-700 transform ${index === currentSlide
                                     ? 'translate-y-0 opacity-100 delay-700'
                                     : 'translate-y-8 opacity-0 duration-300'
                                     }`}>
@@ -135,13 +142,13 @@ const Home = () => {
                                 </p>
 
                                 {/* Buttons */}
-                                <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 transition-all duration-700 transform ${index === currentSlide
+                                <div className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 transition-all duration-700 transform ${index === currentSlide
                                     ? 'translate-y-0 opacity-100 delay-1000'
                                     : 'translate-y-8 opacity-0 duration-300'
                                     }`}>
                                     <button
                                         onClick={() => setIsModalOpen(true)}
-                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#e8b112] text-[#0a2d4a] font-bold px-8 py-3 sm:py-4 rounded-full shadow-[0_0_20px_rgba(232,177,18,0.5)] hover:bg-[#d4a010] hover:shadow-[0_0_30px_rgba(232,177,18,0.7)] transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
+                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#e8b112] text-[#0a2d4a] font-bold px-6 py-2.5 sm:px-8 sm:py-4 rounded-full shadow-[0_0_20px_rgba(232,177,18,0.5)] hover:bg-[#d4a010] hover:shadow-[0_0_30px_rgba(232,177,18,0.7)] transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
                                     >
                                         <span>{slide.cta}</span>
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -151,7 +158,7 @@ const Home = () => {
                                             const el = document.getElementById("testimonial-section");
                                             if (el) el.scrollIntoView({ behavior: "smooth" });
                                         }}
-                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 text-white border border-white/30 font-semibold px-8 py-3 sm:py-4 rounded-full hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+                                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 text-white border border-white/30 font-semibold px-6 py-2.5 sm:px-8 sm:py-4 rounded-full hover:bg-white/20 backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
                                     >
                                         <span>View Success Stories</span>
                                     </button>
@@ -163,7 +170,7 @@ const Home = () => {
 
                 {/* Navigation Dots */}
                 <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-20 flex justify-center space-x-3">
-                    {[0, 1, 2].map((_, index) => (
+                    {[0, 1, 2, 3].map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentSlide(index)}
