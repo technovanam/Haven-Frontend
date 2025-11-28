@@ -296,79 +296,41 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {/* Team Member 1 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
-                alt="James Anderson"
-                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764347263/01_xhlopm.jpg"
+                alt="Sameeha"
+                className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-slate-900 mb-1">James Anderson</h3>
-              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Sameeha</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO | Biology & Physics Educator</p>
               <p className="text-slate-600 text-sm">
-                Passionate about transforming education through technology and personalized mentorship.
+                Passionate about simplifying complex concepts in Biology and Physics to help students excel.
               </p>
             </div>
           </div>
 
           {/* Team Member 2 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
-                alt="Sarah Mitchell"
-                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764350243/WhatsApp_Image_2025-11-28_at_17.15.12_9bfbcee7_1_zkzsnn.jpg"
+                alt="Haseebunnisa"
+                className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
             <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Sarah Mitchell</h3>
-              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of Academics</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Haseebunnisa</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of English Faculty</p>
               <p className="text-slate-600 text-sm">
-                Expert in curriculum design with over 15 years of experience in international education.
-              </p>
-            </div>
-          </div>
-
-          {/* Team Member 3 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
-            <div className="relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80"
-                alt="David Chen"
-                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-slate-900 mb-1">David Chen</h3>
-              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Senior Tutor (Math)</p>
-              <p className="text-slate-600 text-sm">
-                Specializes in making complex mathematical concepts simple and engaging for students.
-              </p>
-            </div>
-          </div>
-
-          {/* Team Member 4 */}
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
-            <div className="relative overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
-                alt="Emily Rodriguez"
-                className="w-full h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-slate-900 mb-1">Emily Rodriguez</h3>
-              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Student Counselor</p>
-              <p className="text-slate-600 text-sm">
-                Dedicated to guiding students through their academic journey and career choices.
+                Dedicated to enhancing students' language skills and fostering a love for literature and communication.
               </p>
             </div>
           </div>
