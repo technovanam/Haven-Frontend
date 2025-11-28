@@ -309,7 +309,7 @@ const About = () => {
             </div>
             <div className="p-6 text-center">
               <h3 className="text-xl font-bold text-slate-900 mb-1">Sameeha</h3>
-              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO | Biology & Physics Educator</p>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO <br /> Biology & Physics Educator</p>
               <p className="text-slate-600 text-sm">
                 Passionate about simplifying complex concepts in Biology and Physics to help students excel.
               </p>
