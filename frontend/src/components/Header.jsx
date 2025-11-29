@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-const BookDemoModal = React.lazy(() => import("./BookDemoModal"));
+const StudentDemoModal = React.lazy(() => import("./StudentDemoModal"));
+const TutorApplicationModal = React.lazy(() => import("./TutorApplicationModal"));
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
+  const [isTutorModalOpen, setIsTutorModalOpen] = useState(false);
 
   const navLinkClasses = ({ isActive }) =>
     `transition-colors duration-300 whitespace-nowrap text-base md:text-lg ${isActive
@@ -19,9 +21,15 @@ const Header = () => {
     }`;
 
   const closeMenu = () => setIsOpen(false);
-  const openDemoModal = () => {
+
+  const openStudentModal = () => {
     closeMenu();
-    setIsModalOpen(true);
+    setIsStudentModalOpen(true);
+  };
+
+  const openTutorModal = () => {
+    closeMenu();
+    setIsTutorModalOpen(true);
   };
 
   return (
@@ -76,9 +84,15 @@ const Header = () => {
           </nav>
 
           {/* Right-side Actions */}
-          <div className="hidden md:flex items-center justify-end flex-shrink-0">
+          <div className="hidden md:flex items-center justify-end flex-shrink-0 space-x-4">
             <button
-              onClick={openDemoModal}
+              onClick={openTutorModal}
+              className="text-slate-600 hover:text-[#e8b112] font-medium text-base lg:text-lg transition-colors whitespace-nowrap"
+            >
+              Join as Tutor
+            </button>
+            <button
+              onClick={openStudentModal}
               className="inline-flex items-center px-4 lg:px-5 py-2 rounded-full bg-[#e8b112] text-[#0a2d4a] text-base lg:text-lg font-semibold hover:bg-[#d4a010] transition whitespace-nowrap"
             >
               <span>Book a demo</span>
@@ -154,9 +168,17 @@ const Header = () => {
               Contact
             </NavLink>
           </li>
+          <li>
+            <button
+              onClick={openTutorModal}
+              className="text-xl text-slate-600 hover:text-[#e8b112] font-medium whitespace-nowrap"
+            >
+              Join as Tutor
+            </button>
+          </li>
           <li className="pt-2">
             <button
-              onClick={openDemoModal}
+              onClick={openStudentModal}
               className="inline-flex items-center justify-center min-w-max px-8 py-3 rounded-full bg-[#e8b112] text-[#0a2d4a] font-semibold hover:bg-[#d4a010] transition touch-manipulation"
             >
               Book a demo
@@ -165,10 +187,15 @@ const Header = () => {
         </ul>
       </div>
 
-      {/* Demo Modal */}
-      {isModalOpen && (
+      {/* Modals */}
+      {isStudentModalOpen && (
         <React.Suspense fallback={null}>
-          <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          <StudentDemoModal isOpen={isStudentModalOpen} onClose={() => setIsStudentModalOpen(false)} />
+        </React.Suspense>
+      )}
+      {isTutorModalOpen && (
+        <React.Suspense fallback={null}>
+          <TutorApplicationModal isOpen={isTutorModalOpen} onClose={() => setIsTutorModalOpen(false)} />
         </React.Suspense>
       )}
     </header>
