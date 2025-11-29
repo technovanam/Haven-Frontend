@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
+const StudentDemoModal = React.lazy(() => import("../components/StudentDemoModal"));
 import { MessageSquareQuote, Heart, Shield } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 
@@ -345,7 +345,7 @@ const Home = () => {
                         <span className="text-xs sm:text-sm tracking-wide uppercase">Our Testimonials</span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        What Our Learners Are Saying
+                        What Our Learners Say
                     </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-12 text-sm sm:text-base px-4">
                         Hear from our students and parents about how Haven Tutors has made learning easier and more rewarding
@@ -386,7 +386,7 @@ const Home = () => {
             {/* Book Demo Modal */}
             {isModalOpen && (
                 <React.Suspense fallback={null}>
-                    <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                    <StudentDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
                 </React.Suspense>
             )}
         </div>
