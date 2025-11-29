@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-const BookDemoModal = React.lazy(() => import("./components/BookDemoModal.jsx"));
+const StudentDemoModal = React.lazy(() => import("./components/StudentDemoModal.jsx"));
 
 // ============================================================
 // MAIN APP LAYOUT COMPONENT
@@ -32,7 +32,7 @@ function App() {
 
       {isModalOpen && (
         <React.Suspense fallback={null}>
-          <BookDemoModal
+          <StudentDemoModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
           />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Building2, BadgeCheck, CircleStar, User, Users, BookOpen, Clock, Target, MessageCircle, UserCheck } from "lucide-react";
-const BookDemoModal = React.lazy(() => import("../components/BookDemoModal"));
+const StudentDemoModal = React.lazy(() => import("../components/StudentDemoModal"));
 
 const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -334,6 +334,25 @@ const About = () => {
               </p>
             </div>
           </div>
+
+          {/* Team Member 3 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764439337/WhatsApp_Image_2025-11-29_at_09.58.43_e4cd9578_axbas2.jpg"
+                alt="Aneesa Firdous"
+                className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Aneesa Firdous</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of SST Faculty</p>
+              <p className="text-slate-600 text-sm">
+                Expert in Social Studies, guiding students to understand the world around them through engaging lessons.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -369,7 +388,7 @@ const About = () => {
       {/* Book Demo Modal */}
       {isModalOpen && (
         <React.Suspense fallback={null}>
-          <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          <StudentDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </React.Suspense>
       )}
     </div>
