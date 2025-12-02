@@ -46,7 +46,8 @@ const Header = () => {
               aria-label="Haven Tutors Home"
             >
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_200/v1761212328/logo_jgnqdd.jpg"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764665269/Screenshot_2025-12-02_141734_uctyqs.png
+"
                 alt="Haven Tutors Logo"
                 className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                 width="60"
