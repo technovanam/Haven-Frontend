@@ -17,7 +17,7 @@ const servicesData = [
     description:
       "Personalized, private sessions tailored to the student's unique learning style, pace, and academic goals.",
     image:
-      "https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 102,
@@ -26,7 +26,7 @@ const servicesData = [
     description:
       "Collaborative small group classes that foster peer learning, discussion, and healthy competition.",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 103,
@@ -35,7 +35,7 @@ const servicesData = [
     description:
       "Flexible, high-quality virtual lessons accessible from the comfort of your home, anywhere in the world.",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 104,
@@ -44,7 +44,7 @@ const servicesData = [
     description:
       "In-person tutoring sessions delivered at your doorstep for a focused and familiar learning environment.",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
   },
 
   {
@@ -54,7 +54,7 @@ const servicesData = [
     description:
       "Targeted coaching for board exams (CBSE, ICSE, IGCSE, IB) and competitive entrance tests.",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 202,
@@ -63,7 +63,7 @@ const servicesData = [
     description:
       "Daily assistance with school assignments to ensure concepts are understood and work is completed on time.",
     image:
-      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 203,
@@ -72,7 +72,7 @@ const servicesData = [
     description:
       "Courses designed to improve reading, writing, and speaking skills in English and other languages.",
     image:
-      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 204,
@@ -81,7 +81,7 @@ const servicesData = [
     description:
       "Workshops and courses focused on critical thinking, coding, public speaking, and other essential life skills.",
     image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
   },
 
   {
@@ -91,7 +91,7 @@ const servicesData = [
     description:
       "High-definition video sessions that replicate the in-classroom experience with real-time interaction.",
     image:
-      "https://images.unsplash.com/photo-1610484826967-09c5720778c7?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1610484826967-09c5720778c7?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 302,
@@ -100,7 +100,7 @@ const servicesData = [
     description:
       "Effortlessly collaborate on documents, presentations, or share textbook content in real-time.",
     image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 303,
@@ -109,7 +109,7 @@ const servicesData = [
     description:
       "A shared digital canvas for live explanations, drawing complex diagrams, and solving problems together.",
     image:
-      "https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 304,
@@ -118,7 +118,7 @@ const servicesData = [
     description:
       "Regular assessments and quizzes built into the platform to track progress and gauge understanding immediately.",
     image:
-      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=600&q=80",
   },
 
   {
@@ -128,7 +128,7 @@ const servicesData = [
     description:
       "View comprehensive information including qualifications, experience, and student ratings before you book a session.",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 402,
@@ -137,7 +137,7 @@ const servicesData = [
     description:
       "Schedule your one-on-one or group sessions instantly and seamlessly via our intuitive online booking platform.",
     image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 403,
@@ -146,7 +146,7 @@ const servicesData = [
     description:
       "Access tutors available across various time zones to fit any student schedule, anywhere in the world.",
     image:
-      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 404,
@@ -155,7 +155,7 @@ const servicesData = [
     description:
       "A first class that is either completely free or discounted, allowing you to experience our service risk-free.",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
   },
 
   {
@@ -165,7 +165,7 @@ const servicesData = [
     description:
       "Receive regular, detailed updates on your student's progress, areas of improvement, and session performance.",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 502,
@@ -174,7 +174,7 @@ const servicesData = [
     description:
       "Expert guidance for long-term academic planning and making informed decisions about future career paths.",
     image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 503,
@@ -183,7 +183,7 @@ const servicesData = [
     description:
       "Specialized sessions on topics like advanced study skills, motivation, exam tips, and subject deep dives.",
     image:
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 504,
@@ -192,7 +192,7 @@ const servicesData = [
     description:
       "Instant, round-the-clock help for quick questions, technical issues, and scheduling assistance.",
     image:
-      "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=600&q=80",
   },];
 
 const categories = [

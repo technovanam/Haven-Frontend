@@ -41,7 +41,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         {/* Company Logo */}
                         <img
-                            src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764685340/Screenshot_2025-12-02_195148_v0bc1t.png"
+                            src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_160/v1764685340/Screenshot_2025-12-02_195148_v0bc1t.png"
                             alt="Haven Tutors Logo"
                             className="h-14 sm:h-16 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0 brightness-110 hover:brightness-125 transition-all duration-300"
                             width="80"

@@ -107,10 +107,19 @@ const Home = () => {
                         <div className={`absolute inset-0 transform transition-transform duration-[6000ms] ease-out ${index === currentSlide ? 'scale-110' : 'scale-100'}`}>
                             <img
                                 src={slide.image}
+                                srcSet={`
+                                    ${slide.image.replace('w=1920', 'w=640')} 640w,
+                                    ${slide.image.replace('w=1920', 'w=768')} 768w,
+                                    ${slide.image.replace('w=1920', 'w=1024')} 1024w,
+                                    ${slide.image.replace('w=1920', 'w=1280')} 1280w,
+                                    ${slide.image.replace('w=1920', 'w=1536')} 1536w,
+                                    ${slide.image.replace('w=1920', 'w=1920')} 1920w
+                                `}
+                                sizes="100vw"
                                 alt={slide.title}
                                 className="absolute inset-0 w-full h-full object-cover"
                                 loading={index === 0 ? "eager" : "lazy"}
-                                fetchpriority={index === 0 ? "high" : "auto"}
+                                fetchPriority={index === 0 ? "high" : "auto"}
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
                         </div>

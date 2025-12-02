@@ -222,7 +222,7 @@ const About = () => {
           {/* LEFT SIDE - IMAGE */}
           <div className="flex justify-center order-2 md:order-1">
             <img
-              src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1761212328/approachImage_ova89m.jpg"
+              src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_450/v1761212328/approachImage_ova89m.jpg"
               alt="Student Learning"
               className="rounded-xl sm:rounded-2xl shadow-lg w-full max-w-md object-cover"
               loading="lazy"
@@ -301,7 +301,7 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764685139/01-removebg-preview_dafxco.png"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1764685139/01-removebg-preview_dafxco.png"
                 alt="Sameeha"
                 className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
@@ -320,7 +320,7 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764686774/WhatsApp_Image_2025-11-29_at_11.09.18_6dd17289_1_hxxpd7.jpg"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1764686774/WhatsApp_Image_2025-11-29_at_11.09.18_6dd17289_1_hxxpd7.jpg"
                 alt="Haseeba"
                 className="w-full h-60 sm:h-80 object-cover object-top scale-110 -translate-y-0 group-hover:scale-125 transition-transform duration-500"
                 loading="lazy"
@@ -339,7 +339,7 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764439337/WhatsApp_Image_2025-11-29_at_09.58.43_e4cd9578_axbas2.jpg"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1764439337/WhatsApp_Image_2025-11-29_at_09.58.43_e4cd9578_axbas2.jpg"
                 alt="Aneesa Firdous"
                 className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
