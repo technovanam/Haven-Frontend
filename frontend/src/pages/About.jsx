@@ -311,7 +311,7 @@ const About = () => {
               <h3 className="text-xl font-bold text-slate-900 mb-1">Sameeha</h3>
               <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Founder & CEO <br /> Biology & Physics Educator</p>
               <p className="text-slate-600 text-sm">
-                Passionate about simplifying complex concepts in Biology and Physics to help students excel.
+                Enthusiastic about breaking down intricate Biology and Physics topics, empowering learners to thrive academically.
               </p>
             </div>
           </div>
@@ -330,12 +330,31 @@ const About = () => {
               <h3 className="text-xl font-bold text-slate-900 mb-1">Haseeba</h3>
               <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of Mathematics Faculty</p>
               <p className="text-slate-600 text-sm">
-                Passionate about simplifying complex concepts in Mathematics to help students excel.
+                Passionate mathematician who transforms abstract formulas into clear insights, inspiring confidence in every pupil.
               </p>
             </div>
           </div>
 
           {/* Team Member 3 */}
+          <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764751308/WhatsApp_Image_2025-12-02_at_20.56.14_076b88ff_1_kj7eok.jpg"
+                alt="Joshnitha"
+                className="w-full h-60 sm:h-80 object-cover object-top scale-130 -translate-y-0 group-hover:scale-145 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">Joshnitha</h3>
+              <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of Computer Science Faculty</p>
+              <p className="text-slate-600 text-sm">
+                Innovative coder who unravels intricate algorithms, igniting curiosity and empowering future technologists.
+              </p>
+            </div>
+          </div>
+
+          {/* Team Member 4 */}
           <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
@@ -349,7 +368,7 @@ const About = () => {
               <h3 className="text-xl font-bold text-slate-900 mb-1">Aneesa Firdous</h3>
               <p className="text-[#e8b112] font-semibold text-sm uppercase tracking-wide mb-3">Head of SST Faculty</p>
               <p className="text-slate-600 text-sm">
-                Expert in Social Studies, guiding students to understand the world around them through engaging lessons.
+                Visionary historian weaving cultural narratives through immersive explorations, sparking critical thinking and lifelong appreciation.
               </p>
             </div>
           </div>
