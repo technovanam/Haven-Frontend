@@ -301,7 +301,7 @@ const About = () => {
           <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group w-[85%] sm:w-80">
             <div className="relative overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_400/v1764685139/01-removebg-preview_dafxco.png"
+                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764746980/01-removebg-preview_2_lqhbjc.jpg"
                 alt="Sameeha"
                 className="w-full h-60 sm:h-80 object-cover object-top group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
