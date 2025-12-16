@@ -37,22 +37,13 @@ const servicesData = [
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
   },
-  {
-    id: 104,
-    category: "Tutoring Formats",
-    title: "Home Tutoring",
-    description:
-      "In-person tutoring sessions delivered at your doorstep for a focused and familiar learning environment.",
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
-  },
 
   {
     id: 201,
     category: "Specialized Learning Services",
     title: "Exam Preparation",
     description:
-      "Targeted coaching for board exams (CBSE, ICSE, IGCSE, IB) and competitive entrance tests.",
+      "Targeted coaching for board exams (CBSE, ICSE, IGCSE, IB).",
     image:
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
   },
@@ -128,7 +119,7 @@ const servicesData = [
     description:
       "View comprehensive information including qualifications, experience, and student ratings before you book a session.",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=100",
   },
   {
     id: 402,
@@ -228,7 +219,7 @@ const ServiceCard = ({ service }) => (
   <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 text-left">
     <div className="w-full h-40 sm:h-48 md:h-52 lg:h-56 overflow-hidden bg-gray-100">
       <img
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover ${service.id === 401 ? 'object-[50%_20%]' : ''}`}
         src={service.image}
         alt={service.title}
         loading="lazy"
