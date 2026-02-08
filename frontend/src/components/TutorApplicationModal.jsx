@@ -66,7 +66,7 @@ const TutorApplicationModal = ({ isOpen, onClose }) => {
 
                 <div className="p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                        Join Haven Tutors
+                        Join Silora Academy
                     </h2>
                     <p className="text-slate-600 mb-6">
                         Become part of our growing global tutor network.

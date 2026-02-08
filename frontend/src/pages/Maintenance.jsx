@@ -13,7 +13,7 @@ export default function Maintenance() {
         <p className="text-slate-600 text-center mb-6">
           Our website is currently undergoing scheduled maintenance.<br />
           Thank you for your patience and understanding.<br />
-          <span className="text-[#e8b112] font-semibold">— Haven Team</span>
+          <span className="text-[#e8b112] font-semibold">— Silora Academy Team</span>
         </p>
       </div>
     </div>

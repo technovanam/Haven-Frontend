@@ -43,18 +43,17 @@ const Header = () => {
               to="/"
               className="flex items-center space-x-2"
               onClick={closeMenu}
-              aria-label="Haven Tutors Home"
+              aria-label="Silora Academy Home"
             >
-              <img
-                src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764665269/Screenshot_2025-12-02_141734_uctyqs.png
-"
-                alt="Haven Tutors Logo"
-                className="h-10 sm:h-12 md:h-14 w-auto object-contain"
-                width="60"
-                height="60"
-                loading="eager"
-                fetchPriority="high"
-              />
+                <img
+                  src="/public/logo.jpg"
+                  alt="Silora Academy Logo"
+                  className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+                  width="60"
+                  height="60"
+                  loading="eager"
+                  fetchPriority="high"
+                />
             </Link>
           </div>
 

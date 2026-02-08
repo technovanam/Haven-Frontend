@@ -1,9 +1,9 @@
 /**
  * ============================================================================
- * HAVEN TUTORS - BACKEND API SERVER
+ * SILORA ACADEMY - BACKEND API SERVER
  * ============================================================================
  * 
- * This is the main backend server for Haven Tutors website.
+ * This is the main backend server for Silora Academy website.
  * It handles three main form submissions:
  *   1. Contact Form (/api/contact)
  *   2. Student Demo Booking (/api/student-demo)
@@ -55,9 +55,9 @@ const upload = multer({ dest: "uploads/" });
 
 /**
  * Default sender email with display name
- * This appears as "Haven Tutors <info@haventutor.com>" in recipient's inbox
+ * This appears as "Silora Academy <info@siloraacademy.com>" in recipient's inbox
  */
-const DEFAULT_FROM = `Haven Tutors <${process.env.MAIL_USER || 'info@haventutor.com'}>`;
+const DEFAULT_FROM = `Silora Academy <${process.env.MAIL_USER || 'info@siloraacademy.com'}>`;
 
 /**
  * Resend API endpoint for sending emails
@@ -164,7 +164,7 @@ console.log("🚀 Server starting...");
  */
 app.get("/", (req, res) => {
   res.json({
-    message: "✅ Haven Tutors Backend API is running!",
+    message: "✅ Silora Academy Backend API is running!",
     endpoints: [
       "POST /api/contact",
       "POST /api/student-demo",
@@ -221,19 +221,19 @@ app.post("/api/contact", upload.none(), async (req, res) => {
           <h2 style="color: #2563eb; margin-bottom: 20px;">We've Received Your Message</h2>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${user_name},</p>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-            Thank you for contacting Haven Tutors. We truly appreciate you reaching out to us.
+            Thank you for contacting Silora Academy. We truly appreciate you reaching out to us.
           </p>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">
             Your message has been successfully received by our team. One of our education consultants will review your inquiry and respond within 24 hours.
           </p>
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
           <p style="color: #6b7280; font-size: 14px;">
             Warm regards,<br>
-            <strong style="color: #2563eb;">The Haven Tutors Team</strong>
+            <strong style="color: #2563eb;">The Silora Academy Team</strong>
           </p>
         </div>
       </div>
@@ -255,7 +255,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
     sendResendEmail({
       from: DEFAULT_FROM,
       to: user_email,
-      subject: `We've Received Your Message - Haven Tutors`,
+      subject: `We've Received Your Message - Silora Academy`,
       html: autoReplyHtml
     }).catch(err => console.error("Auto-reply error:", err));
 
@@ -318,7 +318,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
           <h2 style="color: #2563eb; margin-bottom: 20px;">🎉 Demo Request Received</h2>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${name},</p>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-            Thank you for booking a <strong>demo session</strong> with Haven Tutors. Our team will contact you shortly to schedule your session at a convenient time.
+            Thank you for booking a <strong>demo session</strong> with Silora Academy. Our team will contact you shortly to schedule your session at a convenient time.
           </p>
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #1e40af; margin: 0 0 10px;">Submitted Details</h3>
@@ -336,13 +336,13 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
             </p>
           </div>
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
           <p style="color: #6b7280; font-size: 14px;">
             Warm regards,<br>
-            <strong style="color: #2563eb;">The Haven Tutors Team</strong>
+            <strong style="color: #2563eb;">The Silora Academy Team</strong>
           </p>
         </div>
       </div>
@@ -363,7 +363,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
     sendResendEmail({
       from: DEFAULT_FROM,
       to: email,
-      subject: `Your Demo Session Request Is Confirmed - Haven Tutors`,
+      subject: `Your Demo Session Request Is Confirmed - Silora Academy`,
       html: userConfirmationHtml
     }).catch(err => console.error("Student auto-reply error:", err));
 
@@ -457,7 +457,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
           <h2 style="color: #2563eb; margin-bottom: 20px;">👩‍🏫 Application Received Successfully</h2>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">Dear ${tutor_name},</p>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">
-            Thank you for your interest in joining <strong>Haven Tutors</strong> as an educator!
+            Thank you for your interest in joining <strong>Silora Academy</strong> as an educator!
           </p>
           <p style="color: #374151; font-size: 16px; line-height: 1.6;">
             We are delighted to have received your application. Your passion for teaching and commitment to student success is exactly what we look for in our tutoring team.
@@ -478,7 +478,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
           </div>
           
           <div style="background-color: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <h4 style="color: #166534; margin-top: 0;">About Haven Tutors</h4>
+            <h4 style="color: #166534; margin-top: 0;">About Silora Academy</h4>
             <p style="color: #374151; margin: 0; font-size: 14px;">
               We pride ourselves on maintaining the highest standards of education. Our tutors work with students globally, 
               helping them achieve academic excellence through personalized, one-on-one instruction.
@@ -490,14 +490,14 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
           </p>
           
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@haventutor.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           
           <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
           <p style="color: #6b7280; font-size: 14px;">
             Best wishes,<br>
-            <strong style="color: #2563eb;">The Haven Tutors Recruitment Team</strong>
+            <strong style="color: #2563eb;">The Silora Academy Recruitment Team</strong>
           </p>
         </div>
       </div>
@@ -529,7 +529,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
     sendResendEmail({
       from: DEFAULT_FROM,
       to: tutor_email,
-      subject: `Application Received - Haven Tutors Teaching Opportunity`,
+      subject: `Application Received - Silora Academy Teaching Opportunity`,
       html: applicantConfirmationHtml
     }).catch(err => console.error("Tutor auto-reply error:", err));
 

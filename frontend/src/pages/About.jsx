@@ -26,7 +26,7 @@ const About = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
-            At Haven Tutors, we make learning inspiring, flexible, and supportive so every student can grow with confidence.
+            At Silora Academy, we make learning inspiring, flexible, and supportive so every student can grow with confidence.
           </p>
         </div>
       </section>
@@ -49,7 +49,7 @@ const About = () => {
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl text-slate-600 mb-6 sm:mb-8 leading-relaxed">
-              At Haven Tutors, we believe education should be personal, flexible, and inspiring. Guided by a passion for meaningful learning, we've built a calm, supportive environment where every student can grow with confidence.
+              At Silora Academy, we believe education should be personal, flexible, and inspiring. Guided by a passion for meaningful learning, we've built a calm, supportive environment where every student can grow with confidence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 sm:mt-10">
@@ -85,7 +85,7 @@ const About = () => {
                 Our Mission
               </h3>
               <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4">
-                Haven Tutors is founded on the belief that every learner deserves personal attention, clear guidance, and a learning pace that fits them. Our mission is to make quality education both accessible and enjoyable for all.
+                Silora Academy is founded on the belief that every learner deserves personal attention, clear guidance, and a learning pace that fits them. Our mission is to make quality education both accessible and enjoyable for all.
               </p>
               <ul className="space-y-2 text-sm sm:text-base text-slate-700">
                 <li className="flex items-start gap-2">
@@ -111,7 +111,7 @@ const About = () => {
                 Our Vision
               </h3>
               <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4">
-                We envision a world where education adapts to each learner — not the other way around. Haven Tutors strives to build a safe, inspiring space that nurtures curiosity and lifelong learning.
+                We envision a world where education adapts to each learner — not the other way around. Silora Academy strives to build a safe, inspiring space that nurtures curiosity and lifelong learning.
               </p>
               <ul className="space-y-2 text-sm sm:text-base text-slate-700">
                 <li className="flex items-start gap-2">
@@ -391,7 +391,7 @@ const About = () => {
             Ready to Discover Your Potential?
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 px-4">
-            Join Haven Tutors today and take the first step toward confident,
+            Join Silora Academy today and take the first step toward confident,
             <br className="hidden sm:block" />
             personalized, and flexible learning.
           </p>

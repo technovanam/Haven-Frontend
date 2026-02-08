@@ -331,7 +331,7 @@ const ServicesPage = () => {
             Ready to Discover Your Potential?
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 px-4">
-            Join Haven Tutors today and take the first step toward confident,
+            Join Silora Academy today and take the first step toward confident,
             <br className="hidden sm:block" />
             personalized, and flexible learning.
           </p>

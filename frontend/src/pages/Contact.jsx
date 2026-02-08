@@ -226,12 +226,12 @@ const Contact = () => {
                   <ContactInfoItem
                     icon={<Mail className="w-5 h-5 sm:w-6 sm:h-6" />}
                     title="Email Address"
-                    value="info@haventutor.com"
+                    value="info@siloraacademy.com"
                   />
                   <ContactInfoItem
                     icon={<Globe className="w-5 h-5 sm:w-6 sm:h-6" />}
                     title="Website"
-                    value="www.haventutor.com"
+                    value="www.siloraacademy.com"
                   />
                   <ContactInfoItem
                     icon={<Phone className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -247,7 +247,7 @@ const Contact = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     <a
-                      href="https://www.facebook.com/haventutors"
+                      href="https://www.facebook.com/siloraacademy"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
@@ -256,7 +256,7 @@ const Contact = () => {
                       <FaFacebookF className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA=="
+                      href="https://www.instagram.com/siloraacademy"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
@@ -265,7 +265,7 @@ const Contact = () => {
                       <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
+                      href="https://wa.me/+919606840892?text=Hello%20Silora%20Academy!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp"
@@ -274,7 +274,7 @@ const Contact = () => {
                       <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY"
+                      href="https://youtube.com/@siloraacademy"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="YouTube"

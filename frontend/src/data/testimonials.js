@@ -1,13 +1,13 @@
 export const testimonials = [
     {
-        quote: "Haven Tutors made ICSE Physics and Chemistry simple and engaging. My concepts finally clicked, and my grades improved drastically!",
+        quote: "Silora Academy made ICSE Physics and Chemistry simple and engaging. My concepts finally clicked, and my grades improved drastically!",
         name: "Aarav Mehta",
         role: "ICSE Student – Grade 10",
         imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AM",
         rating: 5,
     },
     {
-        quote: "As an IGCSE student, I struggled with balancing Math and Biology, but Haven Tutors' personalized sessions helped me manage both with ease.",
+        quote: "As an IGCSE student, I struggled with balancing Math and Biology, but Silora Academy's personalized sessions helped me manage both with ease.",
         name: "Sophia Thomas",
         role: "IGCSE Student – Grade 9",
         imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=ST",
@@ -49,7 +49,7 @@ export const testimonials = [
         rating: 5,
     },
     {
-        quote: "Thanks to Haven Tutors' Canadian curriculum lessons, my child improved drastically in vocabulary and writing structure. Highly recommend!",
+        quote: "Thanks to Silora Academy's Canadian curriculum lessons, my child improved drastically in vocabulary and writing structure. Highly recommend!",
         name: "Anita Patel",
         role: "Parent – Canadian Curriculum",
         imgSrc: "https://placehold.co/48x48/E2E8F0/4A5568?text=AP",

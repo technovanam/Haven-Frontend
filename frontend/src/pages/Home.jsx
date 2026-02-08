@@ -227,7 +227,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Why Choose Haven Tutors Section */}
+            {/* Why Choose Silora Academy Section */}
             <section className="bg-white py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto bg-slate-50 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
 
@@ -270,10 +270,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Haven Tutors Content */}
+                    {/* Right Column: Silora Academy Content */}
                     <div className="w-full lg:w-1/2 text-left">
                         <p className="text-xs sm:text-sm font-semibold text-[#0a2d4a] uppercase tracking-wide mb-2">
-                            Why Choose Haven Tutors
+                            Why Choose Silora Academy
                         </p>
 
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-snug">
@@ -357,7 +357,7 @@ const Home = () => {
                         What Our Learners Say
                     </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto mb-8 sm:mb-12 text-sm sm:text-base px-4">
-                        Hear from our students and parents about how Haven Tutors has made learning easier and more rewarding
+                        Hear from our students and parents about how Silora Academy has made learning easier and more rewarding
                     </p>
 
                     {/* Testimonials Grid */}

@@ -41,8 +41,8 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         {/* Company Logo */}
                         <img
-                            src="https://res.cloudinary.com/dnmvriw3e/image/upload/f_auto,q_auto,w_160/v1764685340/Screenshot_2025-12-02_195148_v0bc1t.png"
-                            alt="Haven Tutors Logo"
+                            src="/public/logo.jpg"
+                            alt="Silora Academy Logo"
                             className="h-14 sm:h-16 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0 brightness-110 hover:brightness-125 transition-all duration-300"
                             width="80"
                             height="80"
@@ -64,7 +64,7 @@ const Footer = ({ onBookDemoClick }) => {
                                 <div className="bg-[#0a2d4a]/50 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg group-hover:bg-[#e8b112] transition-all duration-300 border border-[#e8b112]/30 group-hover:border-[#e8b112]">
                                     <Mail size={12} className="sm:w-3.5 sm:h-3.5 text-[#e8b112] group-hover:text-[#0a2d4a] transition-colors" />
                                 </div>
-                                <span className="text-slate-200 font-medium text-xs sm:text-sm group-hover:text-[#e8b112] transition-colors">info@haventutor.com</span>
+                                <span className="text-slate-200 font-medium text-xs sm:text-sm group-hover:text-[#e8b112] transition-colors">info@siloraacademy.com</span>
                             </div>
                         </div>
 
@@ -76,19 +76,19 @@ const Footer = ({ onBookDemoClick }) => {
                             </h3>
                             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start">
                                 {/* Facebook */}
-                                <a href="https://www.facebook.com/haventutors" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                <a href="https://www.facebook.com/siloraacademy" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* Instagram */}
-                                <a href="https://www.instagram.com/haven__tutors?igsh=MXRrcmk4OGtuYTJveA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                <a href="https://www.instagram.com/siloraacademy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaInstagram size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* WhatsApp */}
-                                <a href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                <a href="https://wa.me/+919606840892?text=Hello%20Silora%20Academy!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaWhatsapp size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* YouTube */}
-                                <a href="https://youtube.com/@haventutors?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                <a href="https://youtube.com/@siloraacademy?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaYoutube size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                             </div>
@@ -332,12 +332,12 @@ const Footer = ({ onBookDemoClick }) => {
                     <p className="text-xs sm:text-sm text-slate-300">
                         Copyright © 2025{" "}
                         <a
-                            href="https://www.haventutor.com"
+                            href="https://www.siloraacademy.com"
                             target="_self"
                             rel="noopener noreferrer"
                             className="text-[#e8b112] font-semibold hover:underline"
                         >
-                            Haven Tutors
+                            Silora Academy
                         </a>{" "}
                         | All Rights Reserved
                     </p>
@@ -350,7 +350,7 @@ const Footer = ({ onBookDemoClick }) => {
             {/* Fixed position button at bottom right for quick WhatsApp contact */}
             <div className="fixed right-3 bottom-4 sm:right-4 sm:bottom-6 md:right-6 md:bottom-8 flex flex-col items-end gap-3 sm:gap-4 z-50">
                 <a
-                    href="https://wa.me/+919606840892?text=Hello%20Haven%20Tutors!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
+                    href="https://wa.me/+919606840892?text=Hello%20Silora%20Academy!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-to-br from-green-500 to-green-600 text-white p-3 sm:p-3.5 rounded-full shadow-2xl hover:from-green-600 hover:to-green-600 transform transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-green-500"
