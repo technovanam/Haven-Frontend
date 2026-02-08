@@ -41,7 +41,7 @@ const Footer = ({ onBookDemoClick }) => {
                     <div className="w-full">
                         {/* Company Logo */}
                         <img
-                            src="/public/logo.jpg"
+                            src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1770561256/Logo_qe3dyz.jpg"
                             alt="Silora Academy Logo"
                             className="h-14 sm:h-16 w-auto object-contain mb-4 sm:mb-6 mx-auto lg:mx-0 brightness-110 hover:brightness-125 transition-all duration-300"
                             width="80"

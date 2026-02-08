@@ -46,7 +46,7 @@ const Header = () => {
               aria-label="Silora Academy Home"
             >
                 <img
-                  src="/public/logo.jpg"
+                  src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1770561256/Logo_qe3dyz.jpg"
                   alt="Silora Academy Logo"
                   className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                   width="60"
