@@ -57,7 +57,7 @@ const upload = multer({ dest: "uploads/" });
  * Default sender email with display name
  * This appears as "Silora Academy <info@siloraacademy.com>" in recipient's inbox
  */
-const DEFAULT_FROM = `Silora Academy <${process.env.MAIL_USER || 'info@siloraacademy.com'}>`;
+const DEFAULT_FROM = `Silora Academy <info@siloraacademy.com>`;
 
 /**
  * Resend API endpoint for sending emails
@@ -245,7 +245,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
     // Send notification to admin
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: process.env.MAIL_USER,
+      to: 'info@siloraacademy.com',
       subject: `New Contact Form Submission from ${user_name}`,
       html: adminMessageHtml,
       reply_to: user_email  // Admin can reply directly to user
@@ -353,7 +353,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
     // Send notification to admin
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: process.env.MAIL_USER,
+      to: 'info@siloraacademy.com',
       subject: `New Student Demo Booking - ${name}`,
       html: adminHtml,
       reply_to: email  // Admin can reply directly to student/parent
@@ -508,7 +508,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
     // Send notification to admin with resume attachment
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: process.env.MAIL_USER,
+      to: 'info@siloraacademy.com',
       subject: `New Tutor Application - ${tutor_name}`,
       html: adminHtml,
       reply_to: tutor_email,  // Admin can reply directly to applicant
