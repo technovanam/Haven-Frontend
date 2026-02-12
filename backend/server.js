@@ -57,7 +57,13 @@ const upload = multer({ dest: "uploads/" });
  * Default sender email with display name
  * This appears as "Silora Academy <info@siloraacademy.com>" in recipient's inbox
  */
-const DEFAULT_FROM = `Silora Academy <info@siloraacademy.com>`;
+const ADMIN_EMAIL = process.env.MAIL_USER || 'info@siloraacademy.com';
+
+/**
+ * Default sender email with display name
+ * This appears as "Silora Academy <info@siloraacademy.com>" in recipient's inbox
+ */
+const DEFAULT_FROM = `Silora Academy <${ADMIN_EMAIL}>`;
 
 /**
  * Resend API endpoint for sending emails
@@ -227,7 +233,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
             Your message has been successfully received by our team. One of our education consultants will review your inquiry and respond within 24 hours.
           </p>
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> ${ADMIN_EMAIL}</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
@@ -245,7 +251,7 @@ app.post("/api/contact", upload.none(), async (req, res) => {
     // Send notification to admin
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: 'info@siloraacademy.com',
+      to: ADMIN_EMAIL,
       subject: `New Contact Form Submission from ${user_name}`,
       html: adminMessageHtml,
       reply_to: user_email  // Admin can reply directly to user
@@ -336,7 +342,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
             </p>
           </div>
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> ${ADMIN_EMAIL}</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
@@ -353,7 +359,7 @@ app.post("/api/student-demo", upload.none(), async (req, res) => {
     // Send notification to admin
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: 'info@siloraacademy.com',
+      to: ADMIN_EMAIL,
       subject: `New Student Demo Booking - ${name}`,
       html: adminHtml,
       reply_to: email  // Admin can reply directly to student/parent
@@ -490,7 +496,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
           </p>
           
           <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> info@siloraacademy.com</p>
+            <p style="margin: 5px 0; color: #1e40af;"><strong>📧 Email:</strong> ${ADMIN_EMAIL}</p>
             <p style="margin: 5px 0; color: #1e40af;"><strong>💬 WhatsApp:</strong> +91 9606840892</p>
           </div>
           
@@ -508,7 +514,7 @@ app.post("/api/tutor-application", upload.single("resume"), async (req, res) => 
     // Send notification to admin with resume attachment
     sendResendEmail({
       from: DEFAULT_FROM,
-      to: 'info@siloraacademy.com',
+      to: ADMIN_EMAIL,
       subject: `New Tutor Application - ${tutor_name}`,
       html: adminHtml,
       reply_to: tutor_email,  // Admin can reply directly to applicant
