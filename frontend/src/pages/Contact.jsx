@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Building2, Mail, Globe, Phone } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaTelegram } from 'react-icons/fa6';
 import { API_BASE_URL } from "../config";
 
 
@@ -274,13 +274,13 @@ const Contact = () => {
                       <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 group-hover:text-white" />
                     </a>
                     <a
-                      href="https://youtube.com/@siloraacademy"
+                      href="https://t.me/siloraacademy"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="YouTube"
-                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-red-600 transition-all duration-300 group hover:scale-105"
+                      aria-label="Telegram"
+                      className="bg-white p-2.5 sm:p-3 rounded-xl shadow-md hover:shadow-lg hover:bg-blue-500 transition-all duration-300 group hover:scale-105"
                     >
-                      <FaYoutube className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 group-hover:text-white" />
+                      <FaTelegram className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 group-hover:text-white" />
                     </a>
                   </div>
                 </div>

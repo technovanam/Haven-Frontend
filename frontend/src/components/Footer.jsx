@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa6';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTelegram, FaWhatsapp } from 'react-icons/fa6';
 import { Phone, Mail } from 'lucide-react';
 
 // ============================================================
@@ -13,7 +13,7 @@ import { Phone, Mail } from 'lucide-react';
 // - Subject categories with demo booking functionality
 // - Service offerings list
 // - Curriculum/board options
-// - Social media links (Facebook, LinkedIn, Instagram, WhatsApp, YouTube)
+// - Social media links (Facebook, LinkedIn, Instagram, WhatsApp, Telegram)
 // - Copyright information
 // - Floating WhatsApp button for quick contact
 // Color Scheme: #0a2d4a (Navy Blue) and #e8b112 (Golden Yellow)
@@ -76,7 +76,7 @@ const Footer = ({ onBookDemoClick }) => {
                             </h3>
                             <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start">
                                 {/* Facebook */}
-                                <a href="https://www.facebook.com/siloraacademy" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                <a href="https://www.facebook.com/share/1CFwE2urXa" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaFacebookF size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                                 {/* Instagram */}
@@ -87,9 +87,9 @@ const Footer = ({ onBookDemoClick }) => {
                                 <a href="https://wa.me/+919606840892?text=Hello%20Silora%20Academy!%20I%20would%20like%20to%20learn%20more%20about%20your%20tutoring%20services." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
                                     <FaWhatsapp size={14} className="sm:w-4 sm:h-4" />
                                 </a>
-                                {/* YouTube */}
-                                <a href="https://youtube.com/@siloraacademy?si=q8Tr5bEIqM0NHExY" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
-                                    <FaYoutube size={14} className="sm:w-4 sm:h-4" />
+                                {/* Telegram */}
+                                <a href="https://t.me/siloraacademy" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="bg-[#0a2d4a]/50 backdrop-blur-sm hover:bg-[#e8b112] text-[#e8b112] hover:text-[#0a2d4a] p-2 sm:p-2.5 rounded-lg border border-[#e8b112]/30 hover:border-[#e8b112] shadow-lg hover:shadow-[#e8b112]/50 transition-all duration-300 hover:scale-110">
+                                    <FaTelegram size={14} className="sm:w-4 sm:h-4" />
                                 </a>
                             </div>
                         </div>

@@ -46,20 +46,18 @@ function AppRoutes() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        {MAINTENANCE_MODE ? (
+      {MAINTENANCE_MODE ? (
+        <Routes>
           <Route
             path="*"
             element={
               isDeveloperPreview() ? <AppRoutes /> : <Maintenance />
             }
           />
-        ) : (
-          <Route path="/" element={<AppRoutes />} />
-        )}
-      </Routes>
+        </Routes>
+      ) : (
+        <AppRoutes />
+      )}
     </BrowserRouter>
   </React.StrictMode>
 );
-
-
